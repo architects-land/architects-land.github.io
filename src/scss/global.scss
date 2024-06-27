@@ -52,11 +52,19 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.big-text p {
+.is-abril {
+  font-family: 'Abril Fatface', serif;
+}
+
+.huge-text p, .huge-text a {
+  font-size: 1.5rem;
+}
+
+.big-text p, .big-text a {
   font-size: 1.25rem;
 }
 
-.large-text p {
+.large-text p, .large-text a {
   font-size: 1.125rem;
 }
 

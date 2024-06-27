@@ -1,0 +1,23 @@
+@import "../../scss/variables";
+
+nav {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 5;
+  color: $light-sand;
+  background: $dark-background;
+  width: 100%;
+  padding: 2rem 10%;
+  box-sizing: border-box;
+}
+
+.nav__links {
+  display: flex;
+  margin-left: auto;
+  gap: 2rem;
+  & a {
+    color: $light-sand;
+    text-decoration: none;
+  }
+}

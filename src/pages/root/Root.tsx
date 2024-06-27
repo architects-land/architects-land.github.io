@@ -52,7 +52,7 @@ export default function Root() {
                         </p>
                     </div>
                 </div>
-                <div class="content large-text presentation presentation__seasons">
+                <div class="content large-text presentation presentation__seasons" id={"seasons"}>
                     <h2>Saisons</h2>
                     <div class="presentation__seasons__grid">
                         <Season title={"Terre des Civilisations"}
