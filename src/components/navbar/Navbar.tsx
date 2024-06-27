@@ -2,7 +2,7 @@ import "./Navbar.scss"
 
 export default function Navbar() {
     return (
-        <nav class={"huge-text"}>
+        <nav class={"huge-text nav nav--hidden"} id="navbar" role="navigation">
             <p class="is-abril">
                 Architects Land
             </p>

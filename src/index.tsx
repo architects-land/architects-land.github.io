@@ -9,8 +9,11 @@ const root = document.getElementById('root')
 render(() => <App />, root!)
 
 const seasons = document.getElementsByClassName('presentation__season')
+const nav = document.getElementById("navbar")!!
 
 let blocked: Element[] = []
+
+nav.style.display = 'none'
 
 for (const season of seasons) {
     season.addEventListener('mouseenter', _ => {
@@ -30,6 +33,15 @@ for (const season of seasons) {
         updateStatus(season, "presentation__season", false)
     })
 }
+
+document.addEventListener("scroll", _ => {
+    if (window.scrollY >= window.innerHeight) {
+        nav.style.display = ''
+        nav.classList.add("nav--present")
+        return
+    }
+    nav.classList.remove("nav--present")
+})
 
 function updateStatus(el: Element, baseClass: string, add = true) {
     setTimeout((_: any) => {

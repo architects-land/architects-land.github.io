@@ -1,6 +1,8 @@
 @import "../../scss/variables";
 
-nav {
+$height: 4rem + 1.5rem;
+
+.nav {
   position: fixed;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,14 +12,40 @@ nav {
   width: 100%;
   padding: 2rem 10%;
   box-sizing: border-box;
+  top: -$height;
+  animation: nav__disappear .3s ease-in-out;
+  & p {
+    margin-bottom: 0;
+  }
+  &--present {
+    top: 0;
+    animation: nav__appear .3s ease-in-out;
+  }
+  &__links {
+    display: flex;
+    margin-left: auto;
+    gap: 2rem;
+    & a {
+      color: $light-sand;
+      text-decoration: none;
+    }
+  }
 }
 
-.nav__links {
-  display: flex;
-  margin-left: auto;
-  gap: 2rem;
-  & a {
-    color: $light-sand;
-    text-decoration: none;
+@keyframes nav__appear {
+  0% {
+    top: -$height;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes nav__disappear {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -$height;
   }
 }
