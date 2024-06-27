@@ -89,22 +89,22 @@ export default function Root() {
 function Season(props: any) {
     if (props.right) {
         return (
-            <>
-                <img src={props.image} alt={props.placeholder} class="presentation__seasons__image"/>
+            <div class={"presentation__season"}>
+                <img src={props.image} alt={props.placeholder} class="presentation__season__image"/>
                 <div class="presentation--left">
                     <h4>{props.title}</h4>
                     {props.children}
                 </div>
-            </>
+            </div>
         )
     }
     return (
-        <>
+        <div class={"presentation__season"}>
             <div class="presentation--right">
                 <h4>{props.title}</h4>
                 {props.children}
             </div>
-            <img src={props.image} alt={props.placeholder} class="presentation__seasons__image"/>
-        </>
+            <img src={props.image} alt={props.placeholder} class="presentation__season__image"/>
+        </div>
     )
 }

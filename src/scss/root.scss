@@ -48,27 +48,40 @@
     & h2 {
       text-align: center;
     }
-    & p {
-      display: block;
-      max-width: 83%;
-    }
     &__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2rem;
       padding: 5%;
       align-items: center;
       align-content: center;
-      & .presentation--left p {
-        margin: 1.5rem auto 1.5rem 0;
-      }
-      & .presentation--right p {
-        margin: 1.5rem 0 1.5rem auto;
-      }
+    }
+  }
+  &__season {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    align-content: center;
+    & .presentation--left p {
+      margin: 1.5rem auto 1.5rem 0;
+    }
+    & .presentation--right p {
+      margin: 1.5rem 0 1.5rem auto;
+    }
+    & p {
+      display: block;
+      max-width: 83%;
     }
     &__image {
       height: 100%;
       width: 100%;
+    }
+    & .presentation--left p {
+      margin: 1.5rem auto 1.5rem 0;
+    }
+    & .presentation--right p {
+      margin: 1.5rem 0 1.5rem auto;
     }
   }
 }
