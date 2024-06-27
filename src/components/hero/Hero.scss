@@ -1,0 +1,16 @@
+.hero {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  &__text {
+    padding-left: 10%;
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
