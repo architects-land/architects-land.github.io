@@ -1,7 +1,22 @@
+@import "variables";
+
 .presentation {
-  background: #000;
-  color: #fff;
-  text-align: center;
   padding-top: 5%;
   padding-bottom: 5%;
+  &__smp {
+    background: $dark-background;
+    color: #fff;
+    text-align: center;
+  }
+  &__architects-land {
+    text-align: center;
+    & h2 {
+      text-align: center;
+    }
+    & p {
+      display: block;
+      width: 50%;
+      margin: 1.5rem auto;
+    }
+  }
 }
