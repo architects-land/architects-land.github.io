@@ -55,8 +55,10 @@ export default function Root() {
                 <div class="content large-text presentation presentation__seasons">
                     <h2>Saisons</h2>
                     <div class="presentation__seasons__grid">
-                        <div class="presentation--right">
-                            <h4>Terre des Civilisations</h4>
+                        <Season title={"Terre des Civilisations"}
+                                image={"https://loremflickr.com/1200/1000"}
+                                placeholder={"placeholder"}
+                        >
                             <p>
                                 Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024,
                                 en 1.21.
@@ -76,11 +78,33 @@ export default function Root() {
                                 meurent, plus le niveau de difficulté augmentent jusqu'à atteindre l'ultra hardcore.
                                 La map était aussi réduite au début pour concentrer un maximum les bases autour du 0 0.
                             </p>
-                        </div>
-                        <img src="https://loremflickr.com/1200/1000" alt="placeholder" class="presentation__seasons__image"/>
+                        </Season>
                     </div>
                 </div>
             </main>
+        </>
+    )
+}
+
+function Season(props: any) {
+    if (props.right) {
+        return (
+            <>
+                <img src={props.image} alt={props.placeholder} class="presentation__seasons__image"/>
+                <div class="presentation--left">
+                    <h4>{props.title}</h4>
+                    {props.children}
+                </div>
+            </>
+        )
+    }
+    return (
+        <>
+            <div class="presentation--right">
+                <h4>{props.title}</h4>
+                {props.children}
+            </div>
+            <img src={props.image} alt={props.placeholder} class="presentation__seasons__image"/>
         </>
     )
 }

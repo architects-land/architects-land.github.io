@@ -51,7 +51,6 @@
     & p {
       display: block;
       max-width: 83%;
-      margin: 1.5rem 0 1.5rem auto;
     }
     &__grid {
       display: grid;
@@ -60,6 +59,12 @@
       padding: 5%;
       align-items: center;
       align-content: center;
+      & .presentation--left p {
+        margin: 1.5rem auto 1.5rem 0;
+      }
+      & .presentation--right p {
+        margin: 1.5rem 0 1.5rem auto;
+      }
     }
     &__image {
       height: 100%;
