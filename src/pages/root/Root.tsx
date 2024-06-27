@@ -90,6 +90,7 @@ function Season(props: any) {
     if (props.right) {
         return (
             <div class={"presentation__season"}>
+                <div class="presentation__season__animation"></div>
                 <img src={props.image} alt={props.placeholder} class="presentation__season__image"/>
                 <div class="presentation--left">
                     <h4>{props.title}</h4>
@@ -100,6 +101,7 @@ function Season(props: any) {
     }
     return (
         <div class={"presentation__season"}>
+            <div class="presentation__season__animation"></div>
             <div class="presentation--right">
                 <h4>{props.title}</h4>
                 {props.children}
