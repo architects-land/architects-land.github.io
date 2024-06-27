@@ -1,6 +1,9 @@
 @import "variables";
 
 .presentation {
+  &--right {
+    text-align: right;
+  }
   &__smp {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -37,6 +40,30 @@
       display: block;
       max-width: 60%;
       margin: 1.5rem 0;
+    }
+  }
+  &__seasons {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    & h2 {
+      text-align: center;
+    }
+    & p {
+      display: block;
+      max-width: 83%;
+      margin: 1.5rem 0 1.5rem auto;
+    }
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 5%;
+      align-items: center;
+      align-content: center;
+    }
+    &__image {
+      height: 100%;
+      width: 100%;
     }
   }
 }

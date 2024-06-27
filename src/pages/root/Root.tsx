@@ -48,12 +48,38 @@ export default function Root() {
                         </p>
                         <p>
                             Chaque saison d'Architects Land a été imaginée pour remettre de la difficulté dans le jeu,
-                            pour
-                            provoquer l'émerveillement et pour construire un lieu favorable aux intéractions.
+                            pour provoquer l'émerveillement et pour construire un lieu favorable aux intéractions.
                         </p>
                     </div>
                 </div>
-                <div class="presentation__smp"></div>
+                <div class="content large-text presentation presentation__seasons">
+                    <h2>Saisons</h2>
+                    <div class="presentation__seasons__grid">
+                        <div class="presentation--right">
+                            <h4>Terre des Civilisations</h4>
+                            <p>
+                                Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024,
+                                en 1.21.
+                            </p>
+                            <p>
+                                Durant cette saison, la génération fut grandement modifiée pour qu'elle devienne plus
+                                réaliste.
+                                Les villages furent aussi améliorer pour qu'ils deviennent plus grand et plus important.
+                            </p>
+                            <p>
+                                Comme les villages occupent une place beaucoup centrale, les bases des joueurs doivent
+                                forcément être reliées au village le plus proche.
+                                Cette connection de base forme les clans des joueurs.
+                            </p>
+                            <p>
+                                La difficulté du monde est adaptée en temps réelle au niveau des joueurs : plus ils
+                                meurent, plus le niveau de difficulté augmentent jusqu'à atteindre l'ultra hardcore.
+                                La map était aussi réduite au début pour concentrer un maximum les bases autour du 0 0.
+                            </p>
+                        </div>
+                        <img src="https://loremflickr.com/1200/1000" alt="placeholder" class="presentation__seasons__image"/>
+                    </div>
+                </div>
             </main>
         </>
     )
