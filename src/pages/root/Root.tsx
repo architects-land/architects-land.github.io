@@ -5,7 +5,7 @@ export default function Root() {
         <>
             <Hero image={"background.png"}
                   title={"Architects Land"}
-                  description={"Est une famille de SMP Minecraft privé mélangeant semi-RP, survie et mods uniques."}
+                  description={"Famille de SMP Minecraft privé"}
             />
             <main>
                 <div class="content presentation presentation__smp large-text">
