@@ -1,22 +1,42 @@
 @import "variables";
 
 .presentation {
-  padding-top: 5%;
-  padding-bottom: 5%;
   &__smp {
+    padding-top: 5%;
+    padding-bottom: 5%;
     background: $dark-background;
-    color: #fff;
+    color: $light-sand;
     text-align: center;
+    & p {
+      width: 75%;
+      margin: 0.5rem auto;
+    }
   }
   &__architects-land {
-    text-align: center;
-    & h2 {
-      text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+    align-content: center;
+    background: $light-background;
+    &__text {
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+    &__image {
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      height: 100%;
+      width: 100%;
     }
     & p {
       display: block;
-      width: 50%;
-      margin: 1.5rem auto;
+      max-width: 60%;
+      margin: 1.5rem 0;
     }
   }
 }

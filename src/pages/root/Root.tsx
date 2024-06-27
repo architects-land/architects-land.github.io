@@ -32,20 +32,28 @@ export default function Root() {
                     </p>
                 </div>
                 <div class="content large-text presentation presentation__architects-land">
-                    <h2>Architects Land</h2>
-                    <p>
-                        Architects Land a été créé avec cet objectif en tête : refaire vivre Minecraft, même après des
-                        milliers d'heures de jeu.
-                    </p>
-                    <p>
-                        Pour le rendre de nouveau intéressant, on doit créer de nouvelles intéractions entre les
-                        joueurs, rajouter de la difficulté et recréer l'émerveillement des premiers jours.
-                    </p>
-                    <p>
-                        Chaque saison d'Architects Land a été imaginée pour remettre de la difficulté dans le jeu, pour
-                        provoquer l'émerveillement et pour construire un lieu favorable aux intéractions.
-                    </p>
+                    <div class="presentation__architects-land__image">
+                        <img src="https://loremflickr.com/1200/1000" alt="placeholder"/>
+                    </div>
+                    <div class="presentation__architects-land__text">
+                        <h2>Nouvelle forme de SMP</h2>
+                        <p>
+                            Architects Land a été créé avec cet objectif en tête : refaire vivre Minecraft, même après
+                            des
+                            milliers d'heures de jeu.
+                        </p>
+                        <p>
+                            Pour le rendre de nouveau intéressant, on doit créer de nouvelles intéractions entre les
+                            joueurs, rajouter de la difficulté et recréer l'émerveillement des premiers jours.
+                        </p>
+                        <p>
+                            Chaque saison d'Architects Land a été imaginée pour remettre de la difficulté dans le jeu,
+                            pour
+                            provoquer l'émerveillement et pour construire un lieu favorable aux intéractions.
+                        </p>
+                    </div>
                 </div>
+                <div class="presentation__smp"></div>
             </main>
         </>
     )
