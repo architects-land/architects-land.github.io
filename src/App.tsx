@@ -17,6 +17,7 @@ function App() {
                 </>
             )
         case "/rules":
+            document.title = "Règles - Architects Land"
             return (
                 <>
                     <Navbar />
