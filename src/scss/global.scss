@@ -77,5 +77,8 @@ a {
 }
 
 .content {
-  padding: 0 10%;
+  padding: 5% 10%;
+  &.large-space {
+    padding: 5% 30%;
+  }
 }

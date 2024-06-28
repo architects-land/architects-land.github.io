@@ -8,6 +8,11 @@ export default function Rules() {
                   description={""}
                   dark min
             />
+            <main>
+                <div class="content large-space">
+                    <h2>Introduction</h2>
+                </div>
+            </main>
         </>
     )
 }
