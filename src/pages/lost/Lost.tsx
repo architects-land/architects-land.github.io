@@ -5,7 +5,7 @@ export default function Lost() {
         <>
             <Hero image={"/nether.jpg"}
                   title={"Perdu ?"}
-                  description={"Il semblerait que vous vous êtes perdu.es dans le nether. Vous allez être redirigés dans l'overworld."}
+                  description={"Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld."}
             />
         </>
     )

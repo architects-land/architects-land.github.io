@@ -60,19 +60,35 @@ a {
   }
 }
 
+em {
+  font-style: italic;
+}
+
+ul {
+  list-style: disc inside;
+}
+
+li {
+  padding-left: 1rem;
+  line-height: 1.125rem;
+  &:last-child {
+    margin-bottom: 0.5rem;
+  }
+}
+
 .is-abril {
   font-family: 'Abril Fatface', serif;
 }
 
-.huge-text p, .huge-text a {
+.huge-text p, .huge-text a, .huge-text li {
   font-size: 1.5rem;
 }
 
-.big-text p, .big-text a {
+.big-text p, .big-text a, .big-text li {
   font-size: 1.25rem;
 }
 
-.large-text p, .large-text a {
+.large-text p, .large-text a, .large-text li {
   font-size: 1.125rem;
 }
 
