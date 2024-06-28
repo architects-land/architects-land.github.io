@@ -14,8 +14,9 @@ $height: 4rem + 1.5rem;
   box-sizing: border-box;
   top: -$height;
   animation: nav__disappear .3s ease-in-out;
-  & p {
-    margin-bottom: 0;
+  & a {
+    color: $light-sand;
+    text-decoration: none;
   }
   &--present {
     top: 0;
@@ -25,10 +26,6 @@ $height: 4rem + 1.5rem;
     display: flex;
     margin-left: auto;
     gap: 2rem;
-    & a {
-      color: $light-sand;
-      text-decoration: none;
-    }
   }
 }
 
