@@ -3,7 +3,7 @@ import Hero from "../../components/hero/Hero.tsx";
 export default function Root() {
     return (
         <>
-            <Hero image={"background.png"}
+            <Hero image={"/background.png"}
                   title={"Architects Land"}
                   description={"Famille de SMP Minecraft privé"}
             />
