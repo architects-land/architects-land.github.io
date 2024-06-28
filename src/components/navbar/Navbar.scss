@@ -14,10 +14,6 @@ $height: 4rem + 1.5rem;
   box-sizing: border-box;
   top: -$height;
   animation: nav__disappear .3s ease-in-out;
-  & a {
-    color: $light-sand;
-    text-decoration: none;
-  }
   &--present {
     top: 0;
     animation: nav__appear .3s ease-in-out;
