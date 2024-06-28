@@ -1,13 +1,26 @@
 import Root from "./pages/root/Root.tsx";
 import Navbar from "./components/navbar/Navbar.tsx";
+import Lost from "./pages/lost/Lost.tsx";
 
 function App() {
-  return (
-    <>
-        <Navbar />
-      <Root />
-    </>
-  )
+    const href = location.pathname
+
+    if (href == "/") {
+        return (
+            <>
+                <Navbar />
+                <Root />
+            </>
+        )
+    }
+    setTimeout((_: any) => {
+        location.replace(`${location.origin}`)
+    }, 5*1000)
+    return (
+        <>
+            <Lost />
+        </>
+    )
 }
 
 export default App
@@ -39,7 +52,7 @@ export function setupEvents() {
         })
         season.addEventListener("click", _ => {
             const href = season.getAttribute("data-href")!!
-            window.location.href = `/season/${href}`
+            location.replace(`${location.origin}/season/${href}`)
         })
     }
 
