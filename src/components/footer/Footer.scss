@@ -17,6 +17,11 @@
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+    &--inline {
+      flex-direction: row-reverse;
+      gap: 1rem;
+      text-align: right;
+    }
   }
   &__credits {
     text-align: right;
