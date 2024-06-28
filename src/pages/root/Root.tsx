@@ -1,5 +1,7 @@
 import Hero from "../../components/hero/Hero.tsx";
 
+import "./Root.scss"
+
 export default function Root() {
     return (
         <>

@@ -9,8 +9,11 @@ export default function Rules() {
                   dark min
             />
             <main>
-                <div class="content large-space">
+                <div class="content large-space large-text introduction">
                     <h2>Introduction</h2>
+                    <p>
+                        Pourquoi avoir des règles ?
+                    </p>
                 </div>
             </main>
         </>
