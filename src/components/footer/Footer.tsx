@@ -3,7 +3,7 @@ import "./Footer.scss"
 export default function Footer() {
     return (
         <footer class={"footer"}>
-            <img src="/logo-white.png" alt="Logo" class={"footer__logo"}/>
+            <img src="/logo-sand.png" alt="Logo" class={"footer__logo"}/>
             <div class="footer__links large-text">
                 <a href="/">Accueil</a>
                 <a href="/#seasons">Saisons</a>
