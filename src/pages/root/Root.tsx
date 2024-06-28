@@ -58,6 +58,7 @@ export default function Root() {
                         <Season title={"Terre des Civilisations"}
                                 image={"https://loremflickr.com/1200/1000"}
                                 placeholder={"placeholder"}
+                                href={"terre-des-civilisations"}
                         >
                             <p>
                                 Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024,
@@ -89,7 +90,7 @@ export default function Root() {
 function Season(props: any) {
     if (props.right) {
         return (
-            <div class={"presentation__season"}>
+            <div class={"presentation__season"} data-href={props.href}>
                 <div class="presentation__season__animation"></div>
                 <img src={props.image} alt={props.placeholder} class="presentation__season__image"/>
                 <div class="presentation--left">
@@ -100,7 +101,7 @@ function Season(props: any) {
         )
     }
     return (
-        <div class={"presentation__season"}>
+        <div class={"presentation__season"} data-href={props.href}>
             <div class="presentation__season__animation"></div>
             <div class="presentation--right">
                 <h4>{props.title}</h4>

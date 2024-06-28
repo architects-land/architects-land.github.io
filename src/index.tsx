@@ -32,6 +32,10 @@ for (const season of seasons) {
         }
         updateStatus(season, "presentation__season", false)
     })
+    season.addEventListener("click", _ => {
+        const href = season.getAttribute("data-href")!!
+        window.location.href = `/season/${href}`
+    })
 }
 
 document.addEventListener("scroll", _ => {
