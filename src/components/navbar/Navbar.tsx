@@ -17,7 +17,7 @@ export default function Navbar() {
                     Règles
                 </a>
                 <a href={"/team"}>
-                    Équipes
+                    Équipe
                 </a>
             </div>
         </nav>
