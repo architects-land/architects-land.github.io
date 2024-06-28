@@ -1,0 +1,25 @@
+@import "../../scss/variables";
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5% 10%;
+  background: $dark-background;
+  color: $light-sand;
+  align-items: center;
+  gap: 2rem;
+  align-content: center;
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    & a {
+      color: $light-sand;
+      text-decoration: none;
+    }
+  }
+  &__credits {
+    text-align: right;
+  }
+}

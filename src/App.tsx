@@ -1,6 +1,7 @@
 import Root from "./pages/root/Root.tsx";
 import Navbar from "./components/navbar/Navbar.tsx";
 import Lost from "./pages/lost/Lost.tsx";
+import Footer from "./components/footer/Footer.tsx";
 
 function App() {
     const href = location.pathname
@@ -10,6 +11,7 @@ function App() {
             <>
                 <Navbar />
                 <Root />
+                <Footer />
             </>
         )
     }
