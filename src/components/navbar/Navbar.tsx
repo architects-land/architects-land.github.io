@@ -3,7 +3,7 @@ import "./Navbar.scss";
 export default function Navbar() {
   return (
     <nav class={"huge-text nav nav--hidden"} id="navbar" role="navigation">
-      <a class="is-abril" href={"/"}>
+      <a class="is-abril nav__title" href={"/"}>
         Architects Land
       </a>
       <div class="nav__links">

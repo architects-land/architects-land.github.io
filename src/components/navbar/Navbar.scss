@@ -6,6 +6,9 @@ $height: 4rem + 1.5rem;
   position: fixed;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media only screen and (max-width: $bp-little) {
+    grid-template-columns: 1fr;
+  }
   z-index: 5;
   color: $light-sand;
   background: $dark-background;
@@ -14,10 +17,18 @@ $height: 4rem + 1.5rem;
   box-sizing: border-box;
   top: -$height;
   animation: nav__disappear .3s ease-in-out;
+
   &--present {
     top: 0;
     animation: nav__appear .3s ease-in-out;
   }
+
+  &__title {
+    @media only screen and (max-width: $bp-little) {
+      display: none;
+    }
+  }
+
   &__links {
     display: flex;
     margin-left: auto;
