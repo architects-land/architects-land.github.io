@@ -8,7 +8,7 @@ Website source code licensed under AGPL-3.0.
 
 Content licensed under CC BY-SA-NC 4.0.
 
-> ![WARNING]
+> [!WARNING]
 > The content inside the `public` directory may not be licensed under CC BY-SA-NC 4.0.
 
 ## Technologies
