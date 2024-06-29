@@ -38,16 +38,16 @@
       background-size: cover;
     }
 
-    //&__text {
-    //  max-width: 90%;
-    //}
+    &__text {
+      max-width: 90%;
+    }
 
     & p {
       display: block;
       max-width: 60%;
-      //@media only screen and (max-width: $bp-large) {
-      //  max-width: 70%;
-      //}
+      @media only screen and (max-width: $bp-large) {
+        max-width: 70%;
+      }
       margin: 1.5rem 0;
     }
   }
