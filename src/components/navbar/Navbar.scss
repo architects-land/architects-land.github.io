@@ -17,6 +17,11 @@ $height: 4rem + 1.5rem;
   box-sizing: border-box;
   top: -$height;
   animation: nav__disappear .3s ease-in-out;
+  @media only screen and (max-width: $bp-tiny) {
+    position: static;
+    animation: none;
+    padding: 1rem 5%;
+  }
 
   &--present {
     top: 0;
@@ -33,6 +38,17 @@ $height: 4rem + 1.5rem;
     display: flex;
     margin-left: auto;
     gap: 2rem;
+    @media only screen and (max-width: $bp-tiny) {
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 0;
+    }
+
+    & a {
+      @media only screen and (max-width: $bp-tiny) {
+        font-size: 1rem;
+      }
+    }
   }
 }
 

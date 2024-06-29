@@ -5,6 +5,9 @@
   display: grid;
   width: 100%;
   height: 100vh;
+  @media only screen and (max-width: $bp-tiny) {
+    height: 85vh;
+  }
   grid-template-columns: 1fr 1fr;
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: 2fr 1fr;
