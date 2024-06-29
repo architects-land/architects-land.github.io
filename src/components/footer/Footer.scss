@@ -2,27 +2,31 @@
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
   padding: 5% 10%;
   background: $dark-background;
   color: $light-sand;
   align-items: center;
   gap: 2rem;
   align-content: center;
+
   &__logo {
     width: 33%;
   }
+
   &__links {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+
     &--inline {
       flex-direction: row-reverse;
       gap: 1rem;
       text-align: right;
     }
   }
+
   &__credits {
     text-align: right;
   }
