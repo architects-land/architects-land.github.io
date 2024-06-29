@@ -3,6 +3,9 @@
 .presentation {
   &--right {
     text-align: right;
+    @media only screen and (max-width: $bp-large) {
+      text-align: left;
+    }
   }
 
   &__smp {
@@ -73,6 +76,10 @@
     cursor: pointer;
     transition: .3s color;
     transition-delay: .4s;
+    @media only screen and (max-width: $bp-large) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
     & .presentation--left p {
       margin: 1.5rem auto 1.5rem 0;
@@ -85,11 +92,22 @@
     & p {
       display: block;
       max-width: 83%;
+      @media only screen and (max-width: $bp-large) {
+        max-width: 100%;
+      }
+    }
+
+    & h4 {
+      @media only screen and (max-width: $bp-large) {
+        text-align: center;
+      }
     }
 
     &__image {
-      //height: 100%;
       width: 100%;
+      @media only screen and (max-width: $bp-large) {
+        width: 50%;
+      }
     }
 
     & .presentation--left p {
