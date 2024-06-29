@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-	"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|jsx|tsx|html)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|jsx|tsx|html)\""
   },
   "dependencies": {
     "solid-js": "^1.8.17"
