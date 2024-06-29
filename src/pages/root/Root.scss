@@ -24,6 +24,10 @@
   &__architects-land {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media only screen and (max-width: $bp-little) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
     text-align: left;
     padding: 0;
     gap: 2rem;
@@ -40,6 +44,9 @@
 
     &__text {
       max-width: 90%;
+      @media only screen and (max-width: $bp-tiny) {
+        margin: 0 10%;
+      }
     }
 
     & p {
