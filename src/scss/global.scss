@@ -55,6 +55,7 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+
   &:hover {
     text-decoration: underline;
   }
@@ -71,6 +72,7 @@ ul {
 li {
   padding-left: 1rem;
   line-height: 1.125rem;
+
   &:last-child {
     margin-bottom: 0.5rem;
   }
@@ -94,7 +96,11 @@ li {
 
 .content {
   padding: 5% 10%;
+
   &.large-space {
     padding: 5% 30%;
+    @media only screen and (max-width: $bp-large) {
+      padding: 5% 20%;
+    }
   }
 }
