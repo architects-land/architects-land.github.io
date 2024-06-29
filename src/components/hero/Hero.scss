@@ -9,6 +9,9 @@
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: 2fr 1fr;
   }
+  @media only screen and (max-width: $bp-mid) {
+    grid-template-columns: 1fr;
+  }
   color: $light-sand;
   background-position: center;
   background-size: cover;
@@ -24,10 +27,23 @@
 
   &__text {
     padding-left: 20%;
+    @media only screen and (max-width: $bp-mid) {
+      padding: 0;
+    }
 
     &__container {
       display: flex;
       align-items: center;
+      justify-content: center;
+      @media only screen and (max-width: $bp-mid) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__space {
+    @media only screen and (max-width: $bp-mid) {
+      display: none;
     }
   }
 }
