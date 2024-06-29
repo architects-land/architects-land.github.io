@@ -32,9 +32,10 @@ export default function Root() {
           </p>
         </div>
         <div class="content large-text presentation presentation__architects-land">
-          <div class="presentation__architects-land__image">
-            <img src="https://loremflickr.com/1200/1000" alt="placeholder" />
-          </div>
+          <div
+            class="presentation__architects-land__image"
+            style={`background-image: url("https://loremflickr.com/1200/1000")`}
+          ></div>
           <div class="presentation__architects-land__text">
             <h2>Nouvelle forme de SMP</h2>
             <p>
