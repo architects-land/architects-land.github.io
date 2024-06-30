@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar.tsx";
 import Lost from "./pages/lost/Lost.tsx";
 import Footer from "./components/footer/Footer.tsx";
 import Rules from "./pages/rules/Rules.tsx";
+import Team from "./pages/Team/Team.tsx";
 
 function App() {
   const href = location.pathname;
@@ -22,6 +23,15 @@ function App() {
         <>
           <Navbar />
           <Rules />
+          <Footer />
+        </>
+      );
+    case "/team":
+      document.title = "Équipe - Architects Land";
+      return (
+        <>
+          <Navbar />
+          <Team />
           <Footer />
         </>
       );

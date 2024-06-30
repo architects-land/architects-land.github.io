@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.team {
+  &__presentation {
+    background: $dark-background;
+    color: $light-sand;
+    text-align: center;
+
+    & p {
+      width: 75%;
+      margin: 0.5rem auto;
+    }
+  }
+
+  &__members {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__member {
+    text-align: center;
+    width: 50%;
+  }
+}
