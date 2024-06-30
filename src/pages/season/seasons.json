@@ -10,6 +10,23 @@
         "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
         "link": "https://youtube.com/@anhgelus"
       }
-    ]
+    ],
+    "information": {
+      "description": [
+        "Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024, en 1.21.",
+        "Durant cette saison, la génération fut grandement modifiée pour qu'elle devienne plus réaliste. Les villages furent aussi améliorer pour qu'ils deviennent plus grand et plus important.",
+        "Comme les villages occupent une place beaucoup centrale, les bases des joueurs doivent forcément être reliées au village le plus proche. Cette connection de base forme les clans des joueurs.",
+        "La difficulté du monde est adaptée en temps réelle au niveau des joueurs : plus ils meurent, plus le niveau de difficulté augmentent jusqu'à atteindre l'ultra hardcore. La map était aussi réduite au début pour concentrer un maximum les bases autour du 0 0."
+      ],
+      "version": "1.21",
+      "mods": [
+        "Lithosphere",
+        "Luki's Grand Capital",
+        "Difficulty Death Scaler"
+      ],
+      "presentationVideo": "https://youtu.be/_SP_1hrsZBU",
+      "seed": "/",
+      "map": "/"
+    }
   }
 }

@@ -22,10 +22,10 @@ export default function Footer() {
             GitHub
           </a>
         </div>
-        <p>&nbsp;</p>
+        <br />
         <p>Contenu CC BY-SA-NC &copy; 2024 Architects Land.</p>
         <p>Code source AGPL-3.0 &copy; 2024 Architects Land.</p>
-        <p>&nbsp;</p>
+        <br />
         <p>
           Site web créé et maintenu par{" "}
           <a href="https://www.anhgelus.world" target={"_blank"}>

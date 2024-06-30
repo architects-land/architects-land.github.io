@@ -73,7 +73,7 @@ export default function Rules() {
               interdite. Les logiciels de triches donnant accès à un X-Ray, une
               Kill-Aura ou une Reach sont donc prohibés.
             </p>
-            <p>
+            <p class={"has-subtitle"}>
               Toute utilisation d'un bug donnant un avantage à un joueur est
               interdite. Les bugs de duplication sont ainsi interdits. Les bugs
               tolérés sont :
