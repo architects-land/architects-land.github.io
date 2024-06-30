@@ -23,9 +23,15 @@
       @media only screen and (max-width: $bp-little) {
         grid-template-columns: 1fr 1fr;
       }
+      @media only screen and (max-width: $bp-tiny) {
+        grid-template-columns: 1fr;
+      }
 
       & .people__card {
         width: 100%;
+        @media only screen and (max-width: $bp-tiny) {
+          width: 75%;
+        }
       }
     }
   }

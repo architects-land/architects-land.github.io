@@ -74,7 +74,7 @@ export function setupEvents() {
       const href = c.getAttribute("data-href")!!;
       if (href.startsWith("http")) {
         location.href = href;
-      } else {
+      } else if (href != "") {
         location.href = `${location.origin}${href}`;
       }
     });
