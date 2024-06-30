@@ -43,6 +43,12 @@ export default function Team() {
             }
             link={"https://github.com/Akik4"}
           />
+          <Card
+            name={"Léo-21"}
+            image={"/skins/Leo_21_.png"}
+            description={"Léo-21 développe le mod Sneaky Player Names."}
+            link={""}
+          />
         </List>
       </main>
     </>
