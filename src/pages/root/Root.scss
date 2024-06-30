@@ -43,7 +43,7 @@
     &__text {
       max-width: 90%;
       padding: 5% 0;
-      @media only screen and (max-width: $bp-tiny) {
+      @media only screen and (max-width: $bp-little) {
         margin: 0 10%;
       }
     }
