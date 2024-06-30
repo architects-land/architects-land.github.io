@@ -1,0 +1,27 @@
+@import "../../scss/variables";
+
+.people {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (max-width: $bp-little) {
+      grid-template-columns: 1fr;
+    }
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__card {
+    text-align: center;
+    width: 50%;
+
+    & img {
+      width: 100%;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Lost from "./pages/lost/Lost.tsx";
 import Footer from "./components/footer/Footer.tsx";
 import Rules from "./pages/rules/Rules.tsx";
 import Team from "./pages/team/Team.tsx";
+import Season from "./pages/season/Season.tsx";
 
 function App() {
   const href = location.pathname;
@@ -35,6 +36,16 @@ function App() {
           <Footer />
         </>
       );
+  }
+  if (href.startsWith("/season/")) {
+    const id = href.split("/")[2];
+    return (
+      <>
+        <Navbar />
+        <Season id={id} />
+        <Footer />
+      </>
+    );
   }
   setTimeout((_: any) => {
     location.replace(`${location.origin}`);

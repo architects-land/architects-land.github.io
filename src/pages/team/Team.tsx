@@ -1,5 +1,7 @@
 import Hero from "../../components/hero/Hero.tsx";
 import "./Team.scss";
+import List from "../../components/people/List.tsx";
+import Card from "../../components/people/Card.tsx";
 
 export default function Team() {
   return (
@@ -24,8 +26,8 @@ export default function Team() {
             projet.
           </p>
         </div>
-        <div class="content team__members large-text">
-          <Member
+        <List>
+          <Card
             name={"Anhgelus Morhtuuzh"}
             image={"/skins/anhgelus.png"}
             description={
@@ -33,7 +35,7 @@ export default function Team() {
             }
             link={"https://youtube.com/@anhgelus"}
           />
-          <Member
+          <Card
             name={"Akik4"}
             image={"/skins/Akik4.png"}
             description={
@@ -41,19 +43,8 @@ export default function Team() {
             }
             link={"https://github.com/Akik4"}
           />
-        </div>
+        </List>
       </main>
     </>
-  );
-}
-
-function Member(props: any) {
-  return (
-    <div class={"team__member is-clickable"} data-href={props.link}>
-      <div class="is-clickable__animation"></div>
-      <img src={props.image} alt={`Skin de ${props.name}`} />
-      <h5>{props.name}</h5>
-      <p>{props.description}</p>
-    </div>
   );
 }
