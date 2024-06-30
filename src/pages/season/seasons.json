@@ -1,0 +1,15 @@
+{
+  "terre-des-civilisations": {
+    "name": "Terre des Civilisations",
+    "description": "Première saison d'Architects Land",
+    "image": "https://loremflickr.com/1920/1080",
+    "players": [
+      {
+        "pseudo": "anhgelus",
+        "name": "Anhgelus Morhtuuzh",
+        "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
+        "link": "https://youtube.com/@anhgelus"
+      }
+    ]
+  }
+}

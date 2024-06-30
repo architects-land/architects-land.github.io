@@ -7,7 +7,7 @@ export default function Rules() {
     <>
       <Hero image={"/purgatory.png"} title={"Règles"} description={""} min />
       <main>
-        <div class="content large-space large-text tldr">
+        <div class="content--large large-text tldr">
           <h2>Résumé</h2>
           <p>
             La majorité des règles faisant appel au bon sens s'appliquent aux
@@ -28,7 +28,7 @@ export default function Rules() {
             Le mod <em>Simple Voice Chat</em> est obligatoire.
           </p>
         </div>
-        <div class="rules content large-space large-text">
+        <div class="rules content--large large-text">
           <div class="rules__item rules__attitude">
             <h2>Attitude en jeu</h2>
             <p>
