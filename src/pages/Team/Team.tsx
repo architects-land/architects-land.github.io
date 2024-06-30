@@ -31,6 +31,7 @@ export default function Team() {
             description={
               "Fondateur et développeur, Anhgelus Morhtuuzh gère le serveur et prend toutes les décisions importantes."
             }
+            link={"https://youtube.com/@anhgelus"}
           />
           <Member
             name={"Akik4"}
@@ -38,6 +39,7 @@ export default function Team() {
             description={
               "Akik4 est un développeur Spigot aidant grandement Anhgelus Morhtuuzh."
             }
+            link={"https://github.com/Akik4"}
           />
         </div>
       </main>
@@ -48,6 +50,7 @@ export default function Team() {
 function Member(props: any) {
   return (
     <div class={"team__member is-clickable"} data-href={props.link}>
+      <div class="is-clickable__animation"></div>
       <img src={props.image} alt={`Skin de ${props.name}`} />
       <h5>{props.name}</h5>
       <p>{props.description}</p>

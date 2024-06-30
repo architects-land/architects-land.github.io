@@ -24,5 +24,9 @@
   &__member {
     text-align: center;
     width: 50%;
+
+    & img {
+      width: 100%;
+    }
   }
 }

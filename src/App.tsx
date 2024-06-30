@@ -49,7 +49,7 @@ function App() {
 export default App;
 
 export function setupEvents() {
-  const seasons = document.getElementsByClassName("presentation__season");
+  const clickables = document.getElementsByClassName("is-clickable");
   const nav = document.getElementById("navbar")!!;
 
   let blocked: Element[] = [];
@@ -58,26 +58,30 @@ export function setupEvents() {
     nav.style.display = "none";
   }
 
-  for (const season of seasons) {
-    season.addEventListener("mouseenter", (_) => {
-      if (!blocked.includes(season)) {
-        season.classList.add("presentation__season--active");
-        addToBlocked(season);
+  for (const c of clickables) {
+    c.addEventListener("click", (_) => {
+      const href = c.getAttribute("data-href")!!;
+      if (href.startsWith("http")) {
+        location.replace(href);
+      } else {
+        location.replace(`${location.origin}${href}`);
+      }
+    });
+    c.addEventListener("mouseenter", (_) => {
+      if (!blocked.includes(c)) {
+        c.classList.add("is-clickable--active");
+        addToBlocked(c);
         return;
       }
-      updateStatus(season, "presentation__season");
+      updateStatus(c, "is-clickable");
     });
-    season.addEventListener("mouseleave", (_) => {
-      if (!blocked.includes(season)) {
-        season.classList.remove("presentation__season--active");
-        addToBlocked(season);
+    c.addEventListener("mouseleave", (_) => {
+      if (!blocked.includes(c)) {
+        c.classList.remove("is-clickable--active");
+        addToBlocked(c);
         return;
       }
-      updateStatus(season, "presentation__season", false);
-    });
-    season.addEventListener("click", (_) => {
-      const href = season.getAttribute("data-href")!!;
-      location.replace(`${location.origin}/season/${href}`);
+      updateStatus(c, "is-clickable", false);
     });
   }
 

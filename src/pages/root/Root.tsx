@@ -99,8 +99,11 @@ export default function Root() {
 function Season(props: any) {
   if (props.right) {
     return (
-      <div class={"presentation__season is-clickable"} data-href={props.href}>
-        <div class="presentation__season__animation"></div>
+      <div
+        class={"presentation__season is-clickable"}
+        data-href={`/season/${props.href}`}
+      >
+        <div class="is-clickable__animation"></div>
         <img
           src={props.image}
           alt={props.placeholder}
@@ -114,8 +117,11 @@ function Season(props: any) {
     );
   }
   return (
-    <div class={"presentation__season is-clickable"} data-href={props.href}>
-      <div class="presentation__season__animation"></div>
+    <div
+      class={"presentation__season is-clickable"}
+      data-href={`/season/${props.href}`}
+    >
+      <div class="is-clickable__animation"></div>
       <div class="presentation--right">
         <h4>{props.title}</h4>
         {props.children}
