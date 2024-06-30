@@ -1,6 +1,7 @@
 import Hero from "../../components/hero/Hero.tsx";
 
 import "./Root.scss";
+import { Show } from "solid-js";
 
 export default function Root() {
   return (
@@ -97,12 +98,24 @@ export default function Root() {
 }
 
 function Season(props: any) {
-  if (props.right) {
-    return (
-      <div
-        class={"presentation__season is-clickable"}
-        data-href={`/season/${props.href}`}
-      >
+  return (
+    <div
+      class={"presentation__season is-clickable"}
+      data-href={`/season/${props.href}`}
+    >
+      <div class="is-clickable__animation"></div>
+      <Show when={!props.right}>
+        <div class="presentation--right">
+          <h4>{props.title}</h4>
+          {props.children}
+        </div>
+        <img
+          src={props.image}
+          alt={props.placeholder}
+          class="presentation__season__image"
+        />
+      </Show>
+      <Show when={props.right}>
         <div class="is-clickable__animation"></div>
         <img
           src={props.image}
@@ -113,24 +126,7 @@ function Season(props: any) {
           <h4>{props.title}</h4>
           {props.children}
         </div>
-      </div>
-    );
-  }
-  return (
-    <div
-      class={"presentation__season is-clickable"}
-      data-href={`/season/${props.href}`}
-    >
-      <div class="is-clickable__animation"></div>
-      <div class="presentation--right">
-        <h4>{props.title}</h4>
-        {props.children}
-      </div>
-      <img
-        src={props.image}
-        alt={props.placeholder}
-        class="presentation__season__image"
-      />
+      </Show>
     </div>
   );
 }
