@@ -34,7 +34,7 @@ export default function Root() {
         <div class="content large-text presentation presentation__architects-land">
           <div
             class="presentation__architects-land__image"
-            style={`background-image: url("https://loremflickr.com/1200/1000")`}
+            style={`background-image: url("/architects-land.png")`}
           ></div>
           <div class="presentation__architects-land__text">
             <h2>Nouvelle forme de SMP</h2>
