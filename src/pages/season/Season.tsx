@@ -10,6 +10,7 @@ import "./Season.scss";
 export default function Season(props: any) {
   // @ts-ignore
   let info: any = data[props.id];
+  document.title = `${info.name} - Architects Land`;
   return (
     <>
       <Hero
