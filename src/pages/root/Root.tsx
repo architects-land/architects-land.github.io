@@ -7,7 +7,7 @@ export default function Root() {
   return (
     <>
       <Hero
-        image={"/background.png"}
+        image={"/terre-des-civilisations/background.png"}
         title={"Architects Land"}
         description={"Famille de SMP Minecraft privé"}
       />

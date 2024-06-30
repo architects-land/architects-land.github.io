@@ -2,7 +2,7 @@
   "terre-des-civilisations": {
     "name": "Terre des Civilisations",
     "description": "Première saison d'Architects Land",
-    "image": "/background.png",
+    "image": "/terre-des-civilisations/background.png",
     "players": [
       {
         "pseudo": "anhgelus",
