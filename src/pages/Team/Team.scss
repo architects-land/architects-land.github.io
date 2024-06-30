@@ -15,6 +15,12 @@
   &__members {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (max-width: $bp-little) {
+      grid-template-columns: 1fr;
+    }
     gap: 2rem;
     justify-content: center;
     justify-items: center;
