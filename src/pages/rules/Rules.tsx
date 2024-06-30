@@ -21,10 +21,10 @@ export default function Rules() {
           </p>
           <p>
             Il est donc vivement conseillé d'être courtois·e, poli·e et
-            respectueux·se avec tou·tes. On évitera ainsi de parler politique,
-            d'argent ou de religion. Chacun a sa sensibilité propre qu'il est
-            important de respecter. Si quelqu'un vous demande d'arrêter, alors
-            vous devez vous arrêter immédiatement.
+            respectueux·se avec tou·tes. On évitera ainsi de parler de
+            politique, d'argent ou de religion. Chacun a sa sensibilité propre
+            qu'il est important de respecter. Si quelqu'un vous demande
+            d'arrêter, alors vous devez vous arrêter immédiatement.
           </p>
           <p>
             Tout logiciel de triche est interdit. Toute exploitation de bug pour
@@ -52,8 +52,8 @@ export default function Rules() {
             <p>
               Pour éviter de provoquer d'inutiles polémiques, les joueur·ses
               doivent éviter de parler de la politique actuelle, qu'elle soit
-              mondiale, nationale ou locale, d'argent ou de religion. Architects
-              Land n'a pas d'objectif militant.
+              mondiale, nationale ou locale, ainsi que d'argent ou de religion.
+              Architects Land n'a pas d'objectif militant.
             </p>
             <p>
               Les joueur·ses doivent avoir conscience de la sensibilité d'autrui
@@ -76,12 +76,12 @@ export default function Rules() {
             </p>
             <p>
               Toute modification du jeu donnant un avantage à un joueur est
-              interdit. Les logiciels de triches donnant accès à un X-Ray, une
+              interdite. Les logiciels de triches donnant accès à un X-Ray, une
               Kill-Aura ou une Reach sont donc prohibés.
             </p>
             <p>
               Toute utilisation d'un bug donnant un avantage à un joueur est
-              interdit. Les bugs de duplication sont ainsi interdit. Les bugs
+              interdite. Les bugs de duplication sont ainsi interdits. Les bugs
               tolérés sont :
             </p>
             <ul>
@@ -90,7 +90,8 @@ export default function Rules() {
               <li>Duplication des tapis</li>
               <li>Duplication des fils</li>
               <li>
-                Ticks d'invincibilité après un déco/reco si utilisé qu'une fois
+                Ticks d'invincibilité après un déco/reco si utilisé qu'une seule
+                fois
               </li>
             </ul>
           </div>
@@ -113,9 +114,9 @@ export default function Rules() {
             <p>
               En acceptant de rejoindre une saison d'Architects Land, les
               joueur·ses ont aussi explicitement accepté que leur gameplay et
-              leur voix soient enregistrés durant la ou les saisons auxquelles
-              le joueur participe par n'importe quel joueur·se dans l'objectif
-              d'être diffusé, en direct ou non.
+              leur voix soient enregistrés pour être diffusés durant la ou les
+              saisons auxquelles le joueur participe par n'importe quel
+              joueur·se.
             </p>
             <p>
               Tous les joueur·ses peuvent diffuser, en direct ou non, du contenu
@@ -162,14 +163,14 @@ export default function Rules() {
               bannissement.
             </p>
             <p>
-              Le blâme, ou warn, est un avertissement donné indiquant le
-              manquement au règlement.
+              Le blâme, ou warn, est un avertissement alertant le joueur de son
+              non respect des règles.
             </p>
             <p>
               Le bannissement est le retrait du statue de joueur·se à un
               joueur·se pour la saison. Le statue de joueur·se n'est pas
-              automatique accordé à la saison suivante : le joueur·se doit en
-              faire la demande qui peut être refusé.
+              automatiquement accordé à la saison suivante : le joueur·se doit
+              en faire la demande qui peut être refusé.
             </p>
           </div>
           <div class="rules__item rules__next_season">
@@ -186,8 +187,8 @@ export default function Rules() {
             </p>
             <p>
               Si une personne souhaite rejoindre Architects Land, alors il ou
-              elle doit en faire la demande dans le temps imparti par
-              l'organisateur de la saison. Cette demande peut être refusée.
+              elle doit en faire la demande dans le temps imparti. Cette demande
+              peut être refusée.
             </p>
             <p>La demande doit répondre aux questions suivantes :</p>
             <ul>
@@ -196,8 +197,7 @@ export default function Rules() {
                 Civilisations ?
               </li>
               <li>
-                Pourquoi souhaitez-vous rejoindre ce serveur et cette saison
-                spécifiquement ?
+                Pourquoi souhaitez-vous rejoindre ce serveur et cette saison ?
               </li>
               <li>Comment avez-vous découvert ce serveur ?</li>
             </ul>
