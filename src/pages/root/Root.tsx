@@ -62,8 +62,8 @@ export default function Root() {
           <div class="presentation__seasons__grid">
             <Season
               title={"Terre des Civilisations"}
-              image={"https://loremflickr.com/1200/1000"}
-              placeholder={"placeholder"}
+              image={"/terre-des-civilisations/logo.png"}
+              placeholder={"Logo de Terre des Civilisations"}
               href={"terre-des-civilisations"}
             >
               <p>
