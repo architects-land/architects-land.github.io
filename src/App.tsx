@@ -62,9 +62,9 @@ export function setupEvents() {
     c.addEventListener("click", (_) => {
       const href = c.getAttribute("data-href")!!;
       if (href.startsWith("http")) {
-        location.replace(href);
+        location.href = href;
       } else {
-        location.replace(`${location.origin}${href}`);
+        location.href = `${location.origin}${href}`;
       }
     });
     c.addEventListener("mouseenter", (_) => {
