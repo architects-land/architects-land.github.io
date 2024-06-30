@@ -3,7 +3,7 @@ import Navbar from "./components/navbar/Navbar.tsx";
 import Lost from "./pages/lost/Lost.tsx";
 import Footer from "./components/footer/Footer.tsx";
 import Rules from "./pages/rules/Rules.tsx";
-import Team from "./pages/Team/Team.tsx";
+import Team from "./pages/team/Team.tsx";
 
 function App() {
   const href = location.pathname;
