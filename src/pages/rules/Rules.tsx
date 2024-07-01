@@ -5,7 +5,7 @@ import "./Rules.scss";
 export default function Rules() {
   return (
     <>
-      <Hero image={"/purgatory.png"} title={"Règles"} description={""} min />
+      <Hero image={"/purgatory.webp"} title={"Règles"} description={""} min />
       <main>
         <div class="content--large large-text tldr">
           <h2>Résumé</h2>

@@ -7,7 +7,7 @@ export default function Root() {
   return (
     <>
       <Hero
-        image={"/terre-des-civilisations/background.png"}
+        image={"/terre-des-civilisations/background.webp"}
         title={"Architects Land"}
         description={"Famille de SMP Minecraft privé"}
       />
@@ -35,7 +35,7 @@ export default function Root() {
         <div class="content large-text presentation presentation__architects-land">
           <div
             class="presentation__architects-land__image"
-            style={`background-image: url("/architects-land.png")`}
+            style={`background-image: url("/architects-land.webp")`}
           ></div>
           <div class="presentation__architects-land__text">
             <h2>Nouvelle forme de SMP</h2>
