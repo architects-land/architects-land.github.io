@@ -60,7 +60,8 @@ function App() {
 export default App;
 
 export function setupEvents() {
-  const clickables = document.getElementsByClassName("is-clickable");
+  const clickables: HTMLCollectionOf<Element> =
+    document.getElementsByClassName("is-clickable");
   const nav = document.getElementById("navbar")!!;
 
   let blocked: Element[] = [];
@@ -70,8 +71,10 @@ export function setupEvents() {
   }
 
   for (const c of clickables) {
+    const el = c as HTMLElement;
+    const href = c.getAttribute("data-href")!!;
+    if (href == "") el.style.cursor = "default";
     c.addEventListener("click", (_) => {
-      const href = c.getAttribute("data-href")!!;
       if (href.startsWith("http")) {
         location.href = href;
       } else if (href != "") {
