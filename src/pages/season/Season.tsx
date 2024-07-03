@@ -1,6 +1,6 @@
 import Hero from "../../components/hero/Hero.tsx";
 
-import data from "./seasons.json";
+import data from "../../assets/seasons.json";
 import List from "../../components/people/List.tsx";
 import Card from "../../components/people/Card.tsx";
 import { For, Show } from "solid-js";
