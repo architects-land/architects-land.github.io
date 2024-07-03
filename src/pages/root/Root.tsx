@@ -1,7 +1,9 @@
 import Hero from "../../components/hero/Hero.tsx";
 
 import "./Root.scss";
-import { Show } from "solid-js";
+import { For, Show } from "solid-js";
+
+import seasons from "../../assets/seasons.json";
 
 export default function Root() {
   return (
@@ -61,35 +63,37 @@ export default function Root() {
         >
           <h2>Saisons</h2>
           <div class="presentation__seasons__grid">
-            <Season
-              title={"Terre des Civilisations"}
-              image={"/terre-des-civilisations/logo.png"}
-              placeholder={"Logo de Terre des Civilisations"}
-              href={"terre-des-civilisations"}
-            >
-              <p>
-                Première saison d'Architects Land, Terre des Civilisations se
-                déroule durant l'été 2024, en 1.21.
-              </p>
-              <p>
-                Durant cette saison, la génération fut grandement modifiée pour
-                qu'elle devienne plus réaliste. Les villages furent aussi
-                améliorer pour qu'ils deviennent plus grand et plus important.
-              </p>
-              <p>
-                Comme les villages occupent une place beaucoup centrale, les
-                bases des joueurs doivent forcément être reliées au village le
-                plus proche. Cette connection de base forme les clans des
-                joueurs.
-              </p>
-              <p>
-                La difficulté du monde est adaptée en temps réelle au niveau des
-                joueurs : plus ils meurent, plus le niveau de difficulté
-                augmentent jusqu'à atteindre l'ultra hardcore. La map était
-                aussi réduite au début pour concentrer un maximum les bases
-                autour du 0 0.
-              </p>
-            </Season>
+            <For each={Object.entries(seasons)}>
+              {(s, i) => (
+                <>
+                  <Show when={i() % 2 == 0}>
+                    <Season
+                      title={s[1].name}
+                      image={s[1].logo}
+                      placeholder={`Logo de ${s[1].name}`}
+                      href={s[1].id}
+                    >
+                      <For each={s[1].information.description}>
+                        {(item) => <p>{item}</p>}
+                      </For>
+                    </Season>
+                  </Show>
+                  <Show when={i() % 2 != 0}>
+                    <Season
+                      title={s[1].name}
+                      image={s[1].logo}
+                      placeholder={`Logo de ${s[1].name}`}
+                      href={s[1].id}
+                      right
+                    >
+                      <For each={s[1].information.description}>
+                        {(item) => <p>{item}</p>}
+                      </For>
+                    </Season>
+                  </Show>
+                </>
+              )}
+            </For>
           </div>
         </div>
       </main>
