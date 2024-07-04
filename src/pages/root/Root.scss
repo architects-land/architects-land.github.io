@@ -87,8 +87,8 @@
     gap: 2rem;
     align-items: center;
     align-content: center;
-    transition: .3s color;
-    transition-delay: .4s;
+    transition: 0.3s color;
+    transition-delay: 0.4s;
     @media only screen and (max-width: $bp-large) {
       display: flex;
       flex-direction: column-reverse;

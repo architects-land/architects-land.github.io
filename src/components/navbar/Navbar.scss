@@ -16,7 +16,7 @@ $height: 4rem + 1.5rem;
   padding: 2rem 10%;
   box-sizing: border-box;
   top: -$height;
-  animation: nav__disappear .3s ease-in-out;
+  animation: nav__disappear 0.3s ease-in-out;
   @media only screen and (max-width: $bp-tiny) {
     position: static;
     animation: none;
@@ -25,7 +25,7 @@ $height: 4rem + 1.5rem;
 
   &--present {
     top: 0;
-    animation: nav__appear .3s ease-in-out;
+    animation: nav__appear 0.3s ease-in-out;
   }
 
   &__title {

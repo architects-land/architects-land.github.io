@@ -1,18 +1,23 @@
 @import "variables";
 
 @font-face {
-  font-family: 'Abril Fatface';
+  font-family: "Abril Fatface";
   font-weight: 400;
   src: url("/fonts/Abril_Fatface/AbrilFatface-Regular.ttf") format("truetype");
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Abril Fatface', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Abril Fatface", serif;
   margin-bottom: 1.25rem;
 }
 
@@ -95,18 +100,24 @@ li {
 }
 
 .is-abril {
-  font-family: 'Abril Fatface', serif;
+  font-family: "Abril Fatface", serif;
 }
 
-.huge-text p, .huge-text a, .huge-text li {
+.huge-text p,
+.huge-text a,
+.huge-text li {
   font-size: 1.5rem;
 }
 
-.big-text p, .big-text a, .big-text li {
+.big-text p,
+.big-text a,
+.big-text li {
   font-size: 1.25rem;
 }
 
-.large-text p, .large-text a, .large-text li {
+.large-text p,
+.large-text a,
+.large-text li {
   font-size: 1.125rem;
 }
 
@@ -124,8 +135,8 @@ li {
 .is-clickable {
   position: relative;
   cursor: pointer;
-  transition: .3s color;
-  transition-delay: .4s;
+  transition: 0.3s color;
+  transition-delay: 0.4s;
 
   &__animation {
     position: absolute;
@@ -141,8 +152,8 @@ li {
 
   &--active {
     color: $light-sand;
-    transition: .3s color;
-    transition-delay: .4s;
+    transition: 0.3s color;
+    transition-delay: 0.4s;
 
     & .is-clickable__animation {
       width: 100%;
@@ -164,10 +175,10 @@ li {
 @keyframes season__hover__leave {
   0% {
     height: 110%;
-    top: -5%
+    top: -5%;
   }
   100% {
     height: 0;
-    top: 105%
+    top: 105%;
   }
 }
