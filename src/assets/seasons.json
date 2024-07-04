@@ -71,6 +71,12 @@
         "name": "Lymabor",
         "description": "Homme, 17 ans.",
         "link": ""
+      },
+      {
+        "pseudo": "L_Hermite",
+        "name": "L'Hermite",
+        "description": "Joueur souvent solitaire, il aime parcourir le monde et établir sa base loin de tout, d'où son surnom.",
+        "link": ""
       }
     ],
     "information": {
