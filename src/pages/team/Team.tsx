@@ -7,7 +7,7 @@ export default function Team() {
   return (
     <>
       <Hero
-        image={"https://loremflickr.com/1920/1080"}
+        image={"/village-night.webp"}
         title={"Équipe"}
         description={""}
         min
