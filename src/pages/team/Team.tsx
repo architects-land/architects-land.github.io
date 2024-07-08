@@ -47,7 +47,7 @@ export default function Team() {
             name={"Léo-21"}
             image={"/skins/Leo_21_.png"}
             description={"Léo-21 développe le mod Sneaky Player Names."}
-            link={""}
+            link={"https://github.com/leo-210"}
           />
         </List>
       </main>
