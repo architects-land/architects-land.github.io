@@ -108,11 +108,11 @@
       "mods": [
         "Lithosphere",
         "Luki's Grand Capital",
-        "Difficulty Death Scaler"
+        "Difficulty Death Scaler 1.0"
       ],
       "presentationVideo": "https://youtu.be/_SP_1hrsZBU",
-      "seed": "/",
-      "map": "/"
+      "seed": "-6903026090044164755",
+      "map": "https://cdn.anhgelus.world/architects-land/terre-des-civilisations.zip"
     }
   }
 }
