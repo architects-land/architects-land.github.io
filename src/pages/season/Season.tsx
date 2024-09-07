@@ -36,7 +36,8 @@ export type InformationData = {
   description: string[];
   version: string;
   mods: string[];
-  presentationVideo: string;
+  video: string;
+  videoThumbnail: string;
   seed: string;
   map: string;
 };
@@ -76,20 +77,12 @@ export default function Season(props: any) {
             <strong>
               <Show when={info.information.map != "/"}>
                 <a href={info.information.map} target={"_blank"}>
-                  {info.information.map}
+                  &nbsp;{info.information.map}
                 </a>
               </Show>
               <Show when={info.information.map == "/"}>
                 &nbsp;{info.information.map}
               </Show>
-            </strong>
-          </p>
-          <p>
-            Vidéo de présentation :{" "}
-            <strong>
-              <a href={info.information.presentationVideo} target={"_blank"}>
-                {info.information.presentationVideo.slice(8)}
-              </a>
             </strong>
           </p>
           <p class={"has-subtitle"}>Mods spécifiques à la saison :</p>
@@ -102,6 +95,15 @@ export default function Season(props: any) {
               )}
             </For>
           </ul>
+          <div class="information__presentation">
+            <p>Vidéo de présentation :</p>
+            <a href={info.information.video} target="_blank">
+              <img
+                src={info.information.videoThumbnail}
+                alt="Miniature de la vidéo de présentation"
+              />
+            </a>
+          </div>
         </div>
         <div class="content players">
           <h2>Liste des joueurs</h2>

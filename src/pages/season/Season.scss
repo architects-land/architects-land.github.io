@@ -2,6 +2,14 @@
 
 .information {
   background: $light-background;
+
+  &__presentation {
+    margin-top: 3rem;
+
+    & img {
+      width: 100%;
+    }
+  }
 }
 
 .player-info {
