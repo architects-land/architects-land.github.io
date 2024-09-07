@@ -20,6 +20,9 @@ export default function Player(props: Properties) {
   if (player == undefined) throw new Error("No valid player provided");
   return (
     <div class={"player-info"}>
+      <a class={"player-info__back"} href={`/season/${props.id}`}>
+        Retourner en arrière
+      </a>
       <div class={"player-info__skin"}>
         <img
           src={`/skins/${player.pseudo}.png`}

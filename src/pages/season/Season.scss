@@ -5,6 +5,14 @@
 }
 
 .player-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 100vh;
+  overflow: scroll;
+
   &__skin {
     background: $dark-background;
     width: 100%;
@@ -27,11 +35,10 @@
     margin-top: 10%;
   }
 
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  height: 100vh;
-  overflow: scroll;
+  &__back {
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+    color: $light-sand;
+  }
 }
