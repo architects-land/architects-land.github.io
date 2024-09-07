@@ -1,4 +1,51 @@
 {
+  "ruine-des-civilisations": {
+    "name": "Ruine des Civilisations",
+    "description": "Une saison construite sur les ruines de la dernière",
+    "image": "/ruine-des-civilisations/background.webp",
+    "logo": "/ruine-des-civilisations/logo.png",
+    "id": "ruine-des-civilisations",
+    "rp": true,
+    "players": [
+      {
+        "pseudo": "anhgelus",
+        "name": "Anhgelus Morhtuuzh",
+        "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
+        "rp": [
+          "?"
+        ],
+        "links": [
+          {
+            "link": "https://github.com/anhgelus",
+            "name": "GitHub"
+          },
+          {
+            "link": "https://youtube.com/@anhgelus",
+            "name": "YouTube"
+          },
+          {
+            "link": "https://modrinth.com/user/anhgelus",
+            "name": "Modrinth"
+          }
+        ]
+      }
+    ],
+    "information": {
+      "description": [
+        "Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024, en 1.21.",
+        "Durant cette saison, la génération fut grandement modifiée pour qu'elle devienne plus réaliste. Les villages furent aussi améliorer pour qu'ils deviennent plus grand et plus important.",
+        "Comme les villages occupent une place beaucoup centrale, les bases des joueurs doivent forcément être reliées au village le plus proche. Cette connection de base forme les clans des joueurs.",
+        "La difficulté du monde est adaptée en temps réelle au niveau des joueurs : plus ils meurent, plus le niveau de difficulté augmentent jusqu'à atteindre l'ultra hardcore. La map était aussi réduite au début pour concentrer un maximum les bases autour du 0 0."
+      ],
+      "version": "?",
+      "mods": [
+        "?"
+      ],
+      "presentationVideo": "?",
+      "seed": "?",
+      "map": "/"
+    }
+  },
   "terre-des-civilisations": {
     "name": "Terre des Civilisations",
     "description": "Première saison d'Architects Land",
@@ -113,7 +160,7 @@
       ],
       "version": "1.21",
       "mods": [
-        "Lithosphere",
+        "Tectonic",
         "Luki's Grand Capital",
         "Difficulty Death Scaler 1.0"
       ],
