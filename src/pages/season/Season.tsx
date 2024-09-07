@@ -33,7 +33,7 @@ export type LinkData = {
 };
 
 export type InformationData = {
-  description: string;
+  description: string[];
   version: string;
   mods: string[];
   presentationVideo: string;
@@ -61,9 +61,9 @@ export default function Season(props: any) {
       <main>
         <div class="content--large large-text information">
           <h2>Information</h2>
-          {/*<For each={info.information.description}>*/}
-          {/*  {(item) => <p>{item}</p>}*/}
-          {/*</For>*/}
+          <For each={info.information.description}>
+            {(item) => <p>{item}</p>}
+          </For>
           <br />
           <p>
             Version de Minecraft : <strong>{info.information.version}</strong>
