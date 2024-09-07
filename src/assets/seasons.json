@@ -5,12 +5,19 @@
     "image": "/terre-des-civilisations/background.webp",
     "logo": "/terre-des-civilisations/logo.png",
     "id": "terre-des-civilisations",
+    "rp": false,
     "players": [
       {
         "pseudo": "anhgelus",
         "name": "Anhgelus Morhtuuzh",
         "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
-        "link": "https://youtube.com/@anhgelus"
+        "link": "https://youtube.com/@anhgelus",
+        "links": [
+          {
+            "link": "https://youtube.com/@anhgelus",
+            "name": "YouTube"
+          }
+        ]
       },
       {
         "pseudo": "Akik4",
