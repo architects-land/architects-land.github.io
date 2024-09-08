@@ -187,7 +187,7 @@ export default function Rules() {
             <p>La demande doit répondre aux questions suivantes :</p>
             <ul>
               <li>
-                Pouvez-vous expliquer le principe d'Architects Land - Terre des
+                Pouvez-vous expliquer le principe d'Architects Land - Ruine des
                 Civilisations ?
               </li>
               <li>
