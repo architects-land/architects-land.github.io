@@ -19,8 +19,8 @@
   justify-content: center;
   justify-items: center;
   height: 100vh;
-  overflow: scroll;
   background: $light-sand;
+  overflow: hidden;
   @media only screen and (max-width: $bp-mid) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
@@ -38,7 +38,7 @@
   }
 
   &__description {
-    overflow: scroll;
+    overflow: auto;
     display: block;
     max-height: 100vh;
     @media only screen and (max-width: $bp-mid) {

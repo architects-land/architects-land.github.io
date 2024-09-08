@@ -72,7 +72,8 @@ export default App;
 export function setupEvents() {
   const clickables: HTMLCollectionOf<Element> =
     document.getElementsByClassName("is-clickable");
-  const nav = document.getElementById("navbar")!!;
+  const nav = document.getElementById("navbar");
+  if (nav === null) return;
 
   let blocked: Element[] = [];
 
