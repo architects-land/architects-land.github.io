@@ -15,8 +15,11 @@ export default function Footer() {
       </div>
       <div class={"footer__credits"}>
         <div class={"footer__links footer__links--inline"}>
-          <a href={"https://youtu.be/_SP_1hrsZBU"} target={"_blank"}>
-            Présentation
+          <a
+            href={"https://modrinth.com/organization/architects-land"}
+            target={"_blank"}
+          >
+            Modrinth
           </a>
           <a href={"https://github.com/architects-land"} target={"_blank"}>
             GitHub
