@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer.tsx";
 import Rules from "./pages/rules/Rules.tsx";
 import Team from "./pages/team/Team.tsx";
 import Season from "./pages/season/Season.tsx";
+import Player from "./pages/season/Player.tsx";
 
 function App() {
   const href = location.pathname;
@@ -38,7 +39,16 @@ function App() {
       );
   }
   if (href.startsWith("/season/")) {
-    const id = href.split("/")[2];
+    const split = href.split("/");
+    const id = split[2];
+    if (href.includes("/player/")) {
+      const player = split[4];
+      return (
+        <>
+          <Player id={id} player={player} />
+        </>
+      );
+    }
     return (
       <>
         <Navbar />
@@ -62,7 +72,8 @@ export default App;
 export function setupEvents() {
   const clickables: HTMLCollectionOf<Element> =
     document.getElementsByClassName("is-clickable");
-  const nav = document.getElementById("navbar")!!;
+  const nav = document.getElementById("navbar");
+  if (nav === null) return;
 
   let blocked: Element[] = [];
 

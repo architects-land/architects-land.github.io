@@ -7,9 +7,49 @@ import { For, Show } from "solid-js";
 
 import "./Season.scss";
 
+export type SeasonData = {
+  name: string;
+  description: string;
+  image: string;
+  logo: string;
+  id: string;
+  rp: boolean;
+  players: PlayerData[];
+  information: InformationData;
+};
+
+export type PlayerData = {
+  name: string;
+  description: string;
+  pseudo: string;
+  link: string;
+  links: LinkData[];
+  rp: string[];
+};
+
+export type LinkData = {
+  link: string;
+  name: string;
+};
+
+export type InformationData = {
+  description: string[];
+  version: string;
+  mods: string[];
+  video: string;
+  videoThumbnail: string;
+  seed: string;
+  map: string;
+};
+
+export type Properties = {
+  id: string;
+};
+
 export default function Season(props: any) {
   // @ts-ignore
-  let info: any = data[props.id];
+  let info: SeasonData = data[props.id];
+  console.log(data);
   document.title = `${info.name} - Architects Land`;
   return (
     <>
@@ -37,20 +77,12 @@ export default function Season(props: any) {
             <strong>
               <Show when={info.information.map != "/"}>
                 <a href={info.information.map} target={"_blank"}>
-                  {info.information.map}
+                  &nbsp;{info.information.map}
                 </a>
               </Show>
               <Show when={info.information.map == "/"}>
                 &nbsp;{info.information.map}
               </Show>
-            </strong>
-          </p>
-          <p>
-            Vidéo de présentation :{" "}
-            <strong>
-              <a href={info.information.presentationVideo} target={"_blank"}>
-                {info.information.presentationVideo.slice(8)}
-              </a>
             </strong>
           </p>
           <p class={"has-subtitle"}>Mods spécifiques à la saison :</p>
@@ -63,23 +95,51 @@ export default function Season(props: any) {
               )}
             </For>
           </ul>
+          <div class="information__presentation">
+            <p>Vidéo de présentation :</p>
+            <a href={info.information.video} target="_blank">
+              <img
+                src={info.information.videoThumbnail}
+                alt="Miniature de la vidéo de présentation"
+              />
+            </a>
+          </div>
         </div>
         <div class="content players">
           <h2>Liste des joueurs</h2>
           <List more>
-            <For each={info.players}>
-              {(item) => (
-                <Card
-                  name={item.name}
-                  image={`/skins/${item.pseudo}.png`}
-                  description={item.description}
-                  link={item.link}
-                />
-              )}
-            </For>
+            <Show when={!info.rp}>
+              <For each={info.players}>
+                {(item) => (
+                  <Card
+                    name={item.name}
+                    image={`/skins/${item.pseudo}.png`}
+                    description={item.description}
+                    link={item.link}
+                  />
+                )}
+              </For>
+            </Show>
+            <Show when={info.rp}>
+              <For each={info.players}>
+                {(item) => (
+                  <Card
+                    name={item.name}
+                    image={`/skins/${item.pseudo}.png`}
+                    description={item.description}
+                    link={`/season/${info.id}/player/${item.pseudo}`}
+                  />
+                )}
+              </For>
+            </Show>
           </List>
         </div>
       </main>
     </>
   );
+}
+
+export function getSeasons(): SeasonData {
+  // @ts-ignore
+  return data;
 }

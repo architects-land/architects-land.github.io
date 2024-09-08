@@ -2,4 +2,63 @@
 
 .information {
   background: $light-background;
+
+  &__presentation {
+    margin-top: 3rem;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.player-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 100vh;
+  background: $light-sand;
+  overflow: hidden;
+  @media only screen and (max-width: $bp-mid) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    height: auto;
+  }
+
+  &__skin {
+    background: $dark-background;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  &__description {
+    overflow: auto;
+    display: block;
+    max-height: 100vh;
+    @media only screen and (max-width: $bp-mid) {
+      max-height: none;
+    }
+    width: 50%;
+    @media only screen and (max-width: $bp-little) {
+      width: 75%;
+    }
+    text-align: center;
+  }
+
+  & h3, h4 {
+    margin-top: 10%;
+  }
+
+  &__back {
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+    color: $light-sand;
+  }
 }
