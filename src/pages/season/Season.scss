@@ -20,6 +20,12 @@
   justify-items: center;
   height: 100vh;
   overflow: scroll;
+  background: $light-sand;
+  @media only screen and (max-width: $bp-mid) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    height: auto;
+  }
 
   &__skin {
     background: $dark-background;
@@ -32,10 +38,16 @@
   }
 
   &__description {
-
+    overflow: scroll;
     display: block;
     max-height: 100vh;
+    @media only screen and (max-width: $bp-mid) {
+      max-height: none;
+    }
     width: 50%;
+    @media only screen and (max-width: $bp-little) {
+      width: 75%;
+    }
     text-align: center;
   }
 
