@@ -20,6 +20,9 @@ func init() {
 	tmpl["index"] = template.Must(template.ParseFiles(
 		append(components, "src/pages/index.gohtml")...,
 	))
+	tmpl["rules"] = template.Must(template.ParseFiles(
+		append(components, "src/pages/rules.gohtml")...,
+	))
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
@@ -42,6 +45,31 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 				Image:       "/terre-des-civilisations/background.webp",
 			},
 			Seasons: nil,
+		},
+	})
+	if err != nil {
+		panic(err)
+	}
+}
+
+func handleRules(w http.ResponseWriter, r *http.Request) {
+	err := tmpl["rules"].ExecuteTemplate(w, "base", TemplateData{
+		Resources: struct {
+			JS  []string
+			CSS []string
+		}{},
+		Title:     "Règles - Architects Land",
+		Dev:       dev,
+		HasFooter: true,
+		HasNav:    true,
+		Data: struct {
+			Hero HeroData
+		}{
+			Hero: HeroData{
+				Title:       "Règles",
+				Description: "",
+				Image:       "/purgatory.webp",
+			},
 		},
 	})
 	if err != nil {

@@ -47,6 +47,7 @@ func init() {
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleHome)
+	r.HandleFunc("/rules", handleRules)
 
 	srv := &http.Server{
 		Handler:      r,
