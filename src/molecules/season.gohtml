@@ -1,7 +1,7 @@
 {{define "season"}}
     <div
         class="presentation__season is-clickable"
-        data-href="/season/{{.Href}}"
+        data-href="{{.Href}}"
     >
     <div class="is-clickable__animation"></div>
     {{if .Left}}
@@ -12,14 +12,14 @@
             {{end}}
         </div>
         <img
-                src="{{.Image}}"
+                src="/static/{{.Image}}"
                 alt="{{.ImageAlt}}"
                 class="presentation__season__image"
         />
     {{else}}
         <div class="is-clickable__animation"></div>
         <img
-                src="{{.Image}}"
+                src="/static/{{.Image}}"
                 alt="{{.ImageAlt}}"
                 class="presentation__season__image"
         />

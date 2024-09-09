@@ -46,11 +46,11 @@ func (s *Season) toFullSeasonData() *FullSeasonData {
 	for _, player := range s.Players {
 		data := PersonData{
 			Name:        player.Name,
-			Image:       "skins/" + player.Pseudo,
+			Image:       "skins/" + player.Pseudo + ".png",
 			Description: player.Description,
 		}
 		if s.RP {
-			data.Link = "/season/" + s.ID + "/player/" + player.Pseudo + ".png"
+			data.Link = "/season/" + s.ID + "/player/" + player.Pseudo
 		} else {
 			data.Link = player.Link
 		}

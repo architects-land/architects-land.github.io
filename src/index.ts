@@ -2,7 +2,10 @@ function setupEvents() {
     const clickables: HTMLCollectionOf<Element> =
         document.getElementsByClassName("is-clickable");
     const nav = document.getElementById("navbar");
-    if (nav === null) return;
+    if (nav === null) {
+        console.log("null!")
+        return;
+    }
 
     let blocked: Element[] = [];
 

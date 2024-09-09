@@ -24,7 +24,7 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 			Left:        i%2 == 0,
 			Title:       v.Name,
 			Description: v.Information.Description,
-			Image:       v.Image,
+			Image:       v.Logo,
 			ImageAlt:    "Logo de " + v.Name,
 			Href:        "/season/" + k,
 		})
@@ -47,7 +47,7 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 			Hero: &HeroData{
 				Title:       "Architects Land",
 				Description: "Famille de SMP Minecraft privé",
-				Image:       "/static/terre-des-civilisations/background.webp",
+				Image:       "terre-des-civilisations/background.webp",
 				Dark:        false,
 				Min:         false,
 			},
@@ -72,7 +72,7 @@ func handleRules(w http.ResponseWriter, r *http.Request) {
 			Hero: &HeroData{
 				Title:       "Règles",
 				Description: "",
-				Image:       "/static/purgatory.webp",
+				Image:       "purgatory.webp",
 				Dark:        false,
 				Min:         true,
 			},
@@ -95,9 +95,9 @@ func handleTeam(w http.ResponseWriter, r *http.Request) {
 			Team []*PersonData
 		}{
 			Hero: &HeroData{
-				Title:       "Règles",
+				Title:       "Équipe",
 				Description: "",
-				Image:       "/static/purgatory.webp",
+				Image:       "village-night.webp",
 				Dark:        false,
 				Min:         true,
 			},
@@ -133,9 +133,9 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 			Season *FullSeasonData
 		}{
 			Hero: &HeroData{
-				Title:       "Règles",
-				Description: "",
-				Image:       "/static/purgatory.webp",
+				Title:       season.Name,
+				Description: season.Description,
+				Image:       season.Image,
 				Dark:        false,
 				Min:         true,
 			},
@@ -209,7 +209,7 @@ func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			Hero: &HeroData{
 				Title:       "Perdu ?",
 				Description: "Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld.",
-				Image:       "/static/nether.png",
+				Image:       "nether.png",
 				Dark:        false,
 				Min:         false,
 			},

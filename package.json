@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "bun build ./resources/index.ts --outdir ./dist/assets --minify && sass resources/scss/main.scss dist/assets/styles.css",
+    "build": "bun build ./src/index.ts --outdir ./dist/assets --minify && sass ./src/scss/main.scss dist/assets/styles.css",
     "preview": "vite preview",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|jsx|tsx|html|css|scss)\""
   },
