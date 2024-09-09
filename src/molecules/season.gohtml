@@ -1,0 +1,34 @@
+{{define "season"}}
+    <div
+        class="presentation__season is-clickable"
+        data-href="/season/{{.Href}}"
+    >
+    <div class="is-clickable__animation"></div>
+    {{if .Left}}
+        <div class="presentation--right">
+            <h4>{{.Title}}</h4>
+            {{range .Description}}
+                <p>{{.}}</p>
+            {{end}}
+        </div>
+        <img
+                src="{{.Image}}"
+                alt="{{.ImageAlt}}"
+                class="presentation__season__image"
+        />
+    {{else}}
+        <div class="is-clickable__animation"></div>
+        <img
+                src="{{.Image}}"
+                alt="{{.ImageAlt}}"
+                class="presentation__season__image"
+        />
+        <div class="presentation--left">
+            <h4>{.Title}</h4>
+            {{range .Description}}
+                <p>{{.}}</p>
+            {{end}}
+        </div>
+    {{end}}
+    </div>
+{{end}}

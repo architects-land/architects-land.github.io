@@ -2,10 +2,8 @@ package main
 
 import (
 	_ "embed"
-	"encoding/json"
 	"flag"
 	"github.com/gorilla/mux"
-	"html/template"
 	"log"
 	"net/http"
 	"time"
@@ -15,20 +13,6 @@ import (
 var manifest []byte
 
 var dev bool
-
-var templates = []string{
-	"resources/base.gohtml",
-	"resources/footer.gohtml",
-	"resources/navbar.gohtml",
-}
-
-type ViteManifestEntry struct {
-	File    string   `json:"file"`
-	Name    string   `json:"name"`
-	Src     string   `json:"src"`
-	IsEntry bool     `json:"isEntry"`
-	CSS     []string `json:"css"`
-}
 
 type TemplateData struct {
 	Resources struct {
@@ -42,41 +26,28 @@ type TemplateData struct {
 	Data      interface{}
 }
 
+type HeroData struct {
+	Title       string
+	Description string
+	Image       string
+}
+
+type SeasonData struct {
+	Left        bool
+	Title       string
+	Description []string
+	Image       string
+	ImageAlt    string
+}
+
 func init() {
 	flag.BoolVar(&dev, "dev", false, "development mode")
 }
 
 func main() {
 	r := mux.NewRouter()
-	var v map[string]ViteManifestEntry
-	err := json.Unmarshal(manifest, &v)
-	if err != nil {
-		panic(err)
-	}
+	r.HandleFunc("/", handleHome)
 
-	tmpl := make(map[string]*template.Template)
-	tmpl["index"] = template.Must(template.ParseFiles(
-		"templates/index.gohtml",
-		"templates/footer.gohtml",
-		"templates/navbar.gohtml",
-		"templates/base.gohtml",
-	))
-	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl["index"].ExecuteTemplate(w, "base", TemplateData{
-			Resources: struct {
-				JS  []string
-				CSS []string
-			}{},
-			Title:     "Architects Land",
-			Dev:       dev,
-			HasFooter: true,
-			HasNav:    true,
-			Data:      nil,
-		})
-		if err != nil {
-			panic(err)
-		}
-	})
 	srv := &http.Server{
 		Handler:      r,
 		Addr:         "127.0.0.1:8000",
