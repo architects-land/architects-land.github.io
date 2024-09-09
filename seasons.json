@@ -1,0 +1,169 @@
+{
+  "ruine-des-civilisations": {
+    "name": "Ruine des Civilisations",
+    "description": "Une saison construite sur les ruines de la dernière",
+    "image": "/ruine-des-civilisations/background.webp",
+    "logo": "/ruine-des-civilisations/logo.png",
+    "id": "ruine-des-civilisations",
+    "rp": true,
+    "players": [
+      {
+        "pseudo": "anhgelus",
+        "name": "Anhgelus Morhtuuzh",
+        "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
+        "rp": ["?"],
+        "links": [
+          {
+            "link": "https://github.com/anhgelus",
+            "name": "GitHub"
+          },
+          {
+            "link": "https://youtube.com/@anhgelus",
+            "name": "YouTube"
+          },
+          {
+            "link": "https://modrinth.com/user/anhgelus",
+            "name": "Modrinth"
+          }
+        ]
+      }
+    ],
+    "information": {
+      "description": [
+        "La Terre des Civilisations s'est effondrée suite à un désastre provoqué par une étrange entité à l'origine des changements de difficulté : les habitants ne mourraient plus assez pour rassasier sa faim. Pour remédier à ce problème, elle modifia à nouveau la difficulté des terres pour les rendre encore plus hostiles.",
+        "Pour survivre à l'entité, les habitants ont décidé de se cacher sous-terre et de construire d'imposant réseaux de trains pour éviter les dangers de la surface.",
+        "Malheureusement, certains d'entre eux étaient grandement attirés par les récompenses offertes par l'entité suite à l'assassinat d'un survivant virtuose..."
+      ],
+      "version": "?",
+      "mods": ["?"],
+      "video": "https://youtu.be/-9lGbdKV_7k",
+      "video_thumbnail": "/ruine-des-civilisations/presentation.jpg",
+      "seed": "?",
+      "map": "/"
+    }
+  },
+  "terre-des-civilisations": {
+    "name": "Terre des Civilisations",
+    "description": "Première saison d'Architects Land",
+    "image": "/terre-des-civilisations/background.webp",
+    "logo": "/terre-des-civilisations/logo.png",
+    "id": "terre-des-civilisations",
+    "rp": false,
+    "players": [
+      {
+        "pseudo": "anhgelus",
+        "name": "Anhgelus Morhtuuzh",
+        "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
+        "link": "https://youtube.com/@anhgelus",
+        "links": [
+          {
+            "link": "https://youtube.com/@anhgelus",
+            "name": "YouTube"
+          }
+        ]
+      },
+      {
+        "pseudo": "Akik4",
+        "name": "Akik4",
+        "description": "Joueur polyvalent ayant un péché mignon sur les villageois qui lui remémore des souvenirs",
+        "link": "https://github.com/Akik4"
+      },
+      {
+        "pseudo": "AhotBoi",
+        "name": "AhotBoi",
+        "description": "Nul en tout autre chose que le PvP et ne sait survivre que pendant deux nuits en hardcore. (Jamais connecté)",
+        "link": ""
+      },
+      {
+        "pseudo": "Lex_Al",
+        "name": "Lex_Al",
+        "description": "Grand fan de PvP et de Build. N'a pas peur de farm 10 heures d'affilée si besoin.",
+        "link": ""
+      },
+      {
+        "pseudo": "Hagriid",
+        "name": "Hagriid",
+        "description": "0% build, 50% PvP, 50% Mining",
+        "link": ""
+      },
+      {
+        "pseudo": "Leo_21_",
+        "name": "Léo-21",
+        "description": "Un joueur chill qui aime faire des survies en solo de temps en temps.",
+        "link": "https://github.com/leo-210"
+      },
+      {
+        "pseudo": "SuperNoobYT",
+        "name": "Supernoob",
+        "description": "Joueur technique et build. J'aime faire des bases dans le nether 🤡",
+        "link": "https://www.youtube.com/@SupernoobMC"
+      },
+      {
+        "pseudo": "Slayze7",
+        "name": "Slayze",
+        "description": "Bon en build, bon pvp et une intelligence hors pair (NLDR: d'après Slayze)",
+        "link": ""
+      },
+      {
+        "pseudo": "BluePanda57",
+        "name": "BluePanda",
+        "description": "Je fais un peu de tout, je n'ai plus de micro pour l'instant mais ça sera bientôt bon",
+        "link": ""
+      },
+      {
+        "pseudo": "frifrilynxi_UwU",
+        "name": "frifrilynxi",
+        "description": "Joueur UHC ayant peu joué en dehors du PvP, mais avec des bases solides pouvant s'étendre à tous les domaines.",
+        "link": ""
+      },
+      {
+        "pseudo": "Lymabor",
+        "name": "Lymabor",
+        "description": "Joueur banni pour triche, insolence et irrespect.",
+        "link": ""
+      },
+      {
+        "pseudo": "L_Hermite",
+        "name": "L'Hermite",
+        "description": "Joueur souvent solitaire, il aime parcourir le monde et établir sa base loin de tout, d'où son surnom.",
+        "link": ""
+      },
+      {
+        "pseudo": "EWA420",
+        "name": "EWA420",
+        "description": "Joueur jouant depuis 10 ans spécialisé dans le build.",
+        "link": ""
+      },
+      {
+        "pseudo": "smokingalien",
+        "name": "louenn",
+        "description": "Joueur touchant à tout : build, redstone, PvP, modding et administration.",
+        "link": ""
+      },
+      {
+        "pseudo": "nanathus",
+        "name": "Nanathus",
+        "description": "Je suis un joueur farmeur/mineur très tryhard. Je ne suis pas un joueur PVP.",
+        "link": ""
+      }
+    ],
+    "information": {
+      "description": [
+        "Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024, en 1.21.",
+        "Durant cette saison, la génération fut grandement modifiée pour qu'elle devienne plus réaliste. Les villages furent aussi améliorer pour qu'ils deviennent plus grand et plus important.",
+        "Comme les villages occupent une place beaucoup centrale, les bases des joueurs doivent forcément être reliées au village le plus proche. Cette connection de base forme les clans des joueurs.",
+        "La difficulté du monde est adaptée en temps réelle au niveau des joueurs : plus ils meurent, plus le niveau de difficulté augmentent jusqu'à atteindre l'ultra hardcore. La map était aussi réduite au début pour concentrer un maximum les bases autour du 0 0."
+      ],
+      "version": "1.21",
+      "mods": [
+        "Tectonic",
+        "Luki's Grand Capital",
+        "Difficulty Death Scaler 1.0"
+      ],
+      "video": "https://youtu.be/_SP_1hrsZBU",
+      "videoThumbnail": "/terre-des-civilisations/presentation.jpg",
+      "seed": "-6903026090044164755",
+      "map": "https://cdn.anhgelus.world/architects-land/terre-des-civilisations.zip"
+    }
+  }
+}

@@ -15,6 +15,20 @@ var components = []string{
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
+	var seasonsData []SeasonData
+	i := 0
+	for k, v := range seasons {
+		seasonsData = append(seasonsData, SeasonData{
+			Left:        i%2 == 0,
+			Title:       v.Name,
+			Description: v.Information.Description,
+			Image:       v.Image,
+			ImageAlt:    "Logo de " + v.Name,
+			Href:        "/season/" + k,
+		})
+		i++
+	}
+
 	executeTemplate(w, "index", TemplateData{
 		Resources: struct {
 			JS  []string
@@ -33,7 +47,7 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 				Description: "Famille de SMP Minecraft privé",
 				Image:       "/static/terre-des-civilisations/background.webp",
 			},
-			Seasons: nil,
+			Seasons: seasonsData,
 		},
 	})
 }
@@ -79,26 +93,7 @@ func handleTeam(w http.ResponseWriter, r *http.Request) {
 				Description: "",
 				Image:       "/static/purgatory.webp",
 			},
-			Team: []PersonData{
-				{
-					Name:        "Anhgelus Morhtuuzh",
-					Image:       "/static/skins/anhgelus.png",
-					Description: "Fondateur et développeur, Anhgelus Morhtuuzh gère le serveur et prend toutes les décisions importantes.",
-					Link:        "https://youtube.com/@anhgelus",
-				},
-				{
-					Name:        "Akik4",
-					Image:       "/static/skins/Akik4.png",
-					Description: "Akik4 est un développeur Spigot aidant grandement Anhgelus Morhtuuzh.",
-					Link:        "https://github.com/Akik4",
-				},
-				{
-					Name:        "Léo-21",
-					Image:       "/static/skins/Leo_21_.png",
-					Description: "Léo-21 développe le mod Sneaky Player Names.",
-					Link:        "https://github.com/leo-210",
-				},
-			},
+			Team: team,
 		},
 	})
 }

@@ -38,6 +38,7 @@ type SeasonData struct {
 	Description []string
 	Image       string
 	ImageAlt    string
+	Href        string
 }
 
 type PersonData struct {

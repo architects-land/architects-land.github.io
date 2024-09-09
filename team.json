@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Anhgelus Morhtuuzh",
+    "image": "skins/anhgelus.png",
+    "description": "Fondateur et développeur, Anhgelus Morhtuuzh gère le serveur et prend toutes les décisions importantes.",
+    "link": "https://youtube.com/@anhgelus"
+  },
+  {
+    "name": "Akik4",
+    "image": "skins/Akik4.png",
+    "description": "Akik4 est un développeur Spigot aidant grandement Anhgelus Morhtuuzh.",
+    "link": "https://github.com/Akik4"
+  },
+  {
+    "name": "Léo-21",
+    "image": "skins/Leo_21_.png",
+    "description": "Léo-21 développe le mod Sneaky Player Names.",
+    "link": "https://github.com/leo-210"
+  }
+]
