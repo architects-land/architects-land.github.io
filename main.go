@@ -48,6 +48,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleHome)
 	r.HandleFunc("/rules", handleRules)
+	r.NotFoundHandler = &NotFound{}
 
 	srv := &http.Server{
 		Handler:      r,

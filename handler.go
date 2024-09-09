@@ -59,6 +59,30 @@ func handleRules(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+type NotFound struct{}
+
+func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	executeTemplate(w, "lost", TemplateData{
+		Resources: struct {
+			JS  []string
+			CSS []string
+		}{},
+		Title:     "404 - Architects Land",
+		Dev:       dev,
+		HasFooter: true,
+		HasNav:    true,
+		Data: struct {
+			Hero HeroData
+		}{
+			Hero: HeroData{
+				Title:       "Perdu ?",
+				Description: "Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld.",
+				Image:       "/nether.png",
+			},
+		},
+	})
+}
+
 func executeTemplate(w http.ResponseWriter, page string, data TemplateData) {
 	err := template.Must(template.ParseFiles(
 		append(components, "src/pages/"+page+".gohtml")...,
