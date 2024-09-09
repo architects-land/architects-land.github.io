@@ -1,0 +1,56 @@
+{{define "body"}}
+    {{$info := .Data.Season}}
+    {{template "hero" .Data.Hero}}
+    <main>
+        <div class="content--large large-text information">
+            <h2>Information</h2>
+            {{range $info.Information.Description}}
+                <p>{{.}}</p>
+            {{end}}
+            <br />
+            <p>
+                Version de Minecraft : <strong>{{$info.Information.Version}}</strong>
+            </p>
+            <p>
+                Seed : <strong>{{$info.Information.Seed}}</strong>
+            </p>
+            <p>
+                Map :
+                <strong>
+                    {{if ne $info.Information.Map "/"}}
+                        <a href="{{$info.Information.Map}}" target="_blank">
+                            {{$info.Information.Map}}
+                        </a>
+                    {{else}}
+                        {{$info.Information.Map}}
+                    {{end}}
+                </strong>
+            </p>
+            <p class="has-subtitle">Mods spécifiques à la saison :</p>
+            <ul>
+                {{range $info.Information.Mods}}
+                    <li>
+                        <strong>{{.}}</strong>
+                    </li>
+                {{end}}
+            </ul>
+            <div class="information__presentation">
+                <p>Vidéo de présentation :</p>
+                <a href="{{$info.Information.Video}}" target="_blank">
+                    <img
+                        src="{{$info.Information.VideoThumbnail}}"
+                        alt="Miniature de la vidéo de présentation"
+                    />
+                </a>
+            </div>
+        </div>
+        <div class="content players">
+            <h2>Liste des joueurs</h2>
+            <div class="content people__list large-text people__list--more">
+                {{range $info.Players}}
+                    {{template "person" .}}
+                {{end}}
+            </div>
+        </div>
+    </main>
+{{end}}

@@ -58,6 +58,8 @@ func main() {
 	r.HandleFunc("/rules", handleRules)
 	r.NotFoundHandler = &NotFound{}
 	r.HandleFunc("/team", handleTeam)
+	r.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
+	r.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
 

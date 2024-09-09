@@ -13,7 +13,7 @@ var teamRaw []byte
 
 var seasons map[string]Season
 
-type Season struct {
+type CommonSeason struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	Image       string `json:"image"`
@@ -29,7 +29,34 @@ type Season struct {
 		Seed           string   `json:"seed"`
 		Map            string   `json:"map"`
 	} `json:"information"`
-	Players []SeasonPlayer `json:"players"`
+}
+
+type Season struct {
+	CommonSeason
+	Players []*SeasonPlayer `json:"players"`
+}
+
+type FullSeasonData struct {
+	CommonSeason
+	Players []*PersonData
+}
+
+func (s *Season) toFullSeasonData() *FullSeasonData {
+	fsg := FullSeasonData{CommonSeason: s.CommonSeason}
+	for _, player := range s.Players {
+		data := PersonData{
+			Name:        player.Name,
+			Image:       "skins/" + player.Pseudo,
+			Description: player.Description,
+		}
+		if s.RP {
+			data.Link = "/season/" + s.ID + "/player/" + player.Pseudo + ".png"
+		} else {
+			data.Link = player.Link
+		}
+		fsg.Players = append(fsg.Players, &data)
+	}
+	return &fsg
 }
 
 type SeasonPlayer struct {
@@ -44,7 +71,7 @@ type SeasonPlayer struct {
 	Link string `json:"link"`
 }
 
-var team []PersonData
+var team []*PersonData
 
 func init() {
 	err := json.Unmarshal(seasonsRaw, &seasons)
