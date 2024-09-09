@@ -40,6 +40,13 @@ type SeasonData struct {
 	ImageAlt    string
 }
 
+type PersonData struct {
+	Name        string
+	Image       string
+	Description string
+	Link        string
+}
+
 func init() {
 	flag.BoolVar(&dev, "dev", false, "development mode")
 }
@@ -49,6 +56,7 @@ func main() {
 	r.HandleFunc("/", handleHome)
 	r.HandleFunc("/rules", handleRules)
 	r.NotFoundHandler = &NotFound{}
+	r.HandleFunc("/team", handleTeam)
 
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
 

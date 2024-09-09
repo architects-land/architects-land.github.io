@@ -1,0 +1,23 @@
+{{define "body"}}
+    {{template "hero" .Data.Hero}}
+    <main>
+        <div class="content team__presentation large-text">
+            <h2>Les créateurs d'Architects Land</h2>
+            <p>
+                Architects Land, c'est aussi une équipe dévouée visant à créer un
+                SMP inoubliable !
+            </p>
+            <p>
+                Architects Land n'est pas qu'un serveur Minecraft, c'est aussi des
+                modpacks avec des mods customs, des événements nécessitant des
+                plugins créés de toute pièce et un site web pour présenter le
+                projet.
+            </p>
+        </div>
+        <div class="content people__list large-text">
+            {{range .Data.Team}}
+                {{template "person" .}}
+            {{end}}
+        </div>
+    </main>
+{{end}}

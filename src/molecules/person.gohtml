@@ -1,0 +1,8 @@
+{{define "person"}}
+    <div class="people__card is-clickable" data-href="{{.Link}}">
+        <div class="is-clickable__animation"></div>
+        <img src="{{.Image}}" alt="Skin de {{.Name}}" />
+        <h5>{{.Name}}</h5>
+        <p>{{.Description}}</p>
+    </div>
+{{end}}
