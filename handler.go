@@ -5,8 +5,6 @@ import (
 	"net/http"
 )
 
-var tmpl map[string]*template.Template
-
 var components = []string{
 	"src/organisms/footer.gohtml",
 	"src/organisms/navbar.gohtml",
@@ -15,18 +13,8 @@ var components = []string{
 	"src/templates/base.gohtml",
 }
 
-func init() {
-	tmpl = make(map[string]*template.Template)
-	tmpl["index"] = template.Must(template.ParseFiles(
-		append(components, "src/pages/index.gohtml")...,
-	))
-	tmpl["rules"] = template.Must(template.ParseFiles(
-		append(components, "src/pages/rules.gohtml")...,
-	))
-}
-
 func handleHome(w http.ResponseWriter, r *http.Request) {
-	err := tmpl["index"].ExecuteTemplate(w, "base", TemplateData{
+	executeTemplate(w, "index", TemplateData{
 		Resources: struct {
 			JS  []string
 			CSS []string
@@ -47,13 +35,10 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 			Seasons: nil,
 		},
 	})
-	if err != nil {
-		panic(err)
-	}
 }
 
 func handleRules(w http.ResponseWriter, r *http.Request) {
-	err := tmpl["rules"].ExecuteTemplate(w, "base", TemplateData{
+	executeTemplate(w, "rules", TemplateData{
 		Resources: struct {
 			JS  []string
 			CSS []string
@@ -72,6 +57,12 @@ func handleRules(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 	})
+}
+
+func executeTemplate(w http.ResponseWriter, page string, data TemplateData) {
+	err := template.Must(template.ParseFiles(
+		append(components, "src/pages/"+page+".gohtml")...,
+	)).ExecuteTemplate(w, "base", data)
 	if err != nil {
 		panic(err)
 	}
