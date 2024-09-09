@@ -50,6 +50,8 @@ func main() {
 	r.HandleFunc("/rules", handleRules)
 	r.NotFoundHandler = &NotFound{}
 
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
+
 	srv := &http.Server{
 		Handler:      r,
 		Addr:         "127.0.0.1:8000",
