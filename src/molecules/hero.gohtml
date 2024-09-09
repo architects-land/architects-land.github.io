@@ -1,5 +1,5 @@
 {{define "hero"}}
-    <div class="..." style="background-image: url({{.Image}})">
+    <div class="hero {{if .Dark}} hero--dark {{end}}{{if .Min}} hero--min {{end}}" style="background-image: url({{.Image}})">
     <div class="hero__text__container big-text">
         <div class="hero__text">
             <h1>{{.Title}}</h1>

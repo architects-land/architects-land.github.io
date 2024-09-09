@@ -4,19 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "bun build ./resources/index.ts --outdir ./dist/assets --minify && sass resources/scss/main.scss dist/assets/styles.css",
     "preview": "vite preview",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|jsx|tsx|html|css|scss)\""
-  },
-  "dependencies": {
-    "solid-js": "^1.8.17"
   },
   "devDependencies": {
     "prettier": "^3.3.2",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1",
-    "vite-plugin-solid": "^2.10.2",
     "sass": "^1.77.6",
     "scss": "^0.2.4"
   }

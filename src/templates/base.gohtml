@@ -6,9 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/static/logo.png" type="image/png" />
         <title>{{ .Title }}</title>
-        {{ range .Resources.CSS }}
-            <link rel="stylesheet" href="/{{ . }}" />
-        {{end}}
+        <link rel="stylesheet" href="/assets/styles.css" />
     </head>
     <body>
         {{if .HasNav}}
@@ -18,13 +16,7 @@
         {{if .HasFooter}}
             {{template "footer" .}}
         {{end}}
-        {{ range .Resources.JS }}
-            <script type="module" src="/{{ . }}"></script>
-        {{ end }}
-        {{ if .Dev }}
-            <script type="module" src="http://localhost:5173/@vite/client"></script>
-            <script type="module" src="http://localhost:5173/main.js"></script>
-        {{ end }}
+        <script type="module" src="/assets/script.js" defer></script>
     </body>
     </html>
 {{end}}

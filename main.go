@@ -9,9 +9,6 @@ import (
 	"time"
 )
 
-//go:embed dist/.vite/manifest.json
-var manifest []byte
-
 var dev bool
 
 type TemplateData struct {
@@ -30,6 +27,8 @@ type HeroData struct {
 	Title       string
 	Description string
 	Image       string
+	Dark        bool
+	Min         bool
 }
 
 type SeasonData struct {
@@ -62,6 +61,7 @@ func main() {
 	r.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
+	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./dist/assets"))))
 
 	srv := &http.Server{
 		Handler:      r,
