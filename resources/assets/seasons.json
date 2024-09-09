@@ -11,9 +11,7 @@
         "pseudo": "anhgelus",
         "name": "Anhgelus Morhtuuzh",
         "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
-        "rp": [
-          "?"
-        ],
+        "rp": ["?"],
         "links": [
           {
             "link": "https://github.com/anhgelus",
@@ -37,9 +35,7 @@
         "Malheureusement, certains d'entre eux étaient grandement attirés par les récompenses offertes par l'entité suite à l'assassinat d'un survivant virtuose..."
       ],
       "version": "?",
-      "mods": [
-        "?"
-      ],
+      "mods": ["?"],
       "video": "https://youtu.be/-9lGbdKV_7k",
       "videoThumbnail": "/ruine-des-civilisations/presentation.jpg",
       "seed": "?",
