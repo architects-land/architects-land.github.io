@@ -1,9 +1,13 @@
 function setupEvents() {
+    if (document.querySelector(".not-found") !== null) {
+        setTimeout((_: any) => {
+            location.replace(`${location.origin}`);
+        }, 5 * 1000);
+    }
     const clickables: HTMLCollectionOf<Element> =
         document.getElementsByClassName("is-clickable");
     const nav = document.getElementById("navbar");
     if (nav === null) {
-        console.log("null!")
         return;
     }
 
