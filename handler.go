@@ -210,7 +210,7 @@ func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			Hero: &HeroData{
 				Title:       "Perdu ?",
 				Description: "Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld.",
-				Image:       "nether.png",
+				Image:       "nether.webp",
 				Dark:        false,
 				Min:         false,
 			},
