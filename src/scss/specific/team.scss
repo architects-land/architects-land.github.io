@@ -1,0 +1,14 @@
+@import "../variables";
+
+.team {
+  &__presentation {
+    background: $dark-background;
+    color: $light-sand;
+    text-align: center;
+
+    & p {
+      width: 75%;
+      margin: 0.5rem auto;
+    }
+  }
+}

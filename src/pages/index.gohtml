@@ -1,0 +1,59 @@
+{{define "body"}}
+    {{template "hero" .Data.Hero}}
+    <main>
+        <div class="content presentation presentation__smp large-text">
+            <h2>SMP ?</h2>
+            <p>
+                Holycube, QSMP et Content SMP appartiennent à un unique type de
+                serveur minecraft unique : les SMP.
+            </p>
+            <p>Un SMP est une simple survie multijoueur.</p>
+            <p>
+                Sauf qu'après avoir fait des centaines de survie, Minecraft ne se
+                renouvelle plus.
+            </p>
+            <p>
+                Nous avons donc décidé de créer des personnages et une histoire pour
+                rendre notre monde plus vivant.
+            </p>
+            <p>Mais même avec ce semi-RP, on arrive à s'ennuyer.</p>
+            <p>
+                On a donc commencé à modifier le jeu de base pour le redécouvrir.
+            </p>
+        </div>
+        <div class="content large-text presentation presentation__architects-land">
+            <div
+                class="presentation__architects-land__image"
+                style='background-image: url("/static/architects-land.webp")'
+            ></div>
+            <div class="presentation__architects-land__text">
+                <h2>Nouvelle forme de SMP</h2>
+                <p>
+                    Architects Land a été créé avec cet objectif en tête : refaire
+                    vivre Minecraft, même après des milliers d'heures de jeu.
+                </p>
+                <p>
+                    Pour le rendre de nouveau intéressant, on doit créer de nouvelles
+                    intéractions entre les joueurs, rajouter de la difficulté et
+                    recréer l'émerveillement des premiers jours.
+                </p>
+                <p>
+                    Chaque saison d'Architects Land a été imaginée pour remettre de la
+                    difficulté dans le jeu, pour provoquer l'émerveillement et pour
+                    construire un lieu favorable aux intéractions.
+                </p>
+            </div>
+        </div>
+        <div
+            class="content large-text presentation presentation__seasons"
+            id="seasons"
+        >
+            <h2>Saisons</h2>
+            <div class="presentation__seasons__grid">
+                {{range .Data.Seasons}}
+                    {{template "season" .}}
+                {{end}}
+            </div>
+        </div>
+    </main>
+{{end}}

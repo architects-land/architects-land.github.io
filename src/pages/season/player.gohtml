@@ -1,0 +1,27 @@
+{{define "body"}}
+    {{$player := .Data.Player}}
+    <div class="player-info">
+        <a class="player-info__back" href="/season/{{.Data.Season.ID}}">
+            Retourner en arrière
+        </a>
+        <div class="player-info__skin">
+            <img
+                    src="/static/skins/{{$player.Pseudo}}.png"
+                    alt="Skin de {{$player.Name}}"
+            />
+        </div>
+        <div class="player-info__description">
+            <h3>{{$player.Name}}</h3>
+            <p>{{$player.Description}}</p>
+            <h4>RP</h4>
+            {{range $player.RP}}
+                <p>{{.}}</p>
+            {{end}}
+            <div class="player-info__links">
+                {{range $player.Links}}
+                    {{template "button" . }}
+                {{end}}
+            </div>
+        </div>
+    </div>
+{{end}}
