@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gorilla/mux"
 	"html/template"
+	"log/slog"
 	"net/http"
 )
 
@@ -218,10 +219,12 @@ func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func executeTemplate(w http.ResponseWriter, page string, data TemplateData) {
+	slog.Info("Loading page", "page", page)
 	err := template.Must(template.ParseFiles(
 		append(components, "src/pages/"+page+".gohtml")...,
 	)).ExecuteTemplate(w, "base", data)
 	if err != nil {
-		panic(err)
+		slog.Error(err.Error())
+		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
