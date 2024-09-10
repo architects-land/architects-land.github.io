@@ -1,12 +1,14 @@
 package main
 
 import (
+	"context"
 	_ "embed"
 	"flag"
 	"github.com/gorilla/mux"
-	"log"
 	"log/slog"
 	"net/http"
+	"os"
+	"os/signal"
 	"time"
 )
 
@@ -72,5 +74,23 @@ func main() {
 	}
 
 	slog.Info("Starting...")
-	log.Fatal(srv.ListenAndServe())
+	go func() {
+		if err := srv.ListenAndServe(); err != nil {
+			slog.Error(err.Error())
+		}
+	}()
+
+	slog.Info("Started")
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
+	<-c
+
+	ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second)
+	defer cancel()
+	err := srv.Shutdown(ctx)
+	if err != nil {
+		panic(err)
+	}
+	slog.Info("Shutting down")
+	os.Exit(0)
 }
