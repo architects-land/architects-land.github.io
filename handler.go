@@ -180,8 +180,8 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 
 	executeTemplate(w, "season/player", &TemplateData{
 		Title:     player.Name + " - " + season.Name + " - Architects Land",
-		HasFooter: true,
-		HasNav:    true,
+		HasFooter: false,
+		HasNav:    false,
 		SEO: SEOData{
 			Title:       player.Name + " - " + season.Name + " - Architects Land",
 			URL:         "season/" + season.Name + "/" + player.Pseudo,
