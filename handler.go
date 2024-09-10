@@ -185,7 +185,7 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		SEO: SEOData{
 			Title:       player.Name + " - " + season.Name + " - Architects Land",
 			URL:         "season/" + season.Name + "/" + player.Pseudo,
-			Image:       "skins/" + player.Name + ".png",
+			Image:       "skins/" + player.Pseudo + ".png",
 			Description: player.Description,
 		},
 		Data: struct {
