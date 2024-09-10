@@ -1,12 +1,13 @@
 {{define "base"}}
     <!doctype html>
-    <html lang="fr">
+    <html lang="fr" prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/static/logo.png" type="image/png" />
         <title>{{ .Title }}</title>
         <link rel="stylesheet" href="/assets/styles.css" />
+        {{template "opengraph-base" .SEO}}
     </head>
     <body>
         {{if .HasNav}}

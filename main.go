@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	_ "embed"
-	"flag"
 	"github.com/gorilla/mux"
 	"log/slog"
 	"net/http"
@@ -12,17 +11,11 @@ import (
 	"time"
 )
 
-var dev bool
-
 type TemplateData struct {
-	Resources struct {
-		JS  []string
-		CSS []string
-	}
 	Title     string
-	Dev       bool
 	HasFooter bool
 	HasNav    bool
+	SEO       SEOData
 	Data      interface{}
 }
 
@@ -50,8 +43,12 @@ type PersonData struct {
 	Link        string
 }
 
-func init() {
-	flag.BoolVar(&dev, "dev", false, "development mode")
+type SEOData struct {
+	Title       string
+	URL         string
+	Image       string
+	Description string
+	Domain      string
 }
 
 func main() {

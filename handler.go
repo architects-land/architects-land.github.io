@@ -15,6 +15,7 @@ var components = []string{
 	"src/molecules/person.gohtml",
 	"src/atoms/button.gohtml",
 	"src/templates/base.gohtml",
+	"src/templates/opengraph.gohtml",
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
@@ -32,15 +33,16 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 		i++
 	}
 
-	executeTemplate(w, "index", TemplateData{
-		Resources: struct {
-			JS  []string
-			CSS []string
-		}{},
+	executeTemplate(w, "index", &TemplateData{
 		Title:     "Architects Land",
-		Dev:       dev,
 		HasFooter: true,
 		HasNav:    true,
+		SEO: SEOData{
+			Title:       "Architects Land",
+			URL:         "",
+			Image:       "terre-des-civilisations/background.webp",
+			Description: "Famille de SMP Minecraft privé",
+		},
 		Data: struct {
 			Hero    *HeroData
 			Seasons []*SeasonData
@@ -58,15 +60,16 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRules(w http.ResponseWriter, r *http.Request) {
-	executeTemplate(w, "rules", TemplateData{
-		Resources: struct {
-			JS  []string
-			CSS []string
-		}{},
+	executeTemplate(w, "rules", &TemplateData{
 		Title:     "Règles - Architects Land",
-		Dev:       dev,
 		HasFooter: true,
 		HasNav:    true,
+		SEO: SEOData{
+			Title:       "Règles - Architects Land",
+			URL:         "rules",
+			Image:       "purgatory.webp",
+			Description: "Les règles d'Architects Land",
+		},
 		Data: struct {
 			Hero *HeroData
 		}{
@@ -82,15 +85,16 @@ func handleRules(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleTeam(w http.ResponseWriter, r *http.Request) {
-	executeTemplate(w, "team", TemplateData{
-		Resources: struct {
-			JS  []string
-			CSS []string
-		}{},
+	executeTemplate(w, "team", &TemplateData{
 		Title:     "Équipe - Architects Land",
-		Dev:       dev,
 		HasFooter: true,
 		HasNav:    true,
+		SEO: SEOData{
+			Title:       "Équipe - Architects Land",
+			URL:         "team",
+			Image:       "village-night.webp",
+			Description: "L'équipe derrière Architects Land",
+		},
 		Data: struct {
 			Hero *HeroData
 			Team []*PersonData
@@ -120,15 +124,16 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	executeTemplate(w, "season/index", TemplateData{
-		Resources: struct {
-			JS  []string
-			CSS []string
-		}{},
+	executeTemplate(w, "season/index", &TemplateData{
 		Title:     season.Name + " - Architects Land",
-		Dev:       dev,
 		HasFooter: true,
 		HasNav:    true,
+		SEO: SEOData{
+			Title:       season.Name + " - Architects Land",
+			URL:         "season/" + season.ID,
+			Image:       season.Image,
+			Description: season.Description,
+		},
 		Data: struct {
 			Hero   *HeroData
 			Season *FullSeasonData
@@ -173,15 +178,16 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	executeTemplate(w, "season/player", TemplateData{
-		Resources: struct {
-			JS  []string
-			CSS []string
-		}{},
+	executeTemplate(w, "season/player", &TemplateData{
 		Title:     player.Name + " - " + season.Name + " - Architects Land",
-		Dev:       dev,
 		HasFooter: true,
 		HasNav:    true,
+		SEO: SEOData{
+			Title:       player.Name + " - " + season.Name + " - Architects Land",
+			URL:         "season/" + season.Name + "/" + player.Pseudo,
+			Image:       "skins/" + player.Name + ".png",
+			Description: player.Description,
+		},
 		Data: struct {
 			Season *Season
 			Player *SeasonPlayer
@@ -195,15 +201,16 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 type NotFound struct{}
 
 func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	executeTemplate(w, "lost", TemplateData{
-		Resources: struct {
-			JS  []string
-			CSS []string
-		}{},
+	executeTemplate(w, "lost", &TemplateData{
 		Title:     "404 - Architects Land",
-		Dev:       dev,
 		HasFooter: true,
 		HasNav:    true,
+		SEO: SEOData{
+			Title:       "404 - Architects Land",
+			URL:         "",
+			Image:       "nether.webp",
+			Description: "Il semblerait que vous vous êtes perdu·es dans le nether. (Erreur 404)",
+		},
 		Data: struct {
 			Hero *HeroData
 		}{
@@ -218,7 +225,8 @@ func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-func executeTemplate(w http.ResponseWriter, page string, data TemplateData) {
+func executeTemplate(w http.ResponseWriter, page string, data *TemplateData) {
+	data.SEO.Domain = "architects-land.anhgelus.world"
 	slog.Info("Loading page", "page", page)
 	err := template.Must(template.ParseFiles(
 		append(components, "src/pages/"+page+".gohtml")...,
