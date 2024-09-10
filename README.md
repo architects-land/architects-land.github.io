@@ -13,8 +13,8 @@ Content licensed under CC BY-SA-NC 4.0.
 
 ## Technologies
 
-- SolidJS 1.8.17
-- Vite 5.3.1
+- Go 1.23
+- Gorilla/mux 1.8.1
 - Bun 1.1.17
 - TS 5.3.1
 - SASS 1.77.6
