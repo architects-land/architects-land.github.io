@@ -11,7 +11,7 @@ var seasonsRaw []byte
 //go:embed team.json
 var teamRaw []byte
 
-var seasons map[string]Season
+var seasons []Season
 
 type CommonSeason struct {
 	Name        string `json:"name"`
@@ -82,4 +82,13 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func GetSeason(id string) (*Season, bool) {
+	for _, s := range seasons {
+		if s.ID == id {
+			return &s, true
+		}
+	}
+	return nil, false
 }

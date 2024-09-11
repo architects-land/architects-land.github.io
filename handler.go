@@ -21,14 +21,14 @@ var components = []string{
 func handleHome(w http.ResponseWriter, r *http.Request) {
 	var seasonsData []*SeasonData
 	i := 0
-	for k, v := range seasons {
+	for _, v := range seasons {
 		seasonsData = append(seasonsData, &SeasonData{
 			Left:        i%2 == 0,
 			Title:       v.Name,
 			Description: v.Information.Description,
 			Image:       v.Logo,
 			ImageAlt:    "Logo de " + v.Name,
-			Href:        "/season/" + k,
+			Href:        "/season/" + v.ID,
 		})
 		i++
 	}
@@ -118,7 +118,7 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 		(&NotFound{}).ServeHTTP(w, r)
 		return
 	}
-	season, ok := seasons[id]
+	season, ok := GetSeason(id)
 	if !ok {
 		(&NotFound{}).ServeHTTP(w, r)
 		return
@@ -157,7 +157,7 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		(&NotFound{}).ServeHTTP(w, r)
 		return
 	}
-	season, ok := seasons[id]
+	season, ok := GetSeason(id)
 	if !ok {
 		(&NotFound{}).ServeHTTP(w, r)
 		return
@@ -192,7 +192,7 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 			Season *Season
 			Player *SeasonPlayer
 		}{
-			Season: &season,
+			Season: season,
 			Player: player,
 		},
 	})

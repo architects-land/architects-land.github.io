@@ -1,5 +1,5 @@
-{
-  "ruine-des-civilisations": {
+[
+  {
     "name": "Ruine des Civilisations",
     "description": "Une saison construite sur les ruines de la dernière",
     "image": "ruine-des-civilisations/background.webp",
@@ -42,7 +42,7 @@
       "map": "/"
     }
   },
-  "terre-des-civilisations": {
+  {
     "name": "Terre des Civilisations",
     "description": "Première saison d'Architects Land",
     "image": "terre-des-civilisations/background.webp",
@@ -166,4 +166,4 @@
       "map": "https://cdn.anhgelus.world/architects-land/terre-des-civilisations.zip"
     }
   }
-}
+]
