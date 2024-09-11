@@ -203,8 +203,8 @@ type NotFound struct{}
 func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	executeTemplate(w, "lost", &TemplateData{
 		Title:     "404 - Architects Land",
-		HasFooter: true,
-		HasNav:    true,
+		HasFooter: false,
+		HasNav:    false,
 		SEO: SEOData{
 			Title:       "404 - Architects Land",
 			URL:         "",
