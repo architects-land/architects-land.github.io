@@ -6,14 +6,6 @@ import (
 	"github.com/anhgelus/golatt"
 )
 
-type TemplateData struct {
-	Title     string
-	HasFooter bool
-	HasNav    bool
-	SEO       SEOData
-	Data      interface{}
-}
-
 type HeroData struct {
 	Title       string
 	Description string
@@ -36,14 +28,6 @@ type PersonData struct {
 	Image       string
 	Description string
 	Link        string
-}
-
-type SEOData struct {
-	Title       string
-	URL         string
-	Image       string
-	Description string
-	Domain      string
 }
 
 //go:embed templates
