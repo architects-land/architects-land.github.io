@@ -90,7 +90,6 @@ func main() {
 			HasFooter bool
 			HasNav    bool
 			Hero      *HeroData
-			Seasons   []*SeasonData
 		}{
 			HasFooter: true,
 			HasNav:    true,
@@ -103,9 +102,35 @@ func main() {
 			},
 		},
 	}
+	teamPage := golatt.Template{
+		Golatt:      g,
+		Name:        "team",
+		Title:       "Équipe",
+		Image:       "village-night.webp",
+		Description: "L'équipe derrière d'Architects Land",
+		URL:         "/team",
+		Data: struct {
+			HasFooter bool
+			HasNav    bool
+			Hero      *HeroData
+			Team      []*PersonData
+		}{
+			HasFooter: true,
+			HasNav:    true,
+			Hero: &HeroData{
+				Title:       "Équipe",
+				Description: "",
+				Image:       "village-night.webp",
+				Dark:        false,
+				Min:         true,
+			},
+			Team: team,
+		},
+	}
 
 	g.HandleFunc("/", handleHome)
 	g.HandleFunc("/rules", rules.Handle())
+	g.HandleFunc("/team", teamPage.Handle())
 
 	g.StartServer(":8000")
 }
