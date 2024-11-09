@@ -12,7 +12,7 @@
                 {{end}}
             </div>
             <img
-                    src="/static/{{.Image}}"
+                    src="{{getStaticPath .Image}}"
                     alt="{{.ImageAlt}}"
                     class="presentation__season__image"
             />
@@ -24,7 +24,7 @@
         >
             <div class="is-clickable__animation"></div>
             <img
-                    src="/static/{{.Image}}"
+                    src="{{getStaticPath .Image}}"
                     alt="{{.ImageAlt}}"
                     class="presentation__season__image"
             />

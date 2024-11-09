@@ -1,14 +1,10 @@
 package main
 
 import (
-	"context"
+	"embed"
 	_ "embed"
+	"github.com/anhgelus/golatt"
 	"github.com/gorilla/mux"
-	"log/slog"
-	"net/http"
-	"os"
-	"os/signal"
-	"time"
 )
 
 type TemplateData struct {
@@ -51,6 +47,11 @@ type SEOData struct {
 	Domain      string
 }
 
+//go:embed templates
+var templates embed.FS
+
+var g *golatt.Golatt
+
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleHome)
@@ -60,34 +61,27 @@ func main() {
 	r.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
 	r.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
-	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./dist/assets"))))
-
-	srv := &http.Server{
-		Handler:      r,
-		Addr:         ":80",
-		WriteTimeout: 15 * time.Second,
-		ReadTimeout:  15 * time.Second,
+	g = golatt.New(templates)
+	//g.NotFoundHandler = &NotFound{}
+	g.DefaultSeoData = &golatt.SeoData{
+		Image:       "",
+		Description: "",
+		Domain:      "architects-land.anhgelus.world",
 	}
-
-	slog.Info("Starting...")
-	go func() {
-		if err := srv.ListenAndServe(); err != nil {
-			slog.Error(err.Error())
+	g.FormatTitle = func(t string) string {
+		if t == "Architects Land" {
+			return t
 		}
-	}()
-
-	slog.Info("Started")
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt)
-	<-c
-
-	ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second)
-	defer cancel()
-	err := srv.Shutdown(ctx)
-	if err != nil {
-		panic(err)
+		return t + " - Architects Land"
 	}
-	slog.Info("Shutting down")
-	os.Exit(0)
+	g.Templates = append(g.Templates,
+		"templates/organisms/*.gohtml",
+		"templates/molecules/*.gohtml",
+		"templates/atoms/*.gohtml",
+		"templates/base/*.gohtml",
+	)
+
+	g.HandleFunc("/", handleHome)
+
+	g.StartServer(":8000")
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/anhgelus/golatt"
 	"github.com/gorilla/mux"
 	"html/template"
 	"log/slog"
@@ -14,11 +15,11 @@ var components = []string{
 	"src/molecules/season.gohtml",
 	"src/molecules/person.gohtml",
 	"src/atoms/button.gohtml",
-	"src/templates/base.gohtml",
-	"src/templates/opengraph.gohtml",
+	"src/base/base.gohtml",
+	"src/base/opengraph.gohtml",
 }
 
-func handleHome(w http.ResponseWriter, r *http.Request) {
+func handleHome(w http.ResponseWriter, _ *http.Request) {
 	var seasonsData []*SeasonData
 	i := 0
 	for _, v := range seasons {
@@ -33,20 +34,22 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 		i++
 	}
 
-	executeTemplate(w, "index", &TemplateData{
-		Title:     "Architects Land",
-		HasFooter: true,
-		HasNav:    true,
-		SEO: SEOData{
+	g.Render(w, "index", &golatt.TemplateData{
+		Title: "Architects Land",
+		SEO: &golatt.SeoData{
 			Title:       "Architects Land",
-			URL:         "",
+			URL:         "/",
 			Image:       "terre-des-civilisations/background.webp",
 			Description: "Famille de SMP Minecraft privé",
 		},
 		Data: struct {
-			Hero    *HeroData
-			Seasons []*SeasonData
+			HasFooter bool
+			HasNav    bool
+			Hero      *HeroData
+			Seasons   []*SeasonData
 		}{
+			HasFooter: true,
+			HasNav:    true,
 			Hero: &HeroData{
 				Title:       "Architects Land",
 				Description: "Famille de SMP Minecraft privé",
@@ -57,6 +60,31 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 			Seasons: seasonsData,
 		},
 	})
+
+	//executeTemplate(w, "index", &TemplateData{
+	//	Title:     "Architects Land",
+	//	HasFooter: true,
+	//	HasNav:    true,
+	//	SEO: SEOData{
+	//		Title:       "Architects Land",
+	//		URL:         "",
+	//		Image:       "terre-des-civilisations/background.webp",
+	//		Description: "Famille de SMP Minecraft privé",
+	//	},
+	//	Data: struct {
+	//		Hero    *HeroData
+	//		Seasons []*SeasonData
+	//	}{
+	//		Hero: &HeroData{
+	//			Title:       "Architects Land",
+	//			Description: "Famille de SMP Minecraft privé",
+	//			Image:       "terre-des-civilisations/background.webp",
+	//			Dark:        false,
+	//			Min:         false,
+	//		},
+	//		Seasons: seasonsData,
+	//	},
+	//})
 }
 
 func handleRules(w http.ResponseWriter, r *http.Request) {
@@ -229,7 +257,7 @@ func executeTemplate(w http.ResponseWriter, page string, data *TemplateData) {
 	data.SEO.Domain = "architects-land.anhgelus.world"
 	slog.Info("Loading page", "page", page)
 	err := template.Must(template.ParseFiles(
-		append(components, "src/pages/"+page+".gohtml")...,
+		append(components, "src/page/"+page+".gohtml")...,
 	)).ExecuteTemplate(w, "base", data)
 	if err != nil {
 		slog.Error(err.Error())
