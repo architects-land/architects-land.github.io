@@ -53,7 +53,7 @@ var g *golatt.Golatt
 
 func main() {
 	g = golatt.New(templates)
-	//g.NotFoundHandler = &NotFound{}
+	g.NotFoundHandler = &NotFound{}
 	g.DefaultSeoData = &golatt.SeoData{
 		Image:       "",
 		Description: "",

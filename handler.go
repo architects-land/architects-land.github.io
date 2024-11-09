@@ -153,19 +153,22 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 type NotFound struct{}
 
 func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	executeTemplate(w, "lost", &TemplateData{
-		Title:     "404 - Architects Land",
-		HasFooter: false,
-		HasNav:    false,
-		SEO: SEOData{
-			Title:       "404 - Architects Land",
+	g.Render(w, "lost", &golatt.TemplateData{
+		Title: "404",
+		SEO: &golatt.SeoData{
 			URL:         "",
 			Image:       "nether.webp",
 			Description: "Il semblerait que vous vous êtes perdu·es dans le nether. (Erreur 404)",
 		},
 		Data: struct {
-			Hero *HeroData
+			HasFooter bool
+			HasNav    bool
+			Season    *Season
+			Player    *SeasonPlayer
+			Hero      *HeroData
 		}{
+			HasFooter: false,
+			HasNav:    false,
 			Hero: &HeroData{
 				Title:       "Perdu ?",
 				Description: "Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld.",
