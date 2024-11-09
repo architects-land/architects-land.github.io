@@ -3,21 +3,8 @@ package main
 import (
 	"github.com/anhgelus/golatt"
 	"github.com/gorilla/mux"
-	"html/template"
-	"log/slog"
 	"net/http"
 )
-
-var components = []string{
-	"src/organisms/footer.gohtml",
-	"src/organisms/navbar.gohtml",
-	"src/molecules/hero.gohtml",
-	"src/molecules/season.gohtml",
-	"src/molecules/person.gohtml",
-	"src/atoms/button.gohtml",
-	"src/base/base.gohtml",
-	"src/base/opengraph.gohtml",
-}
 
 func handleHome(w http.ResponseWriter, _ *http.Request) {
 	var seasonsData []*SeasonData
@@ -178,16 +165,4 @@ func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 	})
-}
-
-func executeTemplate(w http.ResponseWriter, page string, data *TemplateData) {
-	data.SEO.Domain = "architects-land.anhgelus.world"
-	slog.Info("Loading page", "page", page)
-	err := template.Must(template.ParseFiles(
-		append(components, "src/page/"+page+".gohtml")...,
-	)).ExecuteTemplate(w, "base", data)
-	if err != nil {
-		slog.Error(err.Error())
-		w.WriteHeader(http.StatusInternalServerError)
-	}
 }

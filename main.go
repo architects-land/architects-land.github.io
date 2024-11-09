@@ -127,5 +127,5 @@ func main() {
 	g.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
 	g.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
-	g.StartServer(":8000")
+	g.StartServer(":80")
 }

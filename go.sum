@@ -1,11 +1,3 @@
-github.com/anhgelus/golatt v0.0.0-20241109173627-0774143233b2 h1:7cV1qN0tXN1vhSlGFlWb51osLnWrdr4NqBt/7/OPb9M=
-github.com/anhgelus/golatt v0.0.0-20241109173627-0774143233b2/go.mod h1:Lgyy/Tm9A3w1ft72mZOUxl/p+4G2/WB3qxoXTv7Y4y8=
-github.com/anhgelus/golatt v0.0.0-20241109175123-0e3d44c616ad h1:VQwR7c1YfpOkBFPVmm/KR0ArA2MlN1x+ZKNQvJNDb78=
-github.com/anhgelus/golatt v0.0.0-20241109175123-0e3d44c616ad/go.mod h1:Lgyy/Tm9A3w1ft72mZOUxl/p+4G2/WB3qxoXTv7Y4y8=
-github.com/anhgelus/golatt v0.0.0-20241109182229-32179d409934 h1:6bV0R7oDAeXkYIZfF5nkY6X2+Dk8huPSaUYPDDDGE/U=
-github.com/anhgelus/golatt v0.0.0-20241109182229-32179d409934/go.mod h1:Lgyy/Tm9A3w1ft72mZOUxl/p+4G2/WB3qxoXTv7Y4y8=
-github.com/anhgelus/golatt v0.0.0-20241109182926-ebd4221cd032 h1:AUhDqlg3CmNNMbhcq0YVNZYZRzWfde+yrmY6bqwMAgE=
-github.com/anhgelus/golatt v0.0.0-20241109182926-ebd4221cd032/go.mod h1:Lgyy/Tm9A3w1ft72mZOUxl/p+4G2/WB3qxoXTv7Y4y8=
 github.com/anhgelus/golatt v0.0.0-20241109183808-8c716b22d264 h1:CpiNn32epgJJOPnwXZk4CfrdI6oDFaEtUTwX7w+1A4Q=
 github.com/anhgelus/golatt v0.0.0-20241109183808-8c716b22d264/go.mod h1:Lgyy/Tm9A3w1ft72mZOUxl/p+4G2/WB3qxoXTv7Y4y8=
 github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
