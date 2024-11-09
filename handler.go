@@ -129,22 +129,23 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	executeTemplate(w, "season/player", &TemplateData{
-		Title:     player.Name + " - " + season.Name + " - Architects Land",
-		HasFooter: false,
-		HasNav:    false,
-		SEO: SEOData{
-			Title:       player.Name + " - " + season.Name + " - Architects Land",
-			URL:         "season/" + season.Name + "/" + player.Pseudo,
+	g.Render(w, "season/player", &golatt.TemplateData{
+		Title: player.Name + " - " + season.Name,
+		SEO: &golatt.SeoData{
+			URL:         "/season/" + season.Name + "/" + player.Pseudo,
 			Image:       "skins/" + player.Pseudo + ".png",
 			Description: player.Description,
 		},
 		Data: struct {
-			Season *Season
-			Player *SeasonPlayer
+			HasFooter bool
+			HasNav    bool
+			Season    *Season
+			Player    *SeasonPlayer
 		}{
-			Season: season,
-			Player: player,
+			HasFooter: false,
+			HasNav:    false,
+			Season:    season,
+			Player:    player,
 		},
 	})
 }

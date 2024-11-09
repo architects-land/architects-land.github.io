@@ -4,7 +4,6 @@ import (
 	"embed"
 	_ "embed"
 	"github.com/anhgelus/golatt"
-	"github.com/gorilla/mux"
 )
 
 type TemplateData struct {
@@ -53,10 +52,6 @@ var templates embed.FS
 var g *golatt.Golatt
 
 func main() {
-	r := mux.NewRouter()
-	r.NotFoundHandler = &NotFound{}
-	r.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
-
 	g = golatt.New(templates)
 	//g.NotFoundHandler = &NotFound{}
 	g.DefaultSeoData = &golatt.SeoData{
@@ -130,6 +125,7 @@ func main() {
 	g.HandleFunc("/rules", rules.Handle())
 	g.HandleFunc("/team", teamPage.Handle())
 	g.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
+	g.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
 	g.StartServer(":8000")
 }
