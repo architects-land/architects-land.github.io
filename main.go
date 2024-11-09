@@ -55,8 +55,6 @@ var g *golatt.Golatt
 func main() {
 	r := mux.NewRouter()
 	r.NotFoundHandler = &NotFound{}
-	r.HandleFunc("/team", handleTeam)
-	r.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
 	r.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
 	g = golatt.New(templates)
@@ -131,6 +129,7 @@ func main() {
 	g.HandleFunc("/", handleHome)
 	g.HandleFunc("/rules", rules.Handle())
 	g.HandleFunc("/team", teamPage.Handle())
+	g.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
 
 	g.StartServer(":8000")
 }

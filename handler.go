@@ -37,7 +37,6 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 	g.Render(w, "index", &golatt.TemplateData{
 		Title: "Architects Land",
 		SEO: &golatt.SeoData{
-			Title:       "Architects Land",
 			URL:         "/",
 			Image:       "terre-des-civilisations/background.webp",
 			Description: "Famille de SMP Minecraft privé",
@@ -62,33 +61,6 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 	})
 }
 
-func handleTeam(w http.ResponseWriter, r *http.Request) {
-	executeTemplate(w, "team", &TemplateData{
-		Title:     "Équipe - Architects Land",
-		HasFooter: true,
-		HasNav:    true,
-		SEO: SEOData{
-			Title:       "Équipe - Architects Land",
-			URL:         "team",
-			Image:       "village-night.webp",
-			Description: "L'équipe derrière Architects Land",
-		},
-		Data: struct {
-			Hero *HeroData
-			Team []*PersonData
-		}{
-			Hero: &HeroData{
-				Title:       "Équipe",
-				Description: "",
-				Image:       "village-night.webp",
-				Dark:        false,
-				Min:         true,
-			},
-			Team: team,
-		},
-	})
-}
-
 func handleSeason(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, ok := vars["id"]
@@ -102,20 +74,21 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	executeTemplate(w, "season/index", &TemplateData{
-		Title:     season.Name + " - Architects Land",
-		HasFooter: true,
-		HasNav:    true,
-		SEO: SEOData{
-			Title:       season.Name + " - Architects Land",
-			URL:         "season/" + season.ID,
+	g.Render(w, "season/index", &golatt.TemplateData{
+		Title: season.Name,
+		SEO: &golatt.SeoData{
+			URL:         "/season/" + season.ID,
 			Image:       season.Image,
 			Description: season.Description,
 		},
 		Data: struct {
-			Hero   *HeroData
-			Season *FullSeasonData
+			HasFooter bool
+			HasNav    bool
+			Hero      *HeroData
+			Season    *FullSeasonData
 		}{
+			HasFooter: true,
+			HasNav:    true,
 			Hero: &HeroData{
 				Title:       season.Name,
 				Description: season.Description,
