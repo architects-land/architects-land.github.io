@@ -60,56 +60,6 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 			Seasons: seasonsData,
 		},
 	})
-
-	//executeTemplate(w, "index", &TemplateData{
-	//	Title:     "Architects Land",
-	//	HasFooter: true,
-	//	HasNav:    true,
-	//	SEO: SEOData{
-	//		Title:       "Architects Land",
-	//		URL:         "",
-	//		Image:       "terre-des-civilisations/background.webp",
-	//		Description: "Famille de SMP Minecraft privé",
-	//	},
-	//	Data: struct {
-	//		Hero    *HeroData
-	//		Seasons []*SeasonData
-	//	}{
-	//		Hero: &HeroData{
-	//			Title:       "Architects Land",
-	//			Description: "Famille de SMP Minecraft privé",
-	//			Image:       "terre-des-civilisations/background.webp",
-	//			Dark:        false,
-	//			Min:         false,
-	//		},
-	//		Seasons: seasonsData,
-	//	},
-	//})
-}
-
-func handleRules(w http.ResponseWriter, r *http.Request) {
-	executeTemplate(w, "rules", &TemplateData{
-		Title:     "Règles - Architects Land",
-		HasFooter: true,
-		HasNav:    true,
-		SEO: SEOData{
-			Title:       "Règles - Architects Land",
-			URL:         "rules",
-			Image:       "purgatory.webp",
-			Description: "Les règles d'Architects Land",
-		},
-		Data: struct {
-			Hero *HeroData
-		}{
-			Hero: &HeroData{
-				Title:       "Règles",
-				Description: "",
-				Image:       "purgatory.webp",
-				Dark:        false,
-				Min:         true,
-			},
-		},
-	})
 }
 
 func handleTeam(w http.ResponseWriter, r *http.Request) {

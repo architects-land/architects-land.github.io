@@ -54,8 +54,6 @@ var g *golatt.Golatt
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/", handleHome)
-	r.HandleFunc("/rules", handleRules)
 	r.NotFoundHandler = &NotFound{}
 	r.HandleFunc("/team", handleTeam)
 	r.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
@@ -81,7 +79,33 @@ func main() {
 		"templates/base/*.gohtml",
 	)
 
+	rules := golatt.Template{
+		Golatt:      g,
+		Name:        "rules",
+		Title:       "Règles",
+		Image:       "purgatory.webp",
+		Description: "Les règles d'Architects Land",
+		URL:         "/rules",
+		Data: struct {
+			HasFooter bool
+			HasNav    bool
+			Hero      *HeroData
+			Seasons   []*SeasonData
+		}{
+			HasFooter: true,
+			HasNav:    true,
+			Hero: &HeroData{
+				Title:       "Règles",
+				Description: "",
+				Image:       "purgatory.webp",
+				Dark:        false,
+				Min:         true,
+			},
+		},
+	}
+
 	g.HandleFunc("/", handleHome)
+	g.HandleFunc("/rules", rules.Handle())
 
 	g.StartServer(":8000")
 }
