@@ -52,12 +52,12 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, ok := vars["id"]
 	if !ok {
-		(&NotFound{}).ServeHTTP(w, r)
+		handleNotFound(w, r)
 		return
 	}
 	season, ok := GetSeason(id)
 	if !ok {
-		(&NotFound{}).ServeHTTP(w, r)
+		handleNotFound(w, r)
 		return
 	}
 
@@ -92,17 +92,17 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, ok := vars["id"]
 	if !ok {
-		(&NotFound{}).ServeHTTP(w, r)
+		handleNotFound(w, r)
 		return
 	}
 	season, ok := GetSeason(id)
 	if !ok {
-		(&NotFound{}).ServeHTTP(w, r)
+		handleNotFound(w, r)
 		return
 	}
 	pseudo, ok := vars["player"]
 	if !ok {
-		(&NotFound{}).ServeHTTP(w, r)
+		handleNotFound(w, r)
 		return
 	}
 	var player *SeasonPlayer
@@ -112,7 +112,7 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if player == nil {
-		(&NotFound{}).ServeHTTP(w, r)
+		handleNotFound(w, r)
 		return
 	}
 
@@ -137,9 +137,7 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-type NotFound struct{}
-
-func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func handleNotFound(w http.ResponseWriter, _ *http.Request) {
 	g.Render(w, "lost", &golatt.TemplateData{
 		Title: "404",
 		SEO: &golatt.SeoData{
@@ -150,8 +148,6 @@ func (nf *NotFound) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		Data: struct {
 			HasFooter bool
 			HasNav    bool
-			Season    *Season
-			Player    *SeasonPlayer
 			Hero      *HeroData
 		}{
 			HasFooter: false,

@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"flag"
 	"github.com/anhgelus/golatt"
 )
 
@@ -29,14 +30,28 @@ type PersonData struct {
 	Link        string
 }
 
+type CommonData struct {
+	HasFooter bool
+	HasNav    bool
+	Hero      *HeroData
+	Team      []*PersonData
+}
+
 //go:embed templates
 var templates embed.FS
 
 var g *golatt.Golatt
 
+var dev bool
+
+func init() {
+	flag.BoolVar(&dev, "dev", false, "development mode")
+}
+
 func main() {
+	flag.Parse()
 	g = golatt.New(templates)
-	g.NotFoundHandler = &NotFound{}
+	g.NotFoundHandler = handleNotFound
 	g.DefaultSeoData = &golatt.SeoData{
 		Image:       "",
 		Description: "",
@@ -55,18 +70,13 @@ func main() {
 		"templates/base/*.gohtml",
 	)
 
-	rules := golatt.Template{
-		Golatt:      g,
-		Name:        "rules",
-		Title:       "Règles",
-		Image:       "purgatory.webp",
-		Description: "Les règles d'Architects Land",
-		URL:         "/rules",
-		Data: struct {
-			HasFooter bool
-			HasNav    bool
-			Hero      *HeroData
-		}{
+	g.HandleFunc("/", handleHome)
+	g.NewTemplate("rules",
+		"/rules",
+		"Règles",
+		"purgatory.webp",
+		"Les Règles d'Architects Land",
+		CommonData{
 			HasFooter: true,
 			HasNav:    true,
 			Hero: &HeroData{
@@ -76,21 +86,14 @@ func main() {
 				Dark:        false,
 				Min:         true,
 			},
-		},
-	}
-	teamPage := golatt.Template{
-		Golatt:      g,
-		Name:        "team",
-		Title:       "Équipe",
-		Image:       "village-night.webp",
-		Description: "L'équipe derrière d'Architects Land",
-		URL:         "/team",
-		Data: struct {
-			HasFooter bool
-			HasNav    bool
-			Hero      *HeroData
-			Team      []*PersonData
-		}{
+		}).
+		Handle()
+	g.NewTemplate("team",
+		"/team",
+		"Équipe",
+		"village-night.webp",
+		"L'équipe derrière Architects Land",
+		CommonData{
 			HasFooter: true,
 			HasNav:    true,
 			Hero: &HeroData{
@@ -101,14 +104,14 @@ func main() {
 				Min:         true,
 			},
 			Team: team,
-		},
-	}
-
-	g.HandleFunc("/", handleHome)
-	g.HandleFunc("/rules", rules.Handle())
-	g.HandleFunc("/team", teamPage.Handle())
+		}).
+		Handle()
 	g.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
 	g.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 
-	g.StartServer(":80")
+	if dev {
+		g.StartServer(":8000")
+	} else {
+		g.StartServer(":80")
+	}
 }
