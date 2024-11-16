@@ -1,12 +1,12 @@
-@import "reset";
-@import "global";
+@use "reset";
+@use "global";
 
-@import "specific/button";
-@import "specific/footer";
-@import "specific/hero";
-@import "specific/navbar";
-@import "specific/people";
-@import "specific/root";
-@import "specific/rules";
-@import "specific/season";
-@import "specific/team";
+@use "specific/button";
+@use "specific/footer";
+@use "specific/hero";
+@use "specific/navbar";
+@use "specific/people";
+@use "specific/root";
+@use "specific/rules";
+@use "specific/season";
+@use "specific/team";

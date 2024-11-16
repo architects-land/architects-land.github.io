@@ -1,15 +1,15 @@
-@import "../variables";
+@use "../vars";
 
 .btn {
   &:hover {
     text-decoration: none;
-    background: $dark-background;
-    color: $light-background;
+    background: vars.$dark-background;
+    color: vars.$light-background;
     transition: 0.3s;
   }
 
   display: inline-block;
-  border: $dark-background 2px solid;
+  border: vars.$dark-background 2px solid;
   padding: 10px 15px;
   font-weight: bold;
   font-size: 1.2rem;

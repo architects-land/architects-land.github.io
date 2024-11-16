@@ -1,7 +1,7 @@
-@import "../variables";
+@use "../vars";
 
 .tldr {
-  background: $light-background;
+  background: vars.$light-background;
 }
 
 .rules {

@@ -1,25 +1,25 @@
-@import "../variables";
+@use "../vars";
 
 .footer {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: vars.$bp-large) {
     display: flex;
     flex-direction: column;
   }
   padding: 5% 10%;
-  background: $dark-background;
-  color: $light-sand;
+  background: vars.$dark-background;
+  color: vars.$light-sand;
   align-items: center;
   gap: 2rem;
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: vars.$bp-large) {
     gap: 4rem;
   }
   align-content: center;
 
   &__logo {
     width: 33%;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: vars.$bp-large) {
       width: 20%;
     }
   }
@@ -35,7 +35,7 @@
       justify-content: right;
       gap: 1rem;
       text-align: right;
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         text-align: inherit;
         justify-content: center;
       }
@@ -44,7 +44,7 @@
 
   &__credits {
     text-align: right;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: vars.$bp-large) {
       text-align: center;
     }
   }

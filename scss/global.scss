@@ -1,4 +1,4 @@
-@import "variables";
+@use "vars";
 
 @font-face {
   font-family: "Abril Fatface";
@@ -31,28 +31,28 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  @media only screen and (max-width: $bp-little) {
+  @media only screen and (max-width: vars.$bp-little) {
     font-size: 2.5rem;
   }
 }
 
 h3 {
   font-size: 2.5rem;
-  @media only screen and (max-width: $bp-little) {
+  @media only screen and (max-width: vars.$bp-little) {
     font-size: 2rem;
   }
 }
 
 h4 {
   font-size: 2rem;
-  @media only screen and (max-width: $bp-little) {
+  @media only screen and (max-width: vars.$bp-little) {
     font-size: 1.75rem;
   }
 }
 
 h5 {
   font-size: 1.75rem;
-  @media only screen and (max-width: $bp-little) {
+  @media only screen and (max-width: vars.$bp-little) {
     font-size: 1.5rem;
   }
 }
@@ -126,7 +126,7 @@ li {
 
   &--large {
     padding: 5% 30%;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: vars.$bp-large) {
       padding: 5% 20%;
     }
   }
@@ -145,13 +145,13 @@ li {
     height: 0;
     top: -5%;
     left: 0;
-    background: $dark-background;
+    background: vars.$dark-background;
     z-index: -1;
     animation: season__hover__leave 1s ease-in-out;
   }
 
   &--active {
-    color: $light-sand;
+    color: vars.$light-sand;
     transition: 0.3s color;
     transition-delay: 0.4s;
 

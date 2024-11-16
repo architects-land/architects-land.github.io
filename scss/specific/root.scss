@@ -1,16 +1,16 @@
-@import "../variables";
+@use "../vars";
 
 .presentation {
   &--right {
     text-align: right;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: vars.$bp-large) {
       text-align: left;
     }
   }
 
   &__smp {
-    background: $dark-background;
-    color: $light-sand;
+    background: vars.$dark-background;
+    color: vars.$light-sand;
     text-align: center;
 
     & p {
@@ -22,7 +22,7 @@
   &__architects-land {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    @media only screen and (max-width: $bp-little) {
+    @media only screen and (max-width: vars.$bp-little) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
     }
@@ -31,7 +31,7 @@
     gap: 2rem;
     align-items: center;
     align-content: center;
-    background: $light-background;
+    background: vars.$light-background;
 
     &__image {
       height: 100%;
@@ -43,7 +43,7 @@
     &__text {
       max-width: 90%;
       padding: 5% 0;
-      @media only screen and (max-width: $bp-little) {
+      @media only screen and (max-width: vars.$bp-little) {
         margin: 0 10%;
       }
     }
@@ -51,10 +51,10 @@
     & p {
       display: block;
       max-width: 60%;
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         max-width: 70%;
       }
-      @media only screen and (max-width: $bp-little) {
+      @media only screen and (max-width: vars.$bp-little) {
         max-width: 100%;
       }
       margin: 1.5rem 0;
@@ -89,12 +89,12 @@
     align-content: center;
     transition: 0.3s color;
     transition-delay: 0.4s;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: vars.$bp-large) {
       display: flex;
       flex-direction: column-reverse;
     }
     &--left {
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         flex-direction: column;
       }
     }
@@ -110,20 +110,20 @@
     & p {
       display: block;
       max-width: 83%;
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         max-width: 100%;
       }
     }
 
     & h4 {
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         text-align: center;
       }
     }
 
     &__image {
       width: 100%;
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         width: 50%;
       }
     }

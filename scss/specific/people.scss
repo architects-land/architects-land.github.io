@@ -1,13 +1,13 @@
-@import "../variables";
+@use "../vars";
 
 .people {
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: vars.$bp-large) {
       grid-template-columns: 1fr 1fr;
     }
-    @media only screen and (max-width: $bp-little) {
+    @media only screen and (max-width: vars.$bp-little) {
       grid-template-columns: 1fr;
     }
     gap: 2rem;
@@ -17,19 +17,19 @@
 
     &--more {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: vars.$bp-large) {
         grid-template-columns: 1fr 1fr 1fr;
       }
-      @media only screen and (max-width: $bp-little) {
+      @media only screen and (max-width: vars.$bp-little) {
         grid-template-columns: 1fr 1fr;
       }
-      @media only screen and (max-width: $bp-tiny) {
+      @media only screen and (max-width: vars.$bp-tiny) {
         grid-template-columns: 1fr;
       }
 
       & .people__card {
         width: 100%;
-        @media only screen and (max-width: $bp-tiny) {
+        @media only screen and (max-width: vars.$bp-tiny) {
           width: 75%;
         }
       }
