@@ -51,11 +51,8 @@
 
   & p {
     display: block;
-    max-width: 60%;
-    @media only screen and (max-width: vars.$bp-large) {
-      max-width: 70%;
-    }
-    @media only screen and (max-width: vars.$bp-little) {
+    max-width: 70%;
+    @media only screen and (max-width: 1250px) {
       max-width: 100%;
     }
     margin: 1.5rem 0;
