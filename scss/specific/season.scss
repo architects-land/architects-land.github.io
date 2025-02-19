@@ -2,6 +2,7 @@
 
 .information {
   background: vars.$light-background;
+  line-height: 1.25rem;
 
   &__presentation {
     margin-top: 3rem;
@@ -41,6 +42,7 @@
     overflow: auto;
     display: block;
     max-height: 100vh;
+    line-height: 1.25rem;
     @media only screen and (max-width: vars.$bp-mid) {
       max-height: none;
     }

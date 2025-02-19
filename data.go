@@ -22,6 +22,7 @@ type CommonSeason struct {
 	RP          bool   `json:"rp"`
 	Information struct {
 		Description    []string `json:"description"`
+		Particularity  []string `json:"particularity"`
 		Version        string   `json:"version"`
 		Mods           []string `json:"mods"`
 		Video          string   `json:"video"`

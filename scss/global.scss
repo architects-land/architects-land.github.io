@@ -20,6 +20,10 @@ h5,
 h6 {
   font-family: "Abril Fatface", serif;
   margin-bottom: 1.25rem;
+  margin-top: 1.5rem;
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .has-subtitle {

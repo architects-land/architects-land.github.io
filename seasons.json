@@ -10,7 +10,7 @@
       {
         "pseudo": "anhgelus",
         "name": "Anhgelus Morhtuuzh",
-        "description": "Joueur technique aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
+        "description": "Joueur hardcore aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
         "rp": ["?"],
         "links": [
           {
@@ -30,9 +30,13 @@
     ],
     "information": {
       "description": [
-        "La Terre des Civilisations s'est effondrée suite à un désastre provoqué par une étrange entité à l'origine des changements de difficulté : les habitants ne mourraient plus assez pour rassasier sa faim. Pour remédier à ce problème, elle modifia à nouveau la difficulté des terres pour les rendre encore plus hostiles.",
-        "Pour survivre à l'entité, les habitants ont décidé de se cacher sous-terre et de construire d'imposant réseaux de trains pour éviter les dangers de la surface.",
+        "La Terre des Civilisations s'est effondrée. Les habitants ne mourraient plus assez pour rassasier la faim de l'entité : tous étaient devenus trop fort.",
+        "Pour survivre, les habitants ont décidé de se cacher sous-terre et de construire d'imposant réseaux de trains pour éviter les dangers de la surface.",
         "Malheureusement, certains d'entre eux étaient grandement attirés par les récompenses offertes par l'entité suite à l'assassinat d'un survivant virtuose..."
+      ],
+      "particularity": [
+        "Les particularités de cette saison n'ont pas encore été dévoilées.",
+        "Par contre, on peut se dire que les metros joueront un rôle important."
       ],
       "version": "?",
       "mods": ["?"],
@@ -149,7 +153,13 @@
     ],
     "information": {
       "description": [
-        "Première saison d'Architects Land, Terre des Civilisations se déroule durant l'été 2024, en 1.21.",
+        "Après une fracture particulièrement brutale, de nombreux humains se sont retrouvés démunis face aux aléas d'une nature toujours plus violente. Tous cherchaient un endroit où s'abriter, tous exploraient de nouvelles terres pour enfin avoir l'impression de manger et tous s'interrogeaient sur leur futur incertain.",
+        "Au début du printemps, les principaux représentants des communautés se rencontrèrent pour la première fois. Ils avaient tous un objectif commun : trouver une nouvelle terre, plus propice pour s'établir ensemble.",
+        "Après de nombreuses discussions, ils choisirent de traverser l'océan du nord pour rejoindre des contrés plus chaudes. Les habitants prirent tout ce qu'ils purent et se mirent en route vers le nord, en espérant trouver une nouvelle île ou un nouveau continent à explorer.",
+        "Après des semaines à naviguer sans rien trouver, les habitants se furent brusquement réveillés par les cris de joie des équipages : une terre se distinguait à l'horizon.",
+        "Ainsi, ils trouvèrent leur la Terre des Civilisations."
+      ],
+      "particularity": [
         "Durant cette saison, la génération fut grandement modifiée pour qu'elle devienne plus réaliste. Les villages furent aussi améliorer pour qu'ils deviennent plus grand et plus important.",
         "Comme les villages occupent une place beaucoup centrale, les bases des joueurs doivent forcément être reliées au village le plus proche. Cette connection de base forme les clans des joueurs.",
         "La difficulté du monde est adaptée en temps réelle au niveau des joueurs : plus ils meurent, plus le niveau de difficulté augmentent jusqu'à atteindre l'ultra hardcore. La map était aussi réduite au début pour concentrer un maximum les bases autour du 0 0."
