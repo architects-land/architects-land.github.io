@@ -1,14 +1,5 @@
 @use "../vars";
 
-.presentation {
-  &--right {
-    text-align: right;
-    @media only screen and (max-width: vars.$bp-large) {
-      text-align: left;
-    }
-  }
-}
-
 .presentation__smp {
   background: vars.$dark-background;
   color: vars.$light-sand;
@@ -96,6 +87,10 @@
     @media only screen and (max-width: vars.$bp-large) {
       flex-direction: column;
     }
+    @media only screen and (max-width: vars.$bp-mid) {
+      margin: -5%;
+      padding: 10%;
+    }
   }
 
   & .content {
@@ -105,6 +100,9 @@
       text-align: right;
       & p {
         margin-left: auto;
+      }
+      @media only screen and (max-width: vars.$bp-large) {
+        text-align: left;
       }
     }
     &--left p {
@@ -137,8 +135,5 @@
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    @media only screen and (max-width: vars.$bp-large) {
-      width: 40%;
-    }
   }
 }
