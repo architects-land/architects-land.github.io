@@ -2,7 +2,6 @@
     {{if .Left}}
         <div
             class="presentation__season is-clickable"
-            data-href="{{.Href}}"
         >
             <div class="content content--right">
                 <h4>{{.Title}}</h4>
@@ -22,7 +21,6 @@
     {{else}}
         <div
         class="presentation__season presentation__season--left is-clickable"
-        data-href="{{.Href}}"
         >
             <img
                     src="{{getStaticPath .Image}}"
