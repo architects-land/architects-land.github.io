@@ -6,9 +6,12 @@
         >
             <div class="content content--right">
                 <h4>{{.Title}}</h4>
-                {{range .Description}}
-                    <p>{{.}}</p>
+                {{range $i, $v := .Description}}
+                    {{if le $i 1}}<p>{{$v}}</p>{{end}}
                 {{end}}
+                <a class="btn btn--little" href="{{.Href}}">
+                    Découvrir la saison
+                </a>
             </div>
             <img
                     src="{{getStaticPath .Image}}"
@@ -28,9 +31,12 @@
             />
             <div class="content content--left">
                 <h4>{{.Title}}</h4>
-                {{range .Description}}
-                    <p>{{.}}</p>
+                {{range $i, $v := .Description}}
+                    {{if le $i 1}}<p>{{$v}}</p>{{end}}
                 {{end}}
+                <a class="btn btn--little" href="{{.Href}}">
+                    Découvrir la saison
+                </a>
             </div>
         </div>
     {{end}}

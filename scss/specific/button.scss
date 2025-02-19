@@ -8,6 +8,10 @@
     transition: 0.3s;
   }
 
+  &--little {
+    margin: 0.5rem 0;
+  }
+
   display: inline-block;
   border: vars.$dark-background 2px solid;
   padding: 10px 15px;
