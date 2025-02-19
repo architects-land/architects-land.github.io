@@ -15,7 +15,7 @@ $height: 4rem + 1.5rem;
   width: 100%;
   padding: 2rem 10%;
   box-sizing: border-box;
-  top: - $height;
+  top: -$height;
   animation: nav__disappear 0.3s ease-in-out;
   @media only screen and (max-width: vars.$bp-tiny) {
     position: static;
