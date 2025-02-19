@@ -82,8 +82,8 @@
   &__season {
     position: relative;
     display: grid;
-    padding: 0 5%;
     grid-template-columns: 1fr 1fr;
+    padding: 5%;
     gap: 2rem;
     align-items: center;
     align-content: center;
@@ -94,17 +94,31 @@
       flex-direction: column-reverse;
     }
     &--left {
+      background: vars.$light-sand;
       @media only screen and (max-width: vars.$bp-large) {
         flex-direction: column;
       }
     }
 
-    & .presentation--left p {
-      margin: 1.5rem auto 1.5rem 0;
-    }
-
-    & .presentation--right p {
-      margin: 1.5rem 0 1.5rem auto;
+    & .content {
+      display: block;
+      padding: 0;
+      &--right {
+        text-align: right;
+        & p {
+          margin-left: auto;
+        }
+      }
+      &--left p {
+        margin-right: auto;
+      }
+      & p {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
 
     & p {
@@ -126,14 +140,6 @@
       @media only screen and (max-width: vars.$bp-large) {
         width: 50%;
       }
-    }
-
-    & .presentation--left p {
-      margin: 1.5rem auto 1.5rem 0;
-    }
-
-    & .presentation--right p {
-      margin: 1.5rem 0 1.5rem auto;
     }
   }
 }

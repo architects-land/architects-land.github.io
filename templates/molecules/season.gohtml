@@ -4,8 +4,7 @@
             class="presentation__season is-clickable"
             data-href="{{.Href}}"
         >
-            <div class="is-clickable__animation"></div>
-            <div class="presentation--right">
+            <div class="content content--right">
                 <h4>{{.Title}}</h4>
                 {{range .Description}}
                     <p>{{.}}</p>
@@ -22,13 +21,12 @@
         class="presentation__season presentation__season--left is-clickable"
         data-href="{{.Href}}"
         >
-            <div class="is-clickable__animation"></div>
             <img
                     src="{{getStaticPath .Image}}"
                     alt="{{.ImageAlt}}"
                     class="presentation__season__image"
             />
-            <div class="presentation--left">
+            <div class="content content--left">
                 <h4>{{.Title}}</h4>
                 {{range .Description}}
                     <p>{{.}}</p>
