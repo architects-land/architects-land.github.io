@@ -2,7 +2,7 @@
   {
     "name": "Ruine des Civilisations",
     "description": "Une saison construite sur les ruines de la dernière",
-    "image": "ruine-des-civilisations/background.webp",
+    "image": "ruine-des-civilisations/background.jpg",
     "logo": "ruine-des-civilisations/logo.png",
     "id": "ruine-des-civilisations",
     "rp": true,
@@ -49,7 +49,7 @@
   {
     "name": "Terre des Civilisations",
     "description": "Première saison d'Architects Land",
-    "image": "terre-des-civilisations/background.webp",
+    "image": "terre-des-civilisations/background.jpg",
     "logo": "terre-des-civilisations/logo.png",
     "id": "terre-des-civilisations",
     "rp": false,

@@ -25,7 +25,7 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 		Title: "Architects Land",
 		SEO: &golatt.SeoData{
 			URL:         "/",
-			Image:       "terre-des-civilisations/background.webp",
+			Image:       "terre-des-civilisations/background.jpg",
 			Description: "Famille de SMP Minecraft privé",
 		},
 		Data: struct {
@@ -39,7 +39,7 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 			Hero: &HeroData{
 				Title:       "Architects Land",
 				Description: "Famille de SMP Minecraft privé",
-				Image:       "terre-des-civilisations/background.webp",
+				Image:       "terre-des-civilisations/background.jpg",
 				Dark:        false,
 				Min:         false,
 			},
@@ -142,7 +142,7 @@ func handleNotFound(w http.ResponseWriter, _ *http.Request) {
 		Title: "404",
 		SEO: &golatt.SeoData{
 			URL:         "",
-			Image:       "nether.webp",
+			Image:       "nether.jpg",
 			Description: "Il semblerait que vous vous êtes perdu·es dans le nether. (Erreur 404)",
 		},
 		Data: struct {
@@ -155,7 +155,7 @@ func handleNotFound(w http.ResponseWriter, _ *http.Request) {
 			Hero: &HeroData{
 				Title:       "Perdu ?",
 				Description: "Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld.",
-				Image:       "nether.webp",
+				Image:       "nether.jpg",
 				Dark:        false,
 				Min:         false,
 			},

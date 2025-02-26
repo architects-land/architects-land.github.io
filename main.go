@@ -91,7 +91,7 @@ func main() {
 	g.NewTemplate("team",
 		"/team",
 		"Équipe",
-		"village-night.webp",
+		"supernoob-field.jpg",
 		"L'équipe derrière Architects Land",
 		CommonData{
 			HasFooter: true,
@@ -99,8 +99,8 @@ func main() {
 			Hero: &HeroData{
 				Title:       "Équipe",
 				Description: "",
-				Image:       "village-night.webp",
-				Dark:        false,
+				Image:       "supernoob-field.jpg",
+				Dark:        true,
 				Min:         true,
 			},
 			Team: team,
