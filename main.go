@@ -82,7 +82,7 @@ func main() {
 			Hero: &HeroData{
 				Title:       "Règles",
 				Description: "",
-				Image:       "purgatory.webp",
+				Image:       "purgatory.jpg",
 				Dark:        false,
 				Min:         true,
 			},
