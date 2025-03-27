@@ -4,6 +4,7 @@ import (
 	"embed"
 	"flag"
 	"github.com/anhgelus/golatt"
+	"os"
 )
 
 type HeroData struct {
@@ -37,7 +38,7 @@ type CommonData struct {
 	Team      []*PersonData
 }
 
-//go:embed templates
+//go:embed templates dist public
 var templates embed.FS
 
 var g *golatt.Golatt
@@ -50,7 +51,15 @@ func init() {
 
 func main() {
 	flag.Parse()
-	g = golatt.New(templates)
+	if dev {
+		g = golatt.New(golatt.UsableEmbedFS("templates", templates), os.DirFS("public"), os.DirFS("dist"))
+	} else {
+		g = golatt.New(
+			golatt.UsableEmbedFS("templates", templates),
+			golatt.UsableEmbedFS("public", templates),
+			golatt.UsableEmbedFS("dist", templates),
+		)
+	}
 	g.NotFoundHandler = handleNotFound
 	g.DefaultSeoData = &golatt.SeoData{
 		Image:       "",
@@ -64,10 +73,10 @@ func main() {
 		return t + " - Architects Land"
 	}
 	g.Templates = append(g.Templates,
-		"templates/organisms/*.gohtml",
-		"templates/molecules/*.gohtml",
-		"templates/atoms/*.gohtml",
-		"templates/base/*.gohtml",
+		"organisms/*.gohtml",
+		"molecules/*.gohtml",
+		"atoms/*.gohtml",
+		"base/*.gohtml",
 	)
 
 	g.HandleFunc("/", handleHome)
