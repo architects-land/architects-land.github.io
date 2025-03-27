@@ -23,8 +23,8 @@
   background: vars.$light-sand;
   overflow: hidden;
   @media only screen and (max-width: vars.$bp-mid) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     height: auto;
   }
 
@@ -36,6 +36,16 @@
     align-items: center;
     justify-content: center;
     justify-items: center;
+    @media only screen and (max-width: vars.$bp-mid) {
+      height: 100vh;
+    }
+    & img {
+      max-height: 50vh;
+      min-height: 256px;
+      @media only screen and (max-width: vars.$bp-mid) {
+        max-height: 90vh;
+      }
+    }
   }
 
   &__description {
@@ -43,14 +53,15 @@
     display: block;
     max-height: 100vh;
     line-height: 1.25rem;
+    width: 50%;
+    text-align: center;
     @media only screen and (max-width: vars.$bp-mid) {
+      min-height: 100vh;
       max-height: none;
     }
-    width: 50%;
     @media only screen and (max-width: vars.$bp-little) {
       width: 75%;
     }
-    text-align: center;
   }
 
   & h3,
