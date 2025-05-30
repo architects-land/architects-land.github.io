@@ -52,7 +52,7 @@ func init() {
 func main() {
 	flag.Parse()
 	if dev {
-		g = golatt.New(golatt.UsableEmbedFS("templates", templates), os.DirFS("public"), os.DirFS("dist"))
+		g = golatt.New(os.DirFS("templates"), os.DirFS("public"), os.DirFS("dist"))
 	} else {
 		g = golatt.New(
 			golatt.UsableEmbedFS("templates", templates),

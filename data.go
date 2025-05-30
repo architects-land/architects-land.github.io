@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"encoding/json"
+	"os"
 )
 
 //go:embed seasons.json
@@ -75,17 +76,38 @@ type SeasonPlayer struct {
 var team []*PersonData
 
 func init() {
-	err := json.Unmarshal(seasonsRaw, &seasons)
-	if err != nil {
-		panic(err)
-	}
-	err = json.Unmarshal(teamRaw, &team)
+	err := parse()
 	if err != nil {
 		panic(err)
 	}
 }
 
+func parse() error {
+	var err error
+	if dev {
+		seasonsRaw, err = os.ReadFile("seasons.json")
+		if err != nil {
+			return err
+		}
+		teamRaw, err = os.ReadFile("team.json")
+		if err != nil {
+			return err
+		}
+	}
+	err = json.Unmarshal(seasonsRaw, &seasons)
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(teamRaw, &team)
+}
+
 func GetSeason(id string) (*Season, bool) {
+	if dev {
+		err := parse()
+		if err != nil {
+			panic(err)
+		}
+	}
 	for _, s := range seasons {
 		if s.ID == id {
 			return &s, true
