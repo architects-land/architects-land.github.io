@@ -26,7 +26,7 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 	g.Render(w, "index", &golatt.TemplateData{
 		Title: "Architects Land",
 		SEO: &golatt.SeoData{
-			URL:         "/",
+			URL:         "",
 			Image:       img,
 			Description: "Famille de SMP Minecraft privé",
 		},
