@@ -11,7 +11,7 @@
         "pseudo": "anhgelus",
         "name": "Anhgelus Morhtuuzh",
         "description": "Joueur hardcore aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
-        "rp": ["?"],
+        "rp": ["Membre des autres."],
         "links": [
           {
             "link": "https://github.com/anhgelus",
@@ -26,20 +26,35 @@
             "name": "Modrinth"
           }
         ]
+      },
+      {
+        "pseudo": "SuperNoobYT",
+        "name": "Supernoob",
+        "description": "Joueur technique et build. J'aime faire des bases dans le nether 🤡",
+        "rp": ["Membre des autres.", "Cherche à reconstruire la machine du nether."],
+        "links": [
+          {
+            "link": "https://www.youtube.com/@SupernoobMC",
+            "name": "YouTube"
+          }
+        ]
       }
     ],
     "information": {
       "description": [
-        "La Terre des Civilisations s'est effondrée. Les habitants ne mourraient plus assez pour rassasier la faim de l'entité : tous étaient devenus trop fort.",
-        "Pour survivre, les habitants ont décidé de se cacher sous-terre et de construire d'imposant réseaux de trains pour éviter les dangers de la surface.",
-        "Malheureusement, certains d'entre eux étaient grandement attirés par les récompenses offertes par l'entité suite à l'assassinat d'un survivant virtuose..."
+        "L'Entité ayant provoqué la chute de la Terre des Civilisations continue à semer la terreur. Les derniers survivants se cachaient sous terre pour fuir les menaces de la surface.",
+        "Deux choix s'offraient à eux : rester au centre et essayer de s'adapter ou fuir en espérant trouver les terres lointaines.",
+        "Les terres lointaines sont issues du mythe fondateur narré par les anciens. Elles sont décrites comme un zone géographiquement absurde que seules les fous cherchaient. Ces terres ne peuvent être atteinte qu'après avoir perdu tout lien avec l'extérieur. Si ces terres existent, uniquement les voyageurs perdus à jamais peuvent les rejoindre.",
+        "Suite au départ d'un groupe pour ces terres, de nombreuses voix s'élevèrent contre la stratégie mise en place par les dirigeants. Elles ne voulaient plus se cacher, mais travailler pour l'Entité."
       ],
       "particularity": [
-        "Les particularités de cette saison n'ont pas encore été dévoilées.",
-        "Par contre, on peut se dire que les metros joueront un rôle important."
+        "Le monde est divisé en deux camps : les travailleurs et les autres. Les premiers considèrent que le meilleur moyen de survivre est de s'allier avec l'Entité. Les autres s'y opposent.",
+        "Chaque habitant appartient à un des deux camps. Cela détermine automatiquement ses alliés et ses ennemies.",
+        "Tous les habitants évitent un maximum la surface à cause des ravages provoqués par l'Entité. Tous préfèrent se déplacer en souterrain à l'aide d'un vaste réseau de metro reliant toutes les bases entre elles.",
+        "De nombreuses ruines peuplent les terres. La faune et la flore du Nether ont envahi certaines régions de l'Overworld suite à l'absence de contrôle des habitants. Cela a aussi provoqué une modification des structures du Nether : la faune en a profité pour se restructurer."
       ],
-      "version": "?",
-      "mods": ["?"],
+      "version": "1.21.6",
+      "mods": ["Difficulty Death Scaler 2.1", "Larion World Generation", "William Wythers' Overhauled Overworld", "Dungeons and Taverns"],
       "video": "https://youtu.be/fGC35pmchXw",
       "video_thumbnail": "ruine-des-civilisations/presentation.jpg",
       "seed": "?",
