@@ -21,11 +21,13 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 		i++
 	}
 
+	img := "ruine-des-civilisations/background.jpg"
+
 	g.Render(w, "index", &golatt.TemplateData{
 		Title: "Architects Land",
 		SEO: &golatt.SeoData{
 			URL:         "/",
-			Image:       "terre-des-civilisations/background.jpg",
+			Image:       img,
 			Description: "Famille de SMP Minecraft privé",
 		},
 		Data: struct {
@@ -39,7 +41,7 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 			Hero: &HeroData{
 				Title:       "Architects Land",
 				Description: "Famille de SMP Minecraft privé",
-				Image:       "terre-des-civilisations/background.jpg",
+				Image:       img,
 				Dark:        false,
 				Min:         false,
 			},
