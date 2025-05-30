@@ -14,9 +14,9 @@
                 projet.
             </p>
         </div>
-        <div class="content people__list large-text">
+        <div class="content people__list">
             {{range .Data.Team}}
-                {{template "person" .}}
+                {{template "person_desc" .}}
             {{end}}
         </div>
     </main>
