@@ -8,8 +8,7 @@ import (
 
 func handleHome(w http.ResponseWriter, _ *http.Request) {
 	var seasonsData []*SeasonData
-	i := 0
-	for _, v := range seasons {
+	for i, v := range seasons {
 		seasonsData = append(seasonsData, &SeasonData{
 			Left:        i%2 == 0,
 			Title:       v.Name,
@@ -18,7 +17,6 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 			ImageAlt:    "Logo de " + v.Name,
 			Href:        "/season/" + v.ID,
 		})
-		i++
 	}
 
 	img := "ruine-des-civilisations/background.jpg"
@@ -26,7 +24,7 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 	g.Render(w, "index", &golatt.TemplateData{
 		Title: "Architects Land",
 		SEO: &golatt.SeoData{
-			URL:         "",
+			URL:         "/",
 			Image:       img,
 			Description: "Famille de SMP Minecraft privé",
 		},
