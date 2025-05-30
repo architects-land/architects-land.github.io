@@ -19,13 +19,13 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 		})
 	}
 
-	img := golatt.GetStaticPath("ruine-des-civilisations/background.jpg")
+	img := "ruine-des-civilisations/background.jpg"
 
 	g.Render(w, "index", &golatt.TemplateData{
 		Title: "Architects Land",
 		SEO: &golatt.SeoData{
 			URL:         "/",
-			Image:       img,
+			Image:       golatt.GetStaticPath(img),
 			Description: "Famille de SMP Minecraft privé",
 		},
 		Data: struct {
@@ -61,13 +61,11 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	img := golatt.GetStaticPath(season.Image)
-
 	g.Render(w, "season/index", &golatt.TemplateData{
 		Title: season.Name,
 		SEO: &golatt.SeoData{
 			URL:         "/season/" + season.ID,
-			Image:       img,
+			Image:       golatt.GetStaticPath(season.Image),
 			Description: season.Description,
 		},
 		Data: struct {
@@ -81,7 +79,7 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 			Hero: &HeroData{
 				Title:       season.Name,
 				Description: season.Description,
-				Image:       img,
+				Image:       season.Image,
 				Dark:        false,
 				Min:         true,
 			},
