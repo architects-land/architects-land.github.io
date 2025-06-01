@@ -1,19 +1,19 @@
 [
   {
     "name": "Anhgelus Morhtuuzh",
-    "image": "skins/anhgelus.png",
+    "image": "season/ruine-des-civilisations/skins/3d/anhgelus.png",
     "description": "Fondateur et développeur, Anhgelus Morhtuuzh gère le serveur et prend toutes les décisions importantes.",
     "link": "https://youtube.com/@anhgelus"
   },
   {
     "name": "Supernoob",
-    "image": "skins/SuperNoobYT.png",
+    "image": "season/ruine-des-civilisations/skins/3d/SuperNoobYT.png",
     "description": "Supernoob aide Anhgelus Morhtuuzh dans la création du lore.",
     "link": "https://www.youtube.com/@SupernoobMC"
   },
   {
     "name": "Léo-21",
-    "image": "skins/Leo_21_.png",
+    "image": "season/terre-des-civilisations/skins/3d/Leo_21_.png",
     "description": "Léo-21 développe le mod Sneaky Player Names.",
     "link": "https://github.com/leo-210"
   }

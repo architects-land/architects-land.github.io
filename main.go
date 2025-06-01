@@ -78,6 +78,7 @@ func main() {
 		"atoms/*.gohtml",
 		"base/*.gohtml",
 	)
+	g.TemplateFuncMap["getSkin"] = GetSkin
 
 	g.HandleFunc("/", handleHome)
 	g.NewTemplate("rules",
