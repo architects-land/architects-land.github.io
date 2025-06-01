@@ -19,7 +19,7 @@ func handleHome(w http.ResponseWriter, _ *http.Request) {
 			Description: v.Information.Description,
 			Image:       v.Logo,
 			ImageAlt:    "Logo de " + v.Name,
-			Href:        "/season/" + v.ID,
+			Href:        "/season/" + string(v.ID),
 		})
 	}
 
@@ -59,7 +59,7 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 		handleNotFound(w, r)
 		return
 	}
-	season, ok := GetSeason(id)
+	season, ok := GetSeason(SeasonID(id))
 	if !ok {
 		handleNotFound(w, r)
 		return
@@ -68,7 +68,7 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 	g.Render(w, "season/index", &golatt.TemplateData{
 		Title: season.Name,
 		SEO: &golatt.SeoData{
-			URL:         "/season/" + season.ID,
+			URL:         "/season/" + string(season.ID),
 			Image:       golatt.GetStaticPath(season.Image),
 			Description: season.Description,
 		},
@@ -155,7 +155,7 @@ func getInfoFromURI(r *http.Request) (*Season, *SeasonPlayer, bool) {
 	if !ok {
 		return nil, nil, false
 	}
-	season, ok := GetSeason(id)
+	season, ok := GetSeason(SeasonID(id))
 	if !ok {
 		return nil, nil, false
 	}
