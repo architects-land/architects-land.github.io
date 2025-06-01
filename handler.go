@@ -1,8 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"github.com/anhgelus/golatt"
 	"github.com/gorilla/mux"
+	"image"
+	"image/draw"
+	"image/png"
 	"net/http"
 )
 
@@ -89,29 +93,8 @@ func handleSeason(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlePlayer(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	id, ok := vars["id"]
+	season, player, ok := getInfoFromURI(r)
 	if !ok {
-		handleNotFound(w, r)
-		return
-	}
-	season, ok := GetSeason(id)
-	if !ok {
-		handleNotFound(w, r)
-		return
-	}
-	pseudo, ok := vars["player"]
-	if !ok {
-		handleNotFound(w, r)
-		return
-	}
-	var player *SeasonPlayer
-	for _, p := range season.Players {
-		if p.Pseudo == pseudo {
-			player = p
-		}
-	}
-	if player == nil {
 		handleNotFound(w, r)
 		return
 	}
@@ -135,6 +118,57 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 			Player:    player,
 		},
 	})
+}
+
+func handleSkin(w http.ResponseWriter, r *http.Request) {
+	season, player, ok := getInfoFromURI(r)
+	if !ok {
+		handleNotFound(w, r)
+		return
+	}
+	f, err := g.StaticFS.Open(fmt.Sprintf("%s/skins/%s.png", season.ID, player.Pseudo))
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	defer f.Close()
+	img, err := png.Decode(f)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	output := image.NewRGBA(img.Bounds())
+	draw.Draw(output, output.Bounds(), img, image.Pt(0, 0), draw.Src)
+	err = png.Encode(w, output)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+	}
+}
+
+func getInfoFromURI(r *http.Request) (*Season, *SeasonPlayer, bool) {
+	vars := mux.Vars(r)
+	id, ok := vars["id"]
+	if !ok {
+		return nil, nil, false
+	}
+	season, ok := GetSeason(id)
+	if !ok {
+		return nil, nil, false
+	}
+	pseudo, ok := vars["player"]
+	if !ok {
+		return nil, nil, false
+	}
+	var player *SeasonPlayer
+	for _, p := range season.Players {
+		if p.Pseudo == pseudo {
+			player = p
+		}
+	}
+	if player == nil {
+		return nil, nil, false
+	}
+	return season, player, true
 }
 
 func handleNotFound(w http.ResponseWriter, _ *http.Request) {

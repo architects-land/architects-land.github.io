@@ -49,7 +49,7 @@ func (s *Season) toFullSeasonData() *FullSeasonData {
 	for _, player := range s.Players {
 		data := PersonData{
 			Name:        player.Name,
-			Image:       fmt.Sprintf("%s/skins/%s.png", s.ID, player.Pseudo),
+			Image:       fmt.Sprintf("season/%s/skins/3d/%s.png", s.ID, player.Pseudo),
 			Description: player.Description,
 		}
 		if s.RP {
