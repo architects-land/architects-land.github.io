@@ -117,6 +117,7 @@ func main() {
 		Handle()
 	g.HandleFunc("/season/{id:[a-z-]+}", handleSeason)
 	g.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
+	g.HandleFunc("/season/{id:[a-z-]+}/skins/3d/{player}.png", handleSkin)
 
 	if dev {
 		g.StartServer(":8000")

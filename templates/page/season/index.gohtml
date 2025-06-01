@@ -49,8 +49,14 @@
         <div class="content players">
             <h2>Liste des joueurs</h2>
             <div class="content people__list large-text people__list--more">
-                {{range $info.Players}}
-                    {{template "person" .}}
+                {{if $info.RP}}
+                    {{range $info.Players}}
+                        {{template "person" .}}
+                    {{end}}
+                {{else}}
+                    {{range $info.Players}}
+                        {{template "person_desc" .}}
+                    {{end}}
                 {{end}}
             </div>
         </div>

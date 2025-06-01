@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -14,13 +15,15 @@ var teamRaw []byte
 
 var seasons []Season
 
+type SeasonID string
+
 type CommonSeason struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Image       string `json:"image"`
-	Logo        string `json:"logo"`
-	ID          string `json:"id"`
-	RP          bool   `json:"rp"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Image       string   `json:"image"`
+	Logo        string   `json:"logo"`
+	ID          SeasonID `json:"id"`
+	RP          bool     `json:"rp"`
 	Information struct {
 		Description    []string `json:"description"`
 		Particularity  []string `json:"particularity"`
@@ -48,11 +51,11 @@ func (s *Season) toFullSeasonData() *FullSeasonData {
 	for _, player := range s.Players {
 		data := PersonData{
 			Name:        player.Name,
-			Image:       "skins/" + player.Pseudo + ".png",
+			Image:       GetSkin(s.ID, player),
 			Description: player.Description,
 		}
 		if s.RP {
-			data.Link = "/season/" + s.ID + "/player/" + player.Pseudo
+			data.Link = "/season/" + string(s.ID) + "/player/" + player.Pseudo
 		} else {
 			data.Link = player.Link
 		}
@@ -101,7 +104,7 @@ func parse() error {
 	return json.Unmarshal(teamRaw, &team)
 }
 
-func GetSeason(id string) (*Season, bool) {
+func GetSeason(id SeasonID) (*Season, bool) {
 	if dev {
 		err := parse()
 		if err != nil {
@@ -114,4 +117,8 @@ func GetSeason(id string) (*Season, bool) {
 		}
 	}
 	return nil, false
+}
+
+func GetSkin(s SeasonID, player *SeasonPlayer) string {
+	return fmt.Sprintf("season/%s/skins/3d/%s.png", s, player.Pseudo)
 }

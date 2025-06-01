@@ -1,6 +1,6 @@
 {{define "person"}}
     <div class="people__card" data-href="{{.Link}}">
-        <img src="{{getStaticPath .Image}}" alt="Skin de {{.Name}}" />
+        <img src="/{{.Image}}" alt="Skin de {{.Name}}" />
         <div class="people__card__content">
             <h5>{{.Name}}</h5>
         </div>
@@ -8,7 +8,7 @@
 {{end}}
 {{define "person_desc"}}
     <div class="people__card" data-href="{{.Link}}">
-        <img src="{{getStaticPath .Image}}" alt="Skin de {{.Name}}" />
+        <img src="/{{.Image}}" alt="Skin de {{.Name}}" />
         <div class="people__card__content">
             <h5>{{.Name}}</h5>
             <p>{{ .Description }}</p>
