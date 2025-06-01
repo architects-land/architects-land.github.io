@@ -1,8 +1,6 @@
 {{define "season"}}
     {{if .Left}}
-        <div
-            class="presentation__season is-clickable"
-        >
+        <div class="presentation__season is-clickable">
             <div class="content content--right">
                 <h4>{{.Title}}</h4>
                 {{range $i, $v := .Description}}
@@ -13,19 +11,18 @@
                 </a>
             </div>
             <img
-                    src="{{getStaticPath .Image}}"
-                    alt="{{.ImageAlt}}"
-                    class="presentation__season__image"
+                src="{{getStaticPath .Image}}"
+                alt="{{.ImageAlt}}"
+                class="presentation__season__image"
             />
         </div>
     {{else}}
         <div
-        class="presentation__season presentation__season--left is-clickable"
-        >
+        class="presentation__season presentation__season--left is-clickable">
             <img
-                    src="{{getStaticPath .Image}}"
-                    alt="{{.ImageAlt}}"
-                    class="presentation__season__image"
+                src="{{getStaticPath .Image}}"
+                alt="{{.ImageAlt}}"
+                class="presentation__season__image"
             />
             <div class="content content--left">
                 <h4>{{.Title}}</h4>
