@@ -99,11 +99,13 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	img := GetSkin(season.ID, player)
+
 	g.Render(w, "season/player", &golatt.TemplateData{
 		Title: player.Name + " - " + season.Name,
 		SEO: &golatt.SeoData{
 			URL:         "/season/" + season.Name + "/" + player.Pseudo,
-			Image:       "skins/" + player.Pseudo + ".png",
+			Image:       img,
 			Description: player.Description,
 		},
 		Data: struct {
@@ -111,11 +113,13 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 			HasNav    bool
 			Season    *Season
 			Player    *SeasonPlayer
+			Image     string
 		}{
 			HasFooter: false,
 			HasNav:    false,
 			Season:    season,
 			Player:    player,
+			Image:     img,
 		},
 	})
 }

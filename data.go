@@ -49,7 +49,7 @@ func (s *Season) toFullSeasonData() *FullSeasonData {
 	for _, player := range s.Players {
 		data := PersonData{
 			Name:        player.Name,
-			Image:       fmt.Sprintf("season/%s/skins/3d/%s.png", s.ID, player.Pseudo),
+			Image:       GetSkin(s.ID, player),
 			Description: player.Description,
 		}
 		if s.RP {
@@ -115,4 +115,8 @@ func GetSeason(id string) (*Season, bool) {
 		}
 	}
 	return nil, false
+}
+
+func GetSkin(seasonID string, player *SeasonPlayer) string {
+	return fmt.Sprintf("season/%s/skins/3d/%s.png", seasonID, player.Pseudo)
 }
