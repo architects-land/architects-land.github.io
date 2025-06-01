@@ -14,6 +14,10 @@ import (
 	"os"
 )
 
+var (
+	skins = map[string]*image.NRGBA{}
+)
+
 func handleHome(w http.ResponseWriter, _ *http.Request) {
 	var seasonsData []*SeasonData
 	for i, v := range seasons {
@@ -134,6 +138,15 @@ func handleSkin(w http.ResponseWriter, r *http.Request) {
 		handleNotFound(w, r)
 		return
 	}
+	savedImg, ok := skins[fmt.Sprintf("%s:%s", season.ID, player.Pseudo)]
+	if ok {
+		err := png.Encode(w, savedImg)
+		if err != nil {
+			slog.Error("error encoding saved skin", "error", err)
+			w.WriteHeader(http.StatusInternalServerError)
+		}
+		return
+	}
 	slim := false
 	f, err := g.StaticFS.Open(fmt.Sprintf("%s/skins/%s.png", season.ID, player.Pseudo))
 	if errors.Is(err, os.ErrNotExist) {
@@ -160,6 +173,7 @@ func handleSkin(w http.ResponseWriter, r *http.Request) {
 		Slim:    slim,
 		Square:  false,
 	})
+	skins[fmt.Sprintf("%s:%s", season.ID, player.Pseudo)] = render
 	err = png.Encode(w, render)
 	if err != nil {
 		slog.Error("error encoding skin", "error", err)
