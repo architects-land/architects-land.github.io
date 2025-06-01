@@ -1,13 +1,17 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"github.com/anhgelus/golatt"
 	"github.com/gorilla/mux"
+	"github.com/mineatar-io/skin-render"
 	"image"
 	"image/draw"
 	"image/png"
+	"log/slog"
 	"net/http"
+	"os"
 )
 
 func handleHome(w http.ResponseWriter, _ *http.Request) {
@@ -130,21 +134,35 @@ func handleSkin(w http.ResponseWriter, r *http.Request) {
 		handleNotFound(w, r)
 		return
 	}
+	slim := false
 	f, err := g.StaticFS.Open(fmt.Sprintf("%s/skins/%s.png", season.ID, player.Pseudo))
+	if errors.Is(err, os.ErrNotExist) {
+		slim = true
+		f, err = g.StaticFS.Open(fmt.Sprintf("%s/skins/%s__slim.png", season.ID, player.Pseudo))
+	}
 	if err != nil {
+		slog.Error("error opening skin", "error", err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 	defer f.Close()
 	img, err := png.Decode(f)
 	if err != nil {
+		slog.Error("error decoding skin", "error", err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	output := image.NewRGBA(img.Bounds())
+	output := image.NewNRGBA(img.Bounds())
 	draw.Draw(output, output.Bounds(), img, image.Pt(0, 0), draw.Src)
-	err = png.Encode(w, output)
+	render := skin.RenderBody(output, skin.Options{
+		Scale:   32,
+		Overlay: true,
+		Slim:    slim,
+		Square:  false,
+	})
+	err = png.Encode(w, render)
 	if err != nil {
+		slog.Error("error encoding skin", "error", err)
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
@@ -161,7 +179,7 @@ func getInfoFromURI(r *http.Request) (*Season, *SeasonPlayer, bool) {
 	}
 	pseudo, ok := vars["player"]
 	if !ok {
-		return nil, nil, false
+		return season, nil, false
 	}
 	var player *SeasonPlayer
 	for _, p := range season.Players {
@@ -170,7 +188,7 @@ func getInfoFromURI(r *http.Request) (*Season, *SeasonPlayer, bool) {
 		}
 	}
 	if player == nil {
-		return nil, nil, false
+		return season, nil, false
 	}
 	return season, player, true
 }
