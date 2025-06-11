@@ -38,6 +38,18 @@
             "name": "YouTube"
           }
         ]
+      },
+      {
+        "pseudo": "ascpial",
+        "name": "ascpial",
+        "description": "Joueur Minecraft aimant la redstone, les fermes, mais ni le PVP ni le build. Novice en torsion d'espace-temps et de communications par intrication quantique.",
+        "rp": ["Membre des travailleurs.", "Hanté par un passé dont plus personne d'autre ne se souvient, partisan farouche de la paix."],
+        "links": [
+          {
+            "link": "https://github.com/ascpial",
+            "name": "GitHub"
+          }
+        ]
       }
     ],
     "information": {
