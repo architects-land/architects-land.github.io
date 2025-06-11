@@ -50,6 +50,18 @@
             "name": "GitHub"
           }
         ]
+      },
+      {
+        "pseudo": "Leo_21_",
+        "name": "Léo-21",
+        "description": "Un joueur chill qui aime faire des survies en solo de temps en temps.",
+        "rp": ["Membre des travailleurs.", "En ces temps obscurs, il n'y a pas le temps de s'occuper des autres. Ici-bas, c'est chacun pour soi."],
+        "links": [
+          {
+            "link": "https://github.com/leo-210",
+            "name": "GitHub"
+          }
+        ]
       }
     ],
     "information": {
