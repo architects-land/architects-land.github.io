@@ -62,6 +62,13 @@
             "name": "GitHub"
           }
         ]
+      },
+      {
+        "pseudo": "patoutkt",
+        "name": "max",
+        "description": "Joueur chill qui aime être tranquille",
+        "rp": ["Membre des travailleurs.", "Fermier qui cherche à vivre une vie paisible sans problèmes."],
+        "links": []
       }
     ],
     "information": {
