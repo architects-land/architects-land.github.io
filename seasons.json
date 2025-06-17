@@ -11,7 +11,12 @@
         "pseudo": "anhgelus",
         "name": "Anhgelus Morhtuuzh",
         "description": "Joueur hardcore aimant le speedrun, le PvP et la compétition. Organisateur de cette saison.",
-        "rp": ["Membre des autres."],
+        "rp": [
+          "Beaucoup m'ont questionné sur mes idées, se demandant souvent pourquoi je me bas pour elles. Ma réponse a toujours été simple : quand on a vu ses amis, sa famille et plus généralement son monde s'effondré suite aux caprices d'une entité, on entretient une haine sourde envers elle.",
+          "Je ne cherche pas que la plus violente des vengeances, je cherche surtout à construire un nouveau monde où de tels êtres ne peuvent être.",
+          "Maintenant, c'est à vous de choisir : me suivre ou périr. Et c'est avec ce choix qu'on apprendra tout de vous.",
+          "Et vous, accepteriez-vous de mourir pour défendre vos idées ?"
+        ],
         "links": [
           {
             "link": "https://github.com/anhgelus",
