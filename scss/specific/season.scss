@@ -43,7 +43,10 @@
       max-height: 50vh;
       min-height: 256px;
       @media only screen and (max-width: vars.$bp-mid) {
-        max-height: 90vh;
+        max-height: 75vh;
+      }
+      @media only screen and (max-width: vars.$bp-little) {
+        max-height: 60vh;
       }
     }
   }
@@ -59,7 +62,7 @@
       min-height: 100vh;
       max-height: none;
     }
-    @media only screen and (max-width: vars.$bp-little) {
+    @media only screen and (max-width: vars.$bp-large) {
       width: 75%;
     }
   }
