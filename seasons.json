@@ -66,8 +66,15 @@
       {
         "pseudo": "patoutkt",
         "name": "max",
-        "description": "Joueur chill qui aime être tranquille",
+        "description": "Joueur chill qui aime être tranquille.",
         "rp": ["Membre des travailleurs.", "Fermier qui cherche à vivre une vie paisible sans problèmes."],
+        "links": []
+      },
+      {
+        "pseudo": "Just__Phoenix",
+        "name": "Phoenix",
+        "description": "Joueur moddé/horreur touche à tout, mais allergique au PvP.",
+        "rp": ["Membre des travailleurs.", "Hôtelier fraîchement arrivé s'apprêtant à découvrir les croyances de cette région."],
         "links": []
       }
     ],
@@ -85,7 +92,7 @@
         "De nombreuses ruines peuplent les terres. La faune et la flore du Nether ont envahi certaines régions de l'Overworld suite à l'absence de contrôle des habitants."
       ],
       "version": "1.21.6",
-      "mods": ["Difficulty Death Scaler 2.1", "Larion World Generation", "William Wythers' Overhauled Overworld", "Dungeons and Taverns"],
+      "mods": ["Difficulty Death Scaler 2.1", "Larion World Generation", "Geophilic", "Dungeons and Taverns"],
       "video": "https://youtu.be/EENhDKf_lro",
       "video_thumbnail": "ruine-des-civilisations/presentation.jpg",
       "seed": "?",
