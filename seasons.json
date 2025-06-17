@@ -81,6 +81,13 @@
         "description": "Joueur moddé/horreur touche à tout, mais allergique au PvP.",
         "rp": ["Membre des travailleurs.", "Hôtelier fraîchement arrivé s'apprêtant à découvrir les croyances de cette région."],
         "links": []
+      },
+      {
+        "pseudo": "Under_draciane",
+        "name": "May_draw",
+        "description": "J'aime beaucoup build et miner + petite passion pour les champs de blés et la pêche. Si souvent je joue en modé, c'est souvent pour rajouter des éléments de build ou des mobs intéressants. Pas vraiment une fan du PvP.",
+        "rp": ["Techniquement l'une des autres, mais ne le sait même pas.", "Sûrement une personne ayant vécu sur cette terre aurait entendu parler de l'Entité et de ses dangers. Mais il faut croire qu'elle n'a pas su impacter l'esprit et la vie de certains, qui continuent de vivre, insouciants du danger qui les guette."],
+        "links": []
       }
     ],
     "information": {
