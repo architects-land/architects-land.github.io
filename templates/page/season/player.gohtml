@@ -1,10 +1,10 @@
 {{define "body"}}
     {{$player := .Data.Player}}
     <div class="player-info">
-        <a class="player-info__back" href="/season/{{.Data.Season.ID}}">
-            Retourner en arrière
-        </a>
         <div class="player-info__skin">
+            <a class="player-info__back" href="/season/{{.Data.Season.ID}}">
+                Retourner en arrière
+            </a>
             <img
                 src="/{{.Data.Image}}"
                 alt="Skin de {{$player.Name}}"
