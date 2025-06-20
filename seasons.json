@@ -35,7 +35,7 @@
       {
         "pseudo": "SuperNoobYT",
         "name": "Supernoob",
-        "description": "'aime build et faire de la redstone, collectionné des truc random du jeu et j'aime toujours faire des bases dans le nether 🗿",
+        "description": "J'aime build et faire de la redstone, collectionné des truc random du jeu et j'aime toujours faire des bases dans le nether 🗿",
         "rp": ["Membres des autres haïssant l'entité, méprisant les travailleurs, près à tout pour exécuter son désir de vengeance."],
         "links": [
           {
@@ -87,6 +87,13 @@
         "name": "May_draw",
         "description": "J'aime beaucoup build et miner + petite passion pour les champs de blés et la pêche. Si souvent je joue en modé, c'est souvent pour rajouter des éléments de build ou des mobs intéressants. Pas vraiment une fan du PvP.",
         "rp": ["Techniquement l'une des autres, mais ne le sait même pas.", "Sûrement une personne ayant vécu sur cette terre aurait entendu parler de l'Entité et de ses dangers. Mais il faut croire qu'elle n'a pas su impacter l'esprit et la vie de certains, qui continuent de vivre, insouciants du danger qui les guette."],
+        "links": []
+      },
+      {
+        "pseudo": "Firetrok",
+        "name": "Firetrok",
+        "description": "J'aime explorer la map à la recherche de trucs et d'objets rares. J'aime le PVP et je commence à avoir un petit niveau en build. Je suis aussi un grand partisan du mc moddé au niveau exploration (ex: aether ou deeper and darker) et machinerie (ex: create).",
+        "rp": ["Je suis un explorateur en quête de richesses et de matériaux rares cherchant des collectionneurs et des passionnés en poursuite d'objet spéciaux et difficile à trouver. Je recherche l'équilibre des forces (et de ma richesse)."],
         "links": []
       }
     ],
