@@ -109,6 +109,22 @@
         "description": "Joueur farm extreme en début de serveur afin de récupérer les ressources nécessaires pour build. Si vous avez besoin d'aide pour farmer des ressources, c'est vers lui qu'il faut se tourner.",
         "rp": ["Membre des travailleurs.", "Architecte très dévoué qui a pour but de construire tout ce qui lui vient en tête. Vous le verrez souvent partir des jours pour récupérer les ressources nécessaires à ses projets. Il cherche perpétuellement la moindre optimisation possible afin de rendre son travail plus simple."],
         "links": []
+      },
+      {
+        "pseudo": "Layms",
+        "name": "Layms",
+        "description": "Joueurs Minecraft aimant expérimenter avec la redstone, le build, et la programmation (mod /datapack / commande block...). De plus, j'aime les courses de bateau et le jump.",
+        "rp": ["Membre des autres.", "Farmer se faisant passer pour un random, alors qu'il est un spécialiste de la redstone et du build."],
+        "links": [
+          {
+            "link": "https://block-display.com/author/layms/",
+            "name": "Block Display"
+          },
+          {
+            "link": "https://www.youtube.com/@Laynnu",
+            "name": "YouTube"
+          }
+        ]
       }
     ],
     "information": {
