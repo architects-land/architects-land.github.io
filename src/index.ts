@@ -12,7 +12,7 @@ function setupEvents() {
 
   if (window.innerWidth > 620) {
     document.addEventListener("scroll", (_) => {
-      if (window.scrollY >= window.innerHeight) {
+      if (window.scrollY >= 0.3 * window.innerHeight) {
         nav.style.display = "";
         nav.classList.add("nav--present");
         return;
