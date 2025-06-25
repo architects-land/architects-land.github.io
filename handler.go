@@ -113,7 +113,7 @@ func handlePlayer(w http.ResponseWriter, r *http.Request) {
 		Title: player.Name + " - " + season.Name,
 		SEO: &golatt.SeoData{
 			URL:         "/season/" + season.Name + "/" + player.Pseudo,
-			Image:       img,
+			Image:       "/" + img,
 			Description: player.Description,
 		},
 		Data: struct {
@@ -208,11 +208,12 @@ func getInfoFromURI(r *http.Request) (*Season, *SeasonPlayer, bool) {
 }
 
 func handleNotFound(w http.ResponseWriter, _ *http.Request) {
+	img := "nether.jpg"
 	g.Render(w, "lost", &golatt.TemplateData{
 		Title: "404",
 		SEO: &golatt.SeoData{
 			URL:         "",
-			Image:       "nether.jpg",
+			Image:       golatt.GetStaticPath(img),
 			Description: "Il semblerait que vous vous êtes perdu·es dans le nether. (Erreur 404)",
 		},
 		Data: struct {
@@ -225,7 +226,7 @@ func handleNotFound(w http.ResponseWriter, _ *http.Request) {
 			Hero: &HeroData{
 				Title:       "Perdu ?",
 				Description: "Il semblerait que vous vous êtes perdu·es dans le nether. Vous allez être redirigés dans l'overworld.",
-				Image:       "nether.jpg",
+				Image:       img,
 				Dark:        false,
 				Min:         false,
 			},
