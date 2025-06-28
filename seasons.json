@@ -141,6 +141,13 @@
         "name": "louenn",
         "description": "Joueur touchant à tout : build, redstone, PvP, modding et administration",
         "rp": ["Membre des autres", "Explorateur perdu sur cette terre."]
+      },
+      {
+        "pseudo": "L_Hermite",
+        "name": "L'Hermite",
+        "description": "Joueur souvent solitaire, il aime parcourir le monde et établir sa base loin de tout, d'où son surnom.",
+        "rp": [],
+        "links": []
       }
     ],
     "information": {
