@@ -157,7 +157,7 @@
         "De nombreuses ruines peuplent les terres. Les structures du Nether ont aussi été affectées par cette absence : la faune en a profité pour se restructurer."
       ],
       "version": "1.21.6 - 1.21.7",
-      "mods": ["Difficulty Death Scaler 2.1", "Larion World Generation", "Geophilic", "Dungeons and Taverns"],
+      "mods": ["Difficulty Death Scaler 2.1", "Larion World Generation", "Geophilic", "Dungeons and Taverns (without custom enchants)"],
       "video": "https://youtu.be/EENhDKf_lro",
       "video_thumbnail": "ruine-des-civilisations/presentation.jpg",
       "seed": "?",
