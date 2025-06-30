@@ -148,6 +148,13 @@
         "description": "Joueur souvent solitaire, il aime parcourir le monde et établir sa base loin de tout, d'où son surnom.",
         "rp": ["Je suis L'Hermite, constructeur et survivaliste expérimenté. J'aime vivre isolé du reste du monde. En ce qui concerne ma position sur ce que vous autres appelez l'Entité, je ne peux être en accord avec ses méthodes, ce qui, étant pour me déplaire, me place dans le camp des \"contre l'entité\". Or, ma vision est toujours prête a évoluer."],
         "links": []
+      },
+      {
+        "pseudo": "Nnokyo",
+        "name": "Sunukis",
+        "description": "Adore les blagues",
+        "rp": ["Fou ? Qui est fou ici ?! Je ne travaille pas pour cette chose ! Des \"travailleurs\", des idiots oui ! À moi la liberté !", "Vous pensez vraiment que ce machin va vous aider ? Ah ! La mort vous sera plus agréable."],
+        "links": []
       }
     ],
     "information": {
@@ -164,7 +171,7 @@
         "De nombreuses ruines peuplent les terres. Les structures du Nether ont aussi été affectées par cette absence : la faune en a profité pour se restructurer."
       ],
       "version": "1.21.6 - 1.21.7",
-      "mods": ["Difficulty Death Scaler 2.1", "Larion World Generation", "Geophilic", "Dungeons and Taverns (without custom enchants)"],
+      "mods": ["Difficulty Death Scaler 2.1", "Larion's World Generation", "Geophilic", "Dungeons and Taverns (without custom enchants)"],
       "video": "https://youtu.be/EENhDKf_lro",
       "video_thumbnail": "ruine-des-civilisations/presentation.jpg",
       "seed": "?",
