@@ -146,7 +146,7 @@
         "pseudo": "L_Hermite",
         "name": "L'Hermite",
         "description": "Joueur souvent solitaire, il aime parcourir le monde et établir sa base loin de tout, d'où son surnom.",
-        "rp": [],
+        "rp": ["Je suis L'Hermite, constructeur et survivaliste expérimenté. J'aime vivre isolé du reste du monde. En ce qui concerne ma position sur ce que vous autres appelez l'Entité, je ne peux être en accord avec ses méthodes, ce qui, étant pour me déplaire, me place dans le camp des \"contre l'entité\". Or, ma vision est toujours prête a évoluer."],
         "links": []
       }
     ],
