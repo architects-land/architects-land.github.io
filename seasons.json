@@ -71,8 +71,8 @@
       {
         "pseudo": "patoutkt",
         "name": "max",
-        "description": "Joueur chill qui aime être tranquille.",
-        "rp": ["Membre des travailleurs.", "Fermier qui cherche à vivre une vie paisible sans problèmes."],
+        "description": "Joueur banni pour utilisation de usebugs, pour irrespect et pour non report de bugs.",
+        "rp": ["Ancien membre des travailleurs.", "L'Entité l'a tué suite à son insolence et à son inefficacité dans son travail. D'après les rumeurs, le camp de travailleurs se porte mieux comme ça..."],
         "links": []
       },
       {
@@ -121,7 +121,7 @@
             "name": "Block Display"
           },
           {
-            "link": "https://www.youtube.com/@Laynnu",
+            "link": "https://www.youtube.com/@Laymsu",
             "name": "YouTube"
           }
         ]
