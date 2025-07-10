@@ -7,21 +7,11 @@
     </div>
 {{end}}
 {{define "person_desc"}}
-    {{if eq (len .Link) 0}}
-        <div class="people__card">
-            <img src="/{{.Image}}" alt="Skin de {{.Name}}" />
-            <div class="people__card__content">
-                <h5>{{.Name}}</h5>
-                <p>{{ .Description }}</p>
-            </div>
+    <div class="people__card" {{if ne (len .Link) 0}} data-href="{{.Link}}" {{end}}>
+        <img src="/{{.Image}}" alt="Skin de {{.Name}}" />
+        <div class="people__card__content">
+            <h5>{{.Name}}</h5>
+            <p>{{ .Description }}</p>
         </div>
-    {{else}}
-        <div class="people__card" data-href="{{.Link}}">
-            <img src="/{{.Image}}" alt="Skin de {{.Name}}" />
-            <div class="people__card__content">
-                <h5>{{.Name}}</h5>
-                <p>{{ .Description }}</p>
-            </div>
-        </div>
-    {{end}}
+    </div>
 {{end}}
