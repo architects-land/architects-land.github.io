@@ -60,7 +60,7 @@
         "pseudo": "Leo_21_",
         "name": "Léo-21",
         "description": "Un joueur chill qui aime faire des survies en solo de temps en temps.",
-        "rp": ["Membre des travailleurs.", "En ces temps obscurs, il n'y a pas le temps de s'occuper des autres. Ici-bas, c'est chacun pour soi."],
+        "rp": ["Membre des travailleurs.", "L'entité c'est un conte pour enfant. Faut grandir un peu et assumer au lieu de s'inventer des histoires stupides."],
         "links": [
           {
             "link": "https://github.com/leo-210",
@@ -90,24 +90,10 @@
         "links": []
       },
       {
-        "pseudo": "Firetrok",
-        "name": "Firetrok",
-        "description": "J'aime explorer la map à la recherche de trucs et d'objets rares. J'aime le PVP et je commence à avoir un petit niveau en build. Je suis aussi un grand partisan du mc moddé au niveau exploration (ex: aether ou deeper and darker) et machinerie (ex: create).",
-        "rp": ["Je suis un explorateur en quête de richesses et de matériaux rares cherchant des collectionneurs et des passionnés en poursuite d'objet spéciaux et difficile à trouver. Je recherche l'équilibre des forces (et de ma richesse)."],
-        "links": []
-      },
-      {
         "pseudo": "UnCitronQuiPique",
         "name": "Citron",
         "description": "Joueur polyvalent, je prends autant de plaisir à build qu’à PvP (même si mon niveau en PVP reste moyen). Mon ennemi juré ? Les Piglins brutes ! Influencé par mon côté joueur COD, j’adore ajouter des armes à feu en moddé, avec une nette préférence pour les modpacks apocalypse zombie",
         "rp": ["Jeune explorateur sans un sou, j’ai grandi et encore aujourd'hui, fasciné par l’End et ses habitants. Mon rêve : percer les secrets de cette dimension  et étudier les créatures qui y vivent afin mieux les comprendre.", "Guidé par l’espoir d'échapper une bonne foi pour toute a la misère, je soutiens l’Entité et son idéologie."],
-        "links": []
-      },
-      {
-        "pseudo": "Lex_Al022",
-        "name": "Lex_Al",
-        "description": "Joueur farm extreme en début de serveur afin de récupérer les ressources nécessaires pour build. Si vous avez besoin d'aide pour farmer des ressources, c'est vers lui qu'il faut se tourner.",
-        "rp": ["Membre des travailleurs.", "Architecte très dévoué qui a pour but de construire tout ce qui lui vient en tête. Vous le verrez souvent partir des jours pour récupérer les ressources nécessaires à ses projets. Il cherche perpétuellement la moindre optimisation possible afin de rendre son travail plus simple."],
         "links": []
       },
       {
