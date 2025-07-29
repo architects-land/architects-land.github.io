@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"flag"
+	"fmt"
 	"github.com/anhgelus/golatt"
 	"os"
 )
@@ -43,10 +44,14 @@ var templates embed.FS
 
 var g *golatt.Golatt
 
-var dev bool
+var (
+	dev  bool = false
+	port int  = 80
+)
 
 func init() {
-	flag.BoolVar(&dev, "dev", false, "development mode")
+	flag.BoolVar(&dev, "dev", dev, "development mode")
+	flag.IntVar(&port, "port", port, "port")
 }
 
 func main() {
@@ -120,9 +125,14 @@ func main() {
 	g.HandleFunc("/season/{id:[a-z-]+}/player/{player}", handlePlayer)
 	g.HandleFunc("/season/{id:[a-z-]+}/skins/3d/{player}.png", handleSkin)
 
+	s := fmt.Sprintf(":%d", port)
+
 	if dev {
-		g.StartServer(":8000")
+		if port == 80 {
+			s = ":8000"
+		}
+		g.StartServer(s)
 	} else {
-		g.StartServer(":80")
+		g.StartServer(s)
 	}
 }
